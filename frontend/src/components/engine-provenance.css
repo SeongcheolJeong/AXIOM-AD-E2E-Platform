@@ -1,0 +1,124 @@
+.recorded-engine-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  border: 1px solid #d4e1dc;
+  border-radius: 5px;
+  padding: 4px 7px;
+  color: #36574b;
+  background: #f1f7f4;
+  font-size: 12px;
+  line-height: 1.4;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.recorded-engine-badge svg {
+  flex: 0 0 auto;
+}
+.recorded-engine-badge > span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+}
+.engine-fidelity-disclosure {
+  min-width: 150px;
+  max-width: 280px;
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #596c61;
+}
+.engine-fidelity-disclosure summary {
+  cursor: pointer;
+}
+.engine-fidelity-disclosure p {
+  margin: 5px 0 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.recorded-engine-summary {
+  border: 1px solid #dce5df;
+  border-radius: 7px;
+  background: #fafcf9;
+  padding: 13px 16px;
+  margin: 0 0 16px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.recorded-engine-summary > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+.recorded-engine-summary p {
+  margin: 8px 0 0;
+  overflow-wrap: anywhere;
+}
+.recorded-engine-summary p > span {
+  color: #5d7164;
+  font-size: 11px;
+  margin-right: 6px;
+}
+.recorded-engine-summary .recorded-engine-error {
+  color: #8e5b36;
+}
+.launcher-selection-summary {
+  border: 1px solid #bad2c4;
+  border-radius: 7px;
+  padding: 14px;
+  background: #f3f8f4;
+  min-width: 0;
+}
+.launcher-selection-summary h3 {
+  font-size: 14px;
+  margin: 0 0 11px;
+  color: #355744;
+}
+.launcher-selection-summary dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+  margin: 0;
+}
+.launcher-selection-summary dl > div {
+  min-width: 0;
+}
+.launcher-selection-summary dt {
+  font-size: 11px;
+  color: #5b7062;
+  margin: 0 0 3px;
+}
+.launcher-selection-summary dd {
+  margin: 0;
+  font-size: 12px;
+  color: #344f41;
+  overflow-wrap: anywhere;
+}
+.launcher-selection-summary dd code {
+  font-size: 11px;
+}
+.launcher-selection-summary > p {
+  font-size: 12px;
+  line-height: 1.65;
+  color: #4b6153;
+  margin: 11px 0 0;
+}
+.launcher-selection-summary .launcher-selection-invalid {
+  color: #956431;
+}
+.engine-catalog-state {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #c5d3c9;
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+  .launcher-selection-summary dl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .recorded-engine-summary {
+    padding: 12px;
+  }
+}

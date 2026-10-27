@@ -1,0 +1,24 @@
+--- a/machines/posix/tpl_machine_posix.c
++++ b/machines/posix/tpl_machine_posix.c
+@@ -198,7 +198,7 @@
+ {
+ 
+     // TODO: invert control flow between these 2 functions
+-    tpl_posixvp_irq_gen_init();
++    /* AXIOM: stdin belongs to the external tick protocol; no keyboard fork. */
+ 
+     tpl_proc_id proc_id;
+ 
+@@ -216,10 +216,10 @@
+ 
+     tpl_posix_siginit();
+ 
+-    tpl_viper_init();
++    /* AXIOM: no ViPER process or wall-clock timer is started. */
+ 
+ #if ((WITH_AUTOSAR == YES) && (SCHEDTABLE_COUNT > 0)) || (ALARM_COUNT > 0)
+-    tpl_viper_start_auto_timer(signal_for_counters,10000);  /* 10 ms */
++    /* AXIOM: one explicit SIGUSR2 from Driver advances one virtual ms. */
+ #endif
+ 
+ #if WITH_AUTOSAR_TIMING_PROTECTION == YES

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axiom-isp-rtl"
+version = "0.1.0"
+description = "Pinned open RTL Bayer ISP execution and FPGA build adapters"
+requires-python = ">=3.11"
+dependencies = ["axiom-rtl-lab==0.1.0", "axiom-apollo-lab==0.1.0", "numpy>=1.26", "Pillow>=10"]
+
+[project.entry-points."ade2e.experiment_handlers"]
+fpga_build = "axiom_isp_rtl.handler:BuildHandler"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+axiom_isp_rtl = ["vendor/mini_isp/*", "templates/*", "boards/ulx3s85f/*"]

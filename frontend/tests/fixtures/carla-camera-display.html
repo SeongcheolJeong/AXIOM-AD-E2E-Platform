@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CarlaCameraFrame display regression fixture</title>
+    <style>
+      body { margin: 24px auto; padding: 0 20px; max-width: 1100px; font: 15px/1.5 system-ui, sans-serif; color: #183132; background: #eef3f3; }
+      h1 { font-size: 24px; margin-bottom: 8px; }
+      .notice { padding: 12px; background: #fff0cf; border: 1px solid #e4c56f; border-radius: 8px; }
+      .controls { display: flex; gap: 10px; margin: 16px 0; }
+      button { padding: 9px 14px; border: 1px solid #9ab6ae; border-radius: 6px; cursor: pointer; background: white; }
+      button:disabled { opacity: .45; cursor: default; }
+      .columns { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+      .panel { padding: 16px; min-width: 0; border: 1px solid #bad0c9; border-radius: 10px; background: white; }
+      .carla-camera-frame { margin: 0; }
+      .carla-camera-frame canvas { width: 100%; height: 190px; object-fit: contain; image-rendering: pixelated; background: #132630; }
+      pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 11px; max-height: 260px; overflow: auto; }
+      #expected { min-height: 48px; font-weight: 600; }
+      #requested { font-family: monospace; }
+      .expansion-error { color: #a02020; }
+      details { font-size: 12px; }
+      @media(max-width: 750px) { .columns { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/tests/fixtures/carla-camera-display.tsx"></script>
+  </body>
+</html>

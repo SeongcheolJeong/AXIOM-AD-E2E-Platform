@@ -1,0 +1,303 @@
+{
+  "schema_version": "axiom-github-demo/1",
+  "scope": "Original authored synthetic CPU reference; no CARLA, measured road data, sensor validation or safety certification.",
+  "seed": 42,
+  "determinism": "Authored inputs and CPU numerical outputs repeat; IDs, build timestamps and SQLite bytes may differ.",
+  "builder_sha256": "7bf219eb4b36fae9a6aff0ed84659de1811dedb21182b4f32ab8b8cebe37d05a",
+  "source_files": [
+    {
+      "path": "backend/src/ade2e/reference.py",
+      "sha256": "c6277dc36e44f01d67853d3c0ea04c98314743694ece7e576c42f5be5d1f0fd9"
+    },
+    {
+      "path": "backend/src/ade2e/planning_replay.py",
+      "sha256": "d13ff046e1ece62d479fb863f70ff31f5617a9952b63d439a1b6bd493a01be68"
+    },
+    {
+      "path": "backend/src/ade2e/scene_sequences.py",
+      "sha256": "ee10cb2d8f73d309254d8d145bd86630360ed5b03e0fd46568c5d5e852784565"
+    },
+    {
+      "path": "backend/src/ade2e/replay_specs.py",
+      "sha256": "253dbe561fc60df71dbc2efe126b4528fdc88368bc2dc6548393131589c648a4"
+    },
+    {
+      "path": "backend/src/ade2e/database.py",
+      "sha256": "f43c166abbb6ace1399ec08005c9b4f4000e61a50fb21b1ef3717b6c5a5a9d97"
+    },
+    {
+      "path": "backend/src/ade2e/service.py",
+      "sha256": "5cccbc3f4a0a86e39b4f0f32b8cf1bfbf3a0c60abcd89144b66125ecefacdf42"
+    },
+    {
+      "path": "backend/src/ade2e/experiment_jobs.py",
+      "sha256": "447bfec3d77a023d55017fbfb7dbc64b6cdf687e6bfd8cc0ac4e3ce9675bc900"
+    }
+  ],
+  "samples": {
+    "object-reference": {
+      "title": "Object reference · retained pass and fail",
+      "runs": [
+        {
+          "id": "run_b4b678f8467745249721cf79281cfca8",
+          "scenario_id": "scn_dd1017caae264b14ac078623554676f5",
+          "scenario_revision": 1,
+          "verdict": "passed",
+          "output_hash": "caf51b87d1c1dd686033611d70d0da253551af7321b0e926431fa2b2d50d70fa",
+          "frame_count": 161,
+          "ui": "#runs?run=run_b4b678f8467745249721cf79281cfca8"
+        },
+        {
+          "id": "run_a0c0eec084854a5cb666689321337c6e",
+          "scenario_id": "scn_5738fad08a7d43bcb19c343a8e06e033",
+          "scenario_revision": 1,
+          "verdict": "failed",
+          "output_hash": "212ec9c0b887f572805c927e6d7522cf500ebfad0d8c4b4041812c1c3c2fbecb",
+          "frame_count": 161,
+          "ui": "#runs?run=run_a0c0eec084854a5cb666689321337c6e"
+        }
+      ],
+      "executions": [],
+      "ui": [
+        "#runs?run=run_b4b678f8467745249721cf79281cfca8",
+        "#runs?run=run_a0c0eec084854a5cb666689321337c6e",
+        "#validation",
+        "#scenarios"
+      ],
+      "scope": "Original authored synthetic CPU reference; no CARLA, measured road data, sensor validation or safety certification.",
+      "database": "platform.db",
+      "files": [
+        {
+          "path": "artifacts/art_9d06b7fee68f4b0c8f305ac28f0e10e8.blob",
+          "bytes": 52091,
+          "sha256": "6c022b0424affecd860b221f7e4b1062d74dab88fd2256d7e8e3d29b87f83430"
+        },
+        {
+          "path": "artifacts/art_a604ed97b5444c8192a93d27bce383be.blob",
+          "bytes": 51282,
+          "sha256": "fb784b7bb5eadac83974deb060b03bd2042b3580c2c2fdbaaef1532c1fd742fe"
+        },
+        {
+          "path": "platform.db",
+          "bytes": 1277952,
+          "sha256": "ec04a47a89b97ba2ffbef5ee6ad63fd897596c6318d897527705e8b067ab40b9"
+        }
+      ],
+      "total_bytes": 1381325
+    },
+    "log-open-loop": {
+      "title": "Log · retained original and open-loop",
+      "recording_id": "rec_50bddfe8a34e44e2b8e6fbd5cf12f594",
+      "recording_sha256": "97fd4ea30cb5cbb5f4efc9c01d208ce722a7cbf414db759a6392a328319d0372",
+      "sequence_id": "seq_2fbcd40dc0514e1ebe02a2c953897d34",
+      "case_id": "case_c1121c99dea541b58936fd6a9c7c6d41",
+      "runs": [],
+      "executions": [
+        {
+          "id": "job_98bc928d87f3404d8b3ba6ad6fbfb3ae",
+          "experiment_id": "experiment_146c26fabff347a8b63aa985e09116f6",
+          "replay_spec_id": "replay_4d7211de3263457e946941682f0149fa",
+          "mode": "original_replay",
+          "frame_count": 41,
+          "max_deceleration_mps2": 5.0,
+          "manifest_hash": "5923f5d14d95532249adc9ee7c35ef8546cf1641539304243e17897c621deeaa",
+          "ui": "#viewers?project=default&execution=job_98bc928d87f3404d8b3ba6ad6fbfb3ae"
+        },
+        {
+          "id": "job_10900eb40fa740999b22358ea0088fef",
+          "experiment_id": "experiment_595b8a2f422b40d8aa7f4e0610760d6b",
+          "replay_spec_id": "replay_3d458b8587224716b1bbdc9f5f00b634",
+          "mode": "open_loop",
+          "frame_count": 41,
+          "max_deceleration_mps2": 5.0,
+          "manifest_hash": "7f4021b7fa12ef23823554db3ce13e3f0384e1e6f58b71c6f02cb4168d5860e5",
+          "ui": "#viewers?project=default&execution=job_10900eb40fa740999b22358ea0088fef"
+        }
+      ],
+      "ui": [
+        "#viewers?project=default&execution=job_98bc928d87f3404d8b3ba6ad6fbfb3ae",
+        "#viewers?project=default&execution=job_10900eb40fa740999b22358ea0088fef",
+        "#replay-specs",
+        "#catalog",
+        "#cases"
+      ],
+      "scope": "Original authored synthetic CPU reference; no CARLA, measured road data, sensor validation or safety certification.",
+      "database": "platform.db",
+      "files": [
+        {
+          "path": "experiments/artifacts/artifact_1acf49548e574d838309c70dee3d4f15",
+          "bytes": 71054,
+          "sha256": "1ae05c279155b4dda7504c5b1c08f32712f1868e57cb200f457a2977e74b8738"
+        },
+        {
+          "path": "experiments/artifacts/artifact_6dbedccb40fc49a6ad3daa3a60eeda54",
+          "bytes": 105386,
+          "sha256": "299c5376e4ea1a8b5965849cc9a462ebf08e5a62df2ed1cc2b6a433395b51e92"
+        },
+        {
+          "path": "experiments/artifacts/artifact_a4fe4f2e347142c091779fdd765e516b",
+          "bytes": 118659,
+          "sha256": "6282a53d2e991b66c1d3a1fd42ca575558e6c81e9d225dc382b2771b03365c26"
+        },
+        {
+          "path": "experiments/artifacts/artifact_ccd6db93411a458a945208606a99f306",
+          "bytes": 71030,
+          "sha256": "81405b74f6ec545f37bdfdfb0e770b5990e8ab587ee9e3d46b8b932b732e5850"
+        },
+        {
+          "path": "experiments/attempts/job_10900eb40fa740999b22358ea0088fef/input-manifest.json",
+          "bytes": 2996,
+          "sha256": "a7d6b3a03e55d347ea5cf54f99ef56cb9f2ce7a5f527d976762f6797e8928955"
+        },
+        {
+          "path": "experiments/attempts/job_10900eb40fa740999b22358ea0088fef/planning-manifest.json",
+          "bytes": 71030,
+          "sha256": "81405b74f6ec545f37bdfdfb0e770b5990e8ab587ee9e3d46b8b932b732e5850"
+        },
+        {
+          "path": "experiments/attempts/job_10900eb40fa740999b22358ea0088fef/planning-trace.ndjson",
+          "bytes": 118659,
+          "sha256": "6282a53d2e991b66c1d3a1fd42ca575558e6c81e9d225dc382b2771b03365c26"
+        },
+        {
+          "path": "experiments/attempts/job_98bc928d87f3404d8b3ba6ad6fbfb3ae/input-manifest.json",
+          "bytes": 3020,
+          "sha256": "4dc0ccd8e78b4cf8208009f7ea24a8bc032bf7ba8db705910a273a01a6815fb0"
+        },
+        {
+          "path": "experiments/attempts/job_98bc928d87f3404d8b3ba6ad6fbfb3ae/planning-manifest.json",
+          "bytes": 71054,
+          "sha256": "1ae05c279155b4dda7504c5b1c08f32712f1868e57cb200f457a2977e74b8738"
+        },
+        {
+          "path": "experiments/attempts/job_98bc928d87f3404d8b3ba6ad6fbfb3ae/planning-trace.ndjson",
+          "bytes": 105386,
+          "sha256": "299c5376e4ea1a8b5965849cc9a462ebf08e5a62df2ed1cc2b6a433395b51e92"
+        },
+        {
+          "path": "platform.db",
+          "bytes": 1675264,
+          "sha256": "95967b6e26bc776116c9cbbaeecb975fa6d627480fd7c60743e301f0d969a212"
+        },
+        {
+          "path": "recordings/rec_50bddfe8a34e44e2b8e6fbd5cf12f594.mcap",
+          "bytes": 6660,
+          "sha256": "97fd4ea30cb5cbb5f4efc9c01d208ce722a7cbf414db759a6392a328319d0372"
+        },
+        {
+          "path": "recordings/rec_50bddfe8a34e44e2b8e6fbd5cf12f594.payloads",
+          "bytes": 19956,
+          "sha256": "8ec7c0f7cce75a6dfe64be3fc2eed3b3c647b111b5d22d04520d7181a73eed09"
+        }
+      ],
+      "total_bytes": 2440154
+    },
+    "log-feedback": {
+      "title": "Log · reference planning feedback",
+      "recording_id": "rec_2a538cdf8b914ad1bbe153d49b3dd798",
+      "recording_sha256": "97fd4ea30cb5cbb5f4efc9c01d208ce722a7cbf414db759a6392a328319d0372",
+      "sequence_id": "seq_8a0ab31612ad4a16be7cd2d658b85a2f",
+      "case_id": "case_1ca7247b9ee441bea54e4344d80a3c1b",
+      "runs": [],
+      "executions": [
+        {
+          "id": "job_a38eb4b4ca6c465695cb8197034f0e83",
+          "experiment_id": "experiment_c01ae63beeca4b4a95ceb6f12f4972b9",
+          "replay_spec_id": "replay_d248c2ffacaa40fe918464d8a0f34ea4",
+          "mode": "planning_closed_loop",
+          "frame_count": 41,
+          "max_deceleration_mps2": 0.8,
+          "manifest_hash": "b22d5f999748741b250e82aaad7b7090e75ae517d3f700a9c6b3b3f90bc424ef",
+          "ui": "#viewers?project=default&execution=job_a38eb4b4ca6c465695cb8197034f0e83"
+        },
+        {
+          "id": "job_164947deb11648e0b7f28a3ce1c354c4",
+          "experiment_id": "experiment_8d984b54667b4ccd8857a27073955418",
+          "replay_spec_id": "replay_cf094f62d0f94822a6e469fafff58b6a",
+          "mode": "planning_closed_loop",
+          "frame_count": 41,
+          "max_deceleration_mps2": 6.0,
+          "manifest_hash": "d0ed3f48aecb6bb924264d8a2de619e9dbc10474add5cb808fdd08cfe6b3b6a0",
+          "ui": "#viewers?project=default&execution=job_164947deb11648e0b7f28a3ce1c354c4"
+        }
+      ],
+      "ui": [
+        "#viewers?project=default&execution=job_a38eb4b4ca6c465695cb8197034f0e83",
+        "#viewers?project=default&execution=job_164947deb11648e0b7f28a3ce1c354c4",
+        "#replay-specs",
+        "#catalog",
+        "#cases"
+      ],
+      "scope": "Original authored synthetic CPU reference; no CARLA, measured road data, sensor validation or safety certification.",
+      "database": "platform.db",
+      "files": [
+        {
+          "path": "experiments/artifacts/artifact_1dc4abef64ae466f93bd2b2e347a34b9",
+          "bytes": 123474,
+          "sha256": "d85ff30cdfd76b6e1fedecc6b978fac8a1793f50af0f55b73e8e91d0d1448101"
+        },
+        {
+          "path": "experiments/artifacts/artifact_23a48242672e431cb2f0e92ba0373c16",
+          "bytes": 71119,
+          "sha256": "e8c5e12f80915250286d04222aebace486e3f91e5ce07878caf9e1ccf85e8098"
+        },
+        {
+          "path": "experiments/artifacts/artifact_3add68ad95554640917a69e172f73caf",
+          "bytes": 124542,
+          "sha256": "f7f855c2b16b407fc75a58e279d2690e2a7900fae11c329a87241969e838f743"
+        },
+        {
+          "path": "experiments/artifacts/artifact_67b4928fb5e84fc0af2ab4ce366bcbd9",
+          "bytes": 71124,
+          "sha256": "750197924b6e090345a89d653ecfd04d6c0c87a99adc4cd4672319298ee618d5"
+        },
+        {
+          "path": "experiments/attempts/job_164947deb11648e0b7f28a3ce1c354c4/input-manifest.json",
+          "bytes": 3072,
+          "sha256": "0ecd8edd35a2688508f0e82a0b26dfeff5fa93d7b49fc2af541c3198f7566184"
+        },
+        {
+          "path": "experiments/attempts/job_164947deb11648e0b7f28a3ce1c354c4/planning-manifest.json",
+          "bytes": 71119,
+          "sha256": "e8c5e12f80915250286d04222aebace486e3f91e5ce07878caf9e1ccf85e8098"
+        },
+        {
+          "path": "experiments/attempts/job_164947deb11648e0b7f28a3ce1c354c4/planning-trace.ndjson",
+          "bytes": 124542,
+          "sha256": "f7f855c2b16b407fc75a58e279d2690e2a7900fae11c329a87241969e838f743"
+        },
+        {
+          "path": "experiments/attempts/job_a38eb4b4ca6c465695cb8197034f0e83/input-manifest.json",
+          "bytes": 3076,
+          "sha256": "63e53aee7cb43f669be6efe8cef6396fe566fb854971000e3c60ecc6ae1270a6"
+        },
+        {
+          "path": "experiments/attempts/job_a38eb4b4ca6c465695cb8197034f0e83/planning-manifest.json",
+          "bytes": 71124,
+          "sha256": "750197924b6e090345a89d653ecfd04d6c0c87a99adc4cd4672319298ee618d5"
+        },
+        {
+          "path": "experiments/attempts/job_a38eb4b4ca6c465695cb8197034f0e83/planning-trace.ndjson",
+          "bytes": 123474,
+          "sha256": "d85ff30cdfd76b6e1fedecc6b978fac8a1793f50af0f55b73e8e91d0d1448101"
+        },
+        {
+          "path": "platform.db",
+          "bytes": 1703936,
+          "sha256": "31635558141a2a242448cfc5b0c1c21df98ce509b0010e8c67a2458ee1fae0d0"
+        },
+        {
+          "path": "recordings/rec_2a538cdf8b914ad1bbe153d49b3dd798.mcap",
+          "bytes": 6660,
+          "sha256": "97fd4ea30cb5cbb5f4efc9c01d208ce722a7cbf414db759a6392a328319d0372"
+        },
+        {
+          "path": "recordings/rec_2a538cdf8b914ad1bbe153d49b3dd798.payloads",
+          "bytes": 19956,
+          "sha256": "8ec7c0f7cce75a6dfe64be3fc2eed3b3c647b111b5d22d04520d7181a73eed09"
+        }
+      ],
+      "total_bytes": 2517218
+    }
+  }
+}

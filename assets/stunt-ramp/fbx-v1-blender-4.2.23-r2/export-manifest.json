@@ -1,0 +1,110 @@
+{
+  "blender_build_hash": "d0cbe84903e8",
+  "blender_version": "4.2.23 LTS",
+  "editor_import_verified": false,
+  "export_axis_forward": "Y",
+  "export_axis_up": "Z",
+  "exporter_sha256": "7524bf465357650ea7a38448e0ccbb89d4cd5788ac09c142eaf7396a1b882d85",
+  "exports": [
+    {
+      "bounds_cm": {
+        "max": [
+          630.0,
+          400.0,
+          815.4726903000001
+        ],
+        "min": [
+          0.0,
+          -400.0,
+          -30.0
+        ]
+      },
+      "convex_hulls": 55,
+      "file": "StuntRamp.fbx",
+      "maximum_roundtrip_error_cm": 3.047187499305437e-05,
+      "name": "StuntRamp",
+      "roundtrip_objects": 56,
+      "sha256": "eea2aa1d7117c2844a7d5b1797e16c32a6a53c4601dadf9aa0527e0667b3513e",
+      "size_bytes": 123708
+    },
+    {
+      "bounds_cm": {
+        "max": [
+          0.0,
+          400.0,
+          0.0
+        ],
+        "min": [
+          -1200.0,
+          -400.0,
+          -30.0
+        ]
+      },
+      "convex_hulls": 1,
+      "file": "StuntApproach.fbx",
+      "maximum_roundtrip_error_cm": 0.0,
+      "name": "StuntApproach",
+      "roundtrip_objects": 2,
+      "sha256": "a2b617dda539511d2b2da6c4be3e1b0284a8519df46cc169d1babde08f960a61",
+      "size_bytes": 13308
+    },
+    {
+      "bounds_cm": {
+        "max": [
+          3000.0,
+          1500.0,
+          -30.0
+        ],
+        "min": [
+          0.0,
+          -1500.0,
+          -60.0
+        ]
+      },
+      "convex_hulls": 1,
+      "file": "StuntLanding.fbx",
+      "maximum_roundtrip_error_cm": 0.0,
+      "name": "StuntLanding",
+      "roundtrip_objects": 2,
+      "sha256": "89c520b48df7f494cc90868123a7accd177888f6f960dc7fb26773bf3f486543",
+      "size_bytes": 13308
+    }
+  ],
+  "fbx_timestamp_normalized_to": "2000-01-01T00:00:00",
+  "geometry_roundtrip_verified": true,
+  "geometry_units": "cm",
+  "import_settings": {
+    "auto_generate_collision": false,
+    "collision_trace_flag": "CTF_USE_SIMPLE_AND_COMPLEX",
+    "combine_meshes": false,
+    "convert_scene": false,
+    "convert_scene_unit": false,
+    "import_uniform_scale": 1.0,
+    "one_convex_hull_per_ucx": true
+  },
+  "native_collision_verified": false,
+  "native_map_available": false,
+  "physical_validation": "not_established",
+  "required_carla_commit": "1ae535667d2c75ef92ba44d0e7506419b2e577cb",
+  "required_engine_fork": "CarlaUnreal/UnrealEngine:carla",
+  "required_engine_major_minor": "4.26",
+  "scene_scale_length_m": 0.01,
+  "schema_version": "stunt-ramp-fbx/1",
+  "source_files": {
+    "README.md": {
+      "sha256": "af4ff765a1b2878097c62952d91e6fbb4efa24b05f764c9e8a0dfa4e383863d8",
+      "size_bytes": 2222
+    },
+    "collision.obj": {
+      "sha256": "9662fb468e27d3c197548ca4978383a080afed826e212c8fd864e411a374228f",
+      "size_bytes": 28028
+    },
+    "visual.obj": {
+      "sha256": "ad73e0b5ad9297c65658c432a016719dd797c74dd627ada9357b744db00413f1",
+      "size_bytes": 15415
+    }
+  },
+  "source_geometry_sha256": "e144653511c9ddb3ac8dd913377b844f334cefd51c58737fc4e2c5a5544453f2",
+  "source_manifest_sha256": "91790ee503616dfb3b039791f03491eb70100521c26732258b7623d5c1ab7a80",
+  "source_to_geometry_scale": 100
+}

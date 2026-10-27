@@ -1,0 +1,11 @@
+diff --git a/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/RayCastLidar.cpp b/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/RayCastLidar.cpp
+--- a/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/RayCastLidar.cpp
++++ b/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/RayCastLidar.cpp
+@@ -45,6 +45,7 @@
+ void ARayCastLidar::Set(const FLidarDescription &LidarDescription)
+ {
+   Description = LidarDescription;
++  SetSeed(Description.RandomSeed);
+   LidarData = FLidarData(Description.Channels);
+   CreateLasers();
+   PointsPerChannel.resize(Description.Channels);

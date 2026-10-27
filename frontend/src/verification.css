@@ -1,0 +1,70 @@
+.verification-workspace {
+  min-width: 0;
+}
+.verification-panel {
+  padding: 24px;
+  margin-bottom: 20px;
+  min-width: 0;
+}
+.verification-panel code {
+  overflow-wrap: anywhere;
+}
+.verification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 16px;
+  margin: 16px 0;
+}
+.verification-panel label {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0;
+  min-width: 0;
+}
+.verification-panel input:not([type="checkbox"]),
+.verification-panel select {
+  width: 100%;
+  min-width: 0;
+}
+.verification-panel input[type="checkbox"] {
+  width: auto;
+  justify-self: start;
+}
+.verification-panel fieldset {
+  border: 1px solid var(--border, #dce1e8);
+  border-radius: 12px;
+  padding: 18px;
+  margin: 20px 0;
+  min-width: 0;
+}
+.verification-table {
+  overflow-x: auto;
+}
+.verification-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.verification-table th,
+.verification-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--border, #dce1e8);
+}
+.verification-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  max-height: 360px;
+  overflow: auto;
+}
+.verification-image img {
+  width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+}
+.verification-panel .filter-bar {
+  flex-wrap: wrap;
+}
+.verification-workspace > .filter-bar select {
+  max-width: 100%;
+}

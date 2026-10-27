@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "axiom-fpga-lab"
+version = "0.1.0"
+description = "Optional SimPy camera HIL behavioral timing adapter"
+requires-python = ">=3.11"
+dependencies = ["simpy==4.1.1"]
+[project.entry-points."ade2e.experiment_handlers"]
+fpga_lab = "axiom_fpga_lab:TimingHandler"
+ecu_lab = "axiom_fpga_lab.ecu:EcuTimingHandler"
+[tool.setuptools.packages.find]
+where = ["src"]

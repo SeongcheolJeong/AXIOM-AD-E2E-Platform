@@ -1,0 +1,4 @@
+# The repository normally ignores operational artifact directories. These are
+# small, original, generated public fixtures and their hashes are manifested.
+!**/artifacts/
+!**/artifacts/**

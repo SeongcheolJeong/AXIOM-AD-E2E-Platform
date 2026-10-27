@@ -1,0 +1,10 @@
+{
+  "source": "AXIOM integrations/vecu/native",
+  "adaptation": "Network OS invokes control only at executed task ticks; allow monotonic skipped global ticks",
+  "files": {
+    "upstream/traffic_dut.cpp": "f509e87bf83bb94ba83308dff50c2dd369c3896151d16c675f0b77819ad0a8bc",
+    "upstream/sha256.hpp": "a6dbe1c1124ce2bbe7e2b6afc69c8c64f7bd23820364555f1343d31ae3527af6",
+    "network-sequence.patch": "1e5f5ec8c13872dbe99d4e7976f6fe462a01ae4d80841fe8e3fb6b5e36526f06"
+  },
+  "patched_traffic_dut_sha256": "0fe3818938775216bfc443ea880664fcd9b146cf58533b17d4bcf9f0cbcf4cf1"
+}

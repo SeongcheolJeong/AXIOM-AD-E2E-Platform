@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axiom-camera-e2e-adapter"
+version = "0.1.0"
+description = "Optional versioned CameraE2E RAW/ISP experiment connector"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.entry-points."ade2e.experiment_handlers"]
+camera_e2e = "axiom_camera_e2e:create_handler"
+camera_e2e_lens_scene = "axiom_camera_e2e.lens_scene:create_lens_scene_handler"
+
+[tool.setuptools.packages.find]
+where = ["src"]

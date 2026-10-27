@@ -1,0 +1,12 @@
+.annotation-assist { padding: 24px; min-width: 0; }
+.annotation-form { border: 0; padding: 16px 0; display: grid; gap: 12px; min-width: 0; }
+.annotation-form label,.annotation-assist>label { display: grid; gap: 6px; min-width: 0; }
+.annotation-form input,.annotation-form select,.annotation-form textarea,.annotation-assist>label select { max-width: 100%; min-width: 0; }
+.annotation-form .annotation-check { display: flex; align-items: flex-start; gap: 8px; }
+.annotation-table-scroll { overflow-x: auto; max-width: 100%; margin: 16px 0; }
+.annotation-table-scroll table { width: 100%; border-collapse: collapse; }
+.annotation-table-scroll td,.annotation-table-scroll th { padding: 10px; text-align: left; vertical-align: top; }
+.annotation-table-scroll button { overflow-wrap: anywhere; text-align: left; }
+.annotation-assist code,.annotation-assist pre,.annotation-origin code { overflow-wrap: anywhere; white-space: pre-wrap; }
+.annotation-origin { padding: 16px; margin: 16px 0; border: 1px solid currentColor; border-radius: 8px; }
+@media (max-width: 600px) { .annotation-assist { padding: 14px; } }

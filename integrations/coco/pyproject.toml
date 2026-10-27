@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axiom-coco-evaluator"
+version = "0.1.0"
+description = "Optional bounded COCO bbox evaluation of saved AXIOM predictions"
+requires-python = ">=3.12"
+dependencies = ["pycocotools==2.0.11", "numpy==2.5.3"]
+
+[project.entry-points."ade2e.detection_evaluators"]
+coco_bbox = "axiom_coco:CocoBboxEvaluator"
+
+[tool.setuptools.packages.find]
+where = ["src"]

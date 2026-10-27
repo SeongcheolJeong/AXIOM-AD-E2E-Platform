@@ -1,0 +1,14 @@
+.scene-page{min-width:0}.scene-boundary{padding:18px 22px;border:1px solid var(--line,#344453);border-radius:12px;margin:0 0 20px;background:var(--surface,#14222d)}
+.scene-boundary p{margin-bottom:0;max-width:1050px}.scene-index-library{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:12px}
+.scene-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:16px 0}.scene-filters label{display:grid;gap:6px;min-width:0}
+.scene-filters input,.scene-filters select,.scene-filters textarea{width:100%;min-width:0;box-sizing:border-box}
+.scene-check{display:flex!important;align-items:center;gap:9px;font-size:13px}.scene-check input{width:auto!important;flex-shrink:0}
+.scene-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:22px 0}.scene-card{padding:16px;border:1px solid var(--line,#344453);border-radius:12px;min-width:0}
+.scene-card.filtered{border-style:dashed;opacity:.78}.scene-card small,.scene-card code,.scene-review code{overflow-wrap:anywhere}.scene-card h3{font-size:15px;margin:14px 0 6px}
+.scene-card p{font-size:13px;line-height:1.6}.scene-card .case-toolbar{gap:10px;flex-wrap:wrap;font-size:13px}.scene-preview{min-height:130px;height:170px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#10171e;border-radius:8px}
+.scene-preview img{width:100%;height:100%;object-fit:contain}.scene-preview p{padding:12px;overflow-wrap:anywhere}.scene-tags{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+.scene-tags span{padding:4px 8px;border:1px solid var(--line,#344453);border-radius:8px;font-size:11px}
+.scene-review,.scene-selection{padding:22px;margin:22px 0;border:1px solid var(--line,#344453);border-radius:12px}.scene-review>.scene-preview{max-width:560px;height:260px}
+.scene-page code{overflow-wrap:anywhere}.scene-page .condition-stats{grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px}
+@media(max-width:1100px){.scene-results{grid-template-columns:repeat(2,minmax(0,1fr))}.scene-filters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.scene-results,.scene-filters,.scene-index-library{grid-template-columns:minmax(0,1fr)}.scene-review,.scene-selection,.scene-boundary{padding:14px}.scene-page .case-toolbar{flex-wrap:wrap}.scene-page button{white-space:normal}}

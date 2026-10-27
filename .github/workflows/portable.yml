@@ -1,0 +1,27 @@
+name: Portable sample workspace
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  sample-workspace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: pip install -c requirements.lock -e 'backend[test]' -e sdk/python
+      - run: python -m pytest scripts/tests/test_github_demo.py backend/tests/test_platform.py sdk/python/tests/test_client_protocol.py -q
+      - run: npm --prefix frontend ci
+      - run: npm --prefix frontend run build
+      - run: npm --prefix e2e ci
+      - run: cd e2e && npx playwright install --with-deps chromium
+      - run: cd e2e && npx playwright test --config github-demo.config.ts
+        env:
+          AXIOM_TEST_PYTHON: python
+      # These are portable reference calculations and API checks, not CARLA/GPU/hardware validation.

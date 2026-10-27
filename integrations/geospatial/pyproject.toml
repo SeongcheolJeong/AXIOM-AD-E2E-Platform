@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axiom-geospatial"
+version = "0.1.0"
+description = "Optional bounded NGII SHP ZIP inspection and source-preserving OpenDRIVE conversion"
+requires-python = ">=3.11"
+dependencies = ["pyproj==3.7.2", "pyshp==2.3.1", "shapely==2.1.2", "scenariogeneration==0.16.7"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

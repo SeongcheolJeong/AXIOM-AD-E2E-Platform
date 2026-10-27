@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axiom-opendrive-compiler"
+version = "1.0.0"
+description = "Optional bounded object-map/1 to OpenDRIVE compiler using pyoscx"
+requires-python = ">=3.11"
+dependencies = ["scenariogeneration==0.16.7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

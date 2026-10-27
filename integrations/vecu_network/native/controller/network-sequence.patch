@@ -1,0 +1,20 @@
+--- a/traffic_dut.cpp
++++ b/traffic_dut.cpp
+@@ -20,7 +20,7 @@
+ #endif
+ using J = nlohmann::json;
+ constexpr bool ramp_policy = AXIOM_RAMP_POLICY != 0;
+-constexpr const char* version = ramp_policy ? "ramp-traffic-cpp/1" : "reference-traffic-cpp/1";
++constexpr const char* version = "network-traffic-cpp/1";
+ constexpr size_t max_message = 256*1024;
+ [[noreturn]] void invalid(const std::string& reason) { throw std::runtime_error(reason); }
+ bool finite(const J& v) { return v.is_number() && std::isfinite(v.get<double>()); }
+@@ -160,7 +160,7 @@
+         if (message.value("schema_version","")!="hil-dut-step/1" || message.value("op","")!="step" ||
+             !message.contains("sequence") || !message.at("sequence").is_number_integer()) invalid("DUT sequence or 20 Hz simulation clock mismatch");
+         int64_t seq=message.at("sequence");double now=number(message,"time_s");
+-        if (seq!=sequence+1 || std::abs(now-seq*.05)>1e-6) invalid("DUT sequence or 20 Hz simulation clock mismatch");
++        if (seq<=sequence || std::abs(now-seq*.05)>1e-6) invalid("DUT sequence or 20 Hz simulation clock mismatch");
+         const auto& ego=message.at("ego"); const auto& packet=message.at("object_packet");
+         state_check(ego);
+         if (!packet.contains("sequence") || !packet.at("sequence").is_number_integer()) invalid("DUT object packet identity/clock invalid");

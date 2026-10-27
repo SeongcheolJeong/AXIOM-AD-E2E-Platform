@@ -1,0 +1,71 @@
+{
+  "schema_version": "adas-board-example/1",
+  "id": "ulx3s-85f-v3-example/1",
+  "name": "ULX3S 85F \u00b7 example only",
+  "selection": "user_authorized_example_not_connected",
+  "device": "LFE5U-85F-6BG381C",
+  "family": "ECP5",
+  "package": "CABGA381",
+  "speed": 6,
+  "oscillator_hz": 25000000,
+  "target_core_hz": 100000000,
+  "upstream_commit": "6a92cec6b177191c5b0f80e260013a1f8ec147dd",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/emard/ulx3s/6a92cec6b177191c5b0f80e260013a1f8ec147dd/README.md",
+      "sha256": "c43b15e70b04bc1dabb97335a6aa7666a4f27df1c26c35a364ce86d5e3cbc44b",
+      "path": "README.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/emard/ulx3s/6a92cec6b177191c5b0f80e260013a1f8ec147dd/doc/constraints/ulx3s_v20.lpf",
+      "sha256": "625b462ca41465881dbe0c0f9914ec664a2ac6fea8d3e781e9e6e1bbbdacb6fd",
+      "path": "doc/constraints/ulx3s_v20.lpf"
+    }
+  ],
+  "pins": {
+    "clk_25mhz": "G2",
+    "ftdi_rxd": "L4",
+    "ftdi_txd": "M1",
+    "btn_power_n": "D6",
+    "led0": "B2"
+  },
+  "io_type": "LVCMOS33",
+  "host_control": {
+    "interface": "FT231XS USB UART",
+    "maximum_documented_bps": 3000000,
+    "purpose": "control and slow offline transfer only",
+    "live_4ch_raw_supported": false
+  },
+  "camera_input": {
+    "boundary": "post-CSI digital RAW12",
+    "external_receiver": "not_selected",
+    "phy_validation": "not_configured"
+  },
+  "rgb_output": {
+    "boundary": "four independent RGB12 ready/valid plus commit/abort",
+    "physical_transport": "not_selected"
+  },
+  "required_raw_payload_bps": 2985984000,
+  "live_raw_to_uart_ratio": 995.328,
+  "gates": {
+    "profile_reference": "documented",
+    "pin_subset_reference": "verified_against_pinned_source",
+    "pll": "generated_unintegrated",
+    "board_top_integration": "not_configured",
+    "actual_board_io_timing": "not_configured",
+    "actual_board_cdc": "not_configured",
+    "physical_hil": "not_configured"
+  },
+  "scope": "Example control/bring-up constraints only. No camera connector, PHY, full-rate transport, board top or timing signoff is inferred.",
+  "pll_generator": {
+    "tool": "ecppll",
+    "version": "1.4-86-ga31ff70",
+    "command": "ecppll -n axiom_ulx3s_pll --clkin_name clk_25mhz -i 25 --clkout0_name clk_100mhz -o 100 --reset -f pll-25-to-100.v",
+    "sha256": "f7cbfdbb04421c1c313d714fcaa74424d03fa39fc20dd76df87094f3139b0d37",
+    "reference_divider": 1,
+    "feedback_divider": 4,
+    "output_divider": 6,
+    "vco_hz": 600000000,
+    "scope": "Generated EHXPLLL parameters; no physical lock/jitter or integrated board timing verification"
+  }
+}

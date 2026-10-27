@@ -1,0 +1,961 @@
+/* Decoded sensor investigation has its own layout and never styles schematic replay. */
+.recording-view-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #dbe4d4;
+}
+.recording-view-tabs button {
+  background: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px 15px;
+  color: #607655;
+  font-size: 13px;
+}
+.recording-view-tabs button[aria-selected="true"] {
+  color: #345b42;
+  border-color: #739881;
+  font-weight: 650;
+}
+.sensor-detail-active .recording-detail-header {
+  padding: 13px 17px;
+}
+.sensor-detail-active .recording-detail-stats {
+  display: none;
+}
+.sensor-detail-active .recording-heading-line h2 {
+  font-size: 18px;
+}
+.sensor-detail-active .recording-container-icon {
+  width: 37px;
+  height: 37px;
+}
+.sensor-detail-active .recording-declared-source {
+  margin-top: 10px;
+  padding-top: 8px;
+}
+.sensor-detail-active .recording-timeline {
+  padding: 10px 14px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 12px;
+}
+.sensor-detail-active .recording-timeline .recording-section-heading,
+.sensor-detail-active .recording-timeline-ticks {
+  display: none;
+}
+.sensor-detail-active .recording-timeline-track {
+  margin: 0;
+  grid-column: 1 / -1;
+}
+.sensor-detail-active .recording-cursor-controls {
+  margin-top: 0;
+  gap: 7px;
+}
+.sensor-detail-active .recording-exact-time {
+  margin: 0;
+  padding: 7px 9px;
+  align-self: end;
+}
+.sensor-detail-active .recording-timeline-help {
+  grid-column: 1 / -1;
+  margin-top: 0;
+  font-size: 11px;
+}
+.sensor-detail-active .recording-timeline > .inline-error {
+  grid-column: 1 / -1;
+}
+.sensor-detail-active .recording-exact-time > div > span {
+  font-size: 11px;
+}
+.sensor-detail-active .recording-exact-time code {
+  font-size: 11px;
+}
+.sensor-detail-active .recording-cursor-controls form label {
+  font-size: 11px;
+}
+.sensor-workspace {
+  --sensor-ink: #344e3d;
+  --sensor-muted: #61755e;
+  --sensor-border: #dce5d5;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  color: var(--sensor-ink);
+}
+.sensor-workspace p,
+.sensor-form p {
+  font-size: 12px;
+  line-height: 1.65;
+}
+.sensor-workspace button,
+.sensor-workspace select,
+.sensor-form button,
+.sensor-form input,
+.sensor-form select,
+.sensor-form textarea {
+  font-size: 12px;
+}
+.sensor-workspace-actions,
+.sensor-workspace-actions > div,
+.sensor-shared-cursor,
+.sensor-shared-cursor > div:last-child,
+.sensor-evidence-title,
+.sensor-form-section-title,
+.sensor-form-footer,
+.sensor-panel-heading,
+.sensor-panel-heading > span,
+.sensor-coordinate-switch,
+.sensor-view-controls,
+.sensor-view-controls > div,
+.sensor-panel-evidence-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.sensor-workspace-actions,
+.sensor-shared-cursor,
+.sensor-evidence-title,
+.sensor-panel-heading,
+.sensor-coordinate-switch,
+.sensor-view-controls,
+.sensor-panel-evidence-actions {
+  justify-content: space-between;
+}
+.sensor-workspace-actions,
+.sensor-workspace-actions > div {
+  flex-wrap: wrap;
+}
+.sensor-binding-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(130px, 0.42fr);
+  gap: 12px;
+}
+.sensor-binding-toolbar label,
+.sensor-rig-browser label,
+.sensor-form label,
+.sensor-cloud-settings label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  font-size: 12px;
+  font-weight: 550;
+  color: #486246;
+}
+.sensor-binding-toolbar select,
+.sensor-rig-browser select,
+.sensor-panel-heading select,
+.sensor-cloud-settings select,
+.sensor-form input:not([type="checkbox"]),
+.sensor-form select,
+.sensor-form textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 35px;
+  border: 1px solid #d4dfcc;
+  border-radius: 5px;
+  background: #fffef9;
+  padding: 8px 10px;
+  color: #3d563c;
+  outline-offset: 2px;
+}
+.sensor-workspace input:focus-visible,
+.sensor-workspace select:focus-visible,
+.sensor-workspace button:focus-visible,
+.sensor-form input:focus-visible,
+.sensor-form select:focus-visible,
+.sensor-form textarea:focus-visible,
+.sensor-form button:focus-visible {
+  outline: 2px solid #5c987c;
+  outline-offset: 3px;
+}
+.sensor-shared-cursor {
+  padding: 11px 13px;
+  border-radius: 5px;
+  background: #ecf2e7;
+  border: 1px solid #dbe6d4;
+  flex-wrap: wrap;
+}
+.sensor-shared-cursor > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.sensor-shared-cursor span {
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.09em;
+  color: #63785e;
+}
+.sensor-shared-cursor code {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.sensor-replay-boundary {
+  margin-top: -4px;
+  color: #5e735b;
+}
+.sensor-dual-view {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+.sensor-replay-panel {
+  min-width: 0;
+  border: 1px solid var(--sensor-border);
+  border-radius: 7px;
+  background: #fffef9;
+  overflow: hidden;
+}
+.sensor-panel-heading {
+  padding: 11px 12px;
+  min-height: 58px;
+  gap: 10px;
+}
+.sensor-panel-heading > span {
+  flex-shrink: 0;
+  font-size: 13px;
+}
+.sensor-panel-heading label {
+  min-width: 0;
+  max-width: 70%;
+}
+.sensor-panel-heading select {
+  padding: 7px;
+  font-size: 12px;
+}
+.sensor-coordinate-switch {
+  padding: 7px 11px;
+  border-top: 1px solid #e3eadd;
+  background: #f4f7ef;
+  flex-wrap: wrap;
+}
+.sensor-coordinate-switch > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #6c7c62;
+}
+.sensor-coordinate-switch > div {
+  display: flex;
+  gap: 3px;
+}
+.sensor-coordinate-switch button {
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: transparent;
+  color: #52694c;
+  font-size: 12px;
+}
+.sensor-coordinate-switch button[aria-pressed="true"] {
+  color: #315b40;
+  background: #dfeadb;
+}
+.sensor-coordinate-switch button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.sensor-view-controls {
+  min-height: 34px;
+  padding: 6px 9px;
+  background: #20373b;
+  color: #c5dcd1;
+  flex-wrap: wrap;
+}
+.sensor-view-controls > span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+}
+.sensor-view-controls > div {
+  gap: 3px;
+}
+.sensor-view-controls button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #bad2c6;
+  padding: 5px 6px;
+  border-radius: 3px;
+  background: none;
+  font-size: 12px;
+}
+.sensor-view-controls button[aria-pressed="true"] {
+  color: #e5f8e6;
+  background: #3e5954;
+}
+.sensor-image-stage,
+.sensor-point-stage {
+  position: relative;
+  height: 250px;
+  background: #15282c;
+  overflow: auto;
+}
+.sensor-image-stage.fit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sensor-image-stage.fit img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.sensor-image-stage.pixels img {
+  max-width: none;
+  display: block;
+  object-fit: none;
+}
+.sensor-image-stage p,
+.sensor-point-stage > p {
+  color: #c5d9d0;
+  padding: 30px 20px;
+  text-align: center;
+}
+.sensor-point-stage canvas {
+  display: block;
+}
+.sensor-point-frame {
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  bottom: 8px;
+  pointer-events: none;
+  color: #bad0c7;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.sensor-preview-empty,
+.sensor-viewport-unavailable {
+  min-height: 250px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #eef2e9;
+  color: #62785b;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.sensor-preview-empty strong {
+  color: #476440;
+  font-size: 13px;
+}
+.sensor-preview-empty.error {
+  color: #9a5743;
+}
+.sensor-cloud-settings {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 9px 11px;
+  border-bottom: 1px solid #e4eadc;
+  background: #f5f7f0;
+}
+.sensor-cloud-settings label {
+  flex: 1;
+  font-size: 11px;
+  min-width: 85px;
+}
+.sensor-cloud-settings label:nth-child(2) {
+  max-width: 100px;
+}
+.sensor-cloud-settings select {
+  min-height: 30px;
+  padding: 5px;
+  font-size: 12px;
+}
+.sensor-cloud-settings input {
+  width: 100%;
+  min-height: 29px;
+  accent-color: #638b69;
+}
+.sensor-picked-point {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 9px 12px;
+  gap: 5px;
+  border-bottom: 1px solid #e3eadd;
+  font-size: 11px;
+}
+.sensor-picked-point code {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.sensor-picked-point small {
+  width: 100%;
+  color: #687e5e;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.sensor-time-evidence {
+  padding: 10px 12px;
+  background: #edf4e7;
+  border-bottom: 1px solid #e0e8d9;
+}
+.sensor-time-evidence > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+.sensor-time-evidence p,
+.sensor-time-evidence small {
+  margin-top: 4px;
+  color: #607557;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.sensor-time-evidence small {
+  display: block;
+}
+.sensor-time-evidence code {
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+.sensor-time-evidence.stale,
+.sensor-time-evidence.missing {
+  background: #f6edda;
+  color: #86613d;
+}
+.sensor-time-evidence.stale p,
+.sensor-time-evidence.missing p {
+  color: #816746;
+}
+.sensor-decoded-evidence {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 11px;
+}
+.sensor-decoded-evidence > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 5px;
+}
+.sensor-decoded-evidence > div > span {
+  color: #677b5e;
+}
+.sensor-decoded-evidence strong {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.sensor-count-evidence {
+  padding: 8px 9px;
+  border-radius: 4px;
+  background: #eff2e8;
+  color: #56714c;
+}
+.sensor-coordinate-note {
+  color: #687d5e;
+  font-size: 11px !important;
+}
+.sensor-transform-evidence {
+  padding: 9px 12px;
+  border-top: 1px solid #e3eadd;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sensor-transform-evidence > span {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
+  color: #708266;
+}
+.sensor-transform-evidence > strong {
+  font-size: 12px;
+  font-weight: 550;
+}
+.sensor-transform-evidence small {
+  font-size: 11px;
+  color: #6a7d60;
+  overflow-wrap: anywhere;
+}
+.sensor-panel-evidence-actions {
+  padding: 9px 12px;
+  border-top: 1px solid #e3eadd;
+  font-size: 11px;
+  flex-wrap: wrap;
+}
+.sensor-text-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 0;
+  background: none;
+  color: #476e4d;
+  font-size: 12px;
+  text-decoration: none;
+}
+.sensor-payload-disclosure {
+  padding: 10px 12px;
+  border-top: 1px solid #e3eadd;
+}
+.sensor-workspace summary,
+.sensor-origin summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 550;
+  color: #496540;
+}
+.sensor-message-evidence {
+  margin-top: 12px;
+}
+.sensor-evidence-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 11px;
+  margin-bottom: 13px;
+}
+.sensor-evidence-grid > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.sensor-evidence-grid dt {
+  font-size: 11px;
+  color: #6d7f62;
+}
+.sensor-evidence-grid dd {
+  font-size: 12px;
+  line-height: 1.55;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.sensor-hash {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  padding: 8px 0;
+  font-size: 11px;
+  border-top: 1px solid #e3eadb;
+}
+.sensor-hash > span {
+  color: #6a7e5e;
+}
+.sensor-hash code {
+  flex: 1;
+  min-width: 120px;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+.sensor-workspace pre,
+.sensor-form pre,
+.sensor-origin pre {
+  max-width: 100%;
+  max-height: 260px;
+  overflow: auto;
+  background: #f1f4eb;
+  border: 1px solid #e1e8d9;
+  border-radius: 4px;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 11px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.sensor-registry > summary,
+.sensor-capability-panel > summary,
+.sensor-origin > summary {
+  padding: 13px 15px;
+}
+.sensor-registry > summary svg:last-child {
+  margin-left: auto;
+}
+.sensor-registry-body,
+.sensor-capability-panel > div,
+.sensor-origin > div {
+  padding: 0 15px 15px;
+}
+.sensor-registry-body > p {
+  margin: 6px 0;
+  color: #617959;
+}
+.sensor-evidence-title strong {
+  font-size: 13px;
+}
+.sensor-rig-browser {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(100px, 0.5fr) auto;
+  align-items: end;
+  gap: 10px;
+  padding: 15px 0;
+  margin-top: 8px;
+  border-top: 1px solid #e3e9da;
+}
+.sensor-rig-definition {
+  background: #f2f6ed;
+  padding: 12px;
+  border: 1px solid #dfe8d8;
+  border-radius: 5px;
+}
+.sensor-rig-definition > p {
+  margin-top: 7px;
+  color: #63795b;
+}
+.sensor-rig-sensor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 14px 0;
+}
+.sensor-rig-sensor-list > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 9px 11px;
+  background: #fffef9;
+  border: 1px solid #e0e8d7;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.sensor-rig-sensor-list code {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.sensor-rig-sensor-list span {
+  color: #6a7c61;
+}
+.sensor-capability-panel > summary {
+  justify-content: space-between;
+  gap: 10px;
+}
+.sensor-capability-panel > summary span {
+  color: #6d7d64;
+  font-size: 11px;
+}
+.sensor-capability-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px;
+  padding: 13px 0;
+  border-top: 1px solid #e2e8dc;
+  font-size: 12px;
+}
+.sensor-capability-row > small,
+.sensor-capability-row > p {
+  grid-column: 1 / -1;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+  color: #637c58;
+}
+.sensor-capability-row > strong {
+  overflow-wrap: anywhere;
+}
+.sensor-capability-row > button {
+  justify-self: start;
+}
+.sensor-success,
+.sensor-warning,
+.sensor-query-error {
+  padding: 10px 12px;
+  border: 1px solid #dfe6d5;
+  border-radius: 4px;
+  background: #eff5e8;
+  color: #577246;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.sensor-warning,
+.sensor-query-error {
+  background: #f7efdf;
+  border-color: #e8d9bc;
+  color: #846847;
+}
+.sensor-query-error button {
+  margin-top: 8px;
+}
+.sensor-origin > summary {
+  flex-wrap: wrap;
+}
+.sensor-origin > summary > span {
+  font-size: 11px;
+  font-weight: 400;
+  color: #6c7e62;
+}
+.sensor-mobile-tabs {
+  display: none;
+}
+.sensor-modal {
+  width: min(960px, calc(100vw - 44px));
+}
+.sensor-form {
+  padding: 20px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+.sensor-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.sensor-form fieldset:disabled {
+  opacity: 0.65;
+}
+.sensor-form textarea {
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.65;
+}
+.sensor-form label small,
+.sensor-form-help {
+  font-size: 11px !important;
+  font-weight: 400;
+  color: #647b59;
+  line-height: 1.65;
+}
+.sensor-form-grid {
+  display: grid;
+  gap: 12px;
+}
+.sensor-form-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.sensor-form-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.sensor-form-grid.four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.sensor-form-section-title {
+  flex-wrap: wrap;
+  padding-top: 5px;
+}
+.sensor-form-section-title h3 {
+  font-size: 14px;
+}
+.sensor-form-section-title > span {
+  font-size: 11px;
+  color: #728268;
+  flex: 1;
+}
+.sensor-rig-row {
+  padding: 14px;
+  border: 1px solid #dce5d2;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f8faf3;
+}
+.sensor-rig-row > header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.sensor-rig-row > header > strong {
+  font-size: 13px;
+}
+.sensor-rig-row > header > span {
+  font-size: 11px;
+  color: #718365;
+  flex: 1;
+}
+.sensor-rig-row > header > button {
+  margin-left: auto;
+}
+.sensor-form label.sensor-checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.sensor-checkbox input {
+  width: 15px;
+  height: 15px;
+  accent-color: #688e5c;
+}
+.sensor-checkbox span {
+  margin-left: auto;
+  font-size: 11px;
+  color: #738466;
+  font-weight: 400;
+}
+.sensor-intrinsics-editor {
+  border-top: 1px solid #e3eadd;
+  padding-top: 8px;
+}
+.sensor-intrinsics-editor > label {
+  margin-top: 10px;
+}
+.sensor-intrinsics-editor textarea {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+}
+.sensor-form-footer {
+  justify-content: flex-end;
+  margin-top: 4px;
+  padding-top: 15px;
+  border-top: 1px solid #e1e8d8;
+}
+.sensor-inspect-query {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(100px, 0.5fr) auto;
+  gap: 10px;
+  align-items: end;
+}
+.sensor-inspector-status {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+}
+.sensor-inspector-status span {
+  color: #6b7e5f;
+  font-size: 11px;
+}
+.sensor-inspector-modal .sensor-point-stage,
+.sensor-inspector-modal .sensor-image-stage {
+  height: 330px;
+}
+@media (max-width: 1200px) {
+  .sensor-panel-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .sensor-panel-heading label {
+    max-width: 100%;
+  }
+  .sensor-panel-heading > span {
+    font-size: 13px;
+  }
+  .sensor-coordinate-switch > div {
+    flex-wrap: wrap;
+  }
+  .sensor-form-grid.four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .sensor-form input:not([type="checkbox"]),
+  .sensor-form select,
+  .sensor-form textarea {
+    font-size: 16px;
+  }
+  .sensor-detail-active .recording-timeline {
+    display: block;
+  }
+  .sensor-detail-active .recording-timeline-track {
+    margin-bottom: 10px;
+  }
+  .sensor-detail-active .recording-exact-time {
+    margin-top: 9px;
+  }
+  .sensor-detail-active .recording-timeline-help {
+    margin-top: 7px;
+  }
+  .sensor-dual-view {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sensor-mobile-tabs {
+    display: flex;
+    gap: 5px;
+    padding: 4px;
+    background: #ebf1e4;
+    border-radius: 5px;
+  }
+  .sensor-mobile-tabs button {
+    flex: 1;
+    background: transparent;
+    color: #5c7551;
+    border-radius: 4px;
+    padding: 9px;
+    font-size: 12px;
+  }
+  .sensor-mobile-tabs button[aria-selected="true"] {
+    background: #fffef8;
+    color: #385b37;
+    box-shadow: 0 1px 3px #53674215;
+  }
+  .sensor-dual-view.mobile-camera > .lidar,
+  .sensor-dual-view.mobile-lidar > .camera {
+    display: none;
+  }
+  .sensor-binding-toolbar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sensor-shared-cursor > div:last-child {
+    flex-wrap: wrap;
+  }
+  .sensor-rig-browser {
+    grid-template-columns: minmax(0, 1fr) 105px;
+  }
+  .sensor-rig-browser > button {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+  .sensor-capability-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sensor-modal {
+    width: calc(100vw - 24px);
+  }
+  .sensor-form {
+    padding: 16px;
+  }
+  .sensor-form-grid.two,
+  .sensor-form-grid.three,
+  .sensor-form-grid.four {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sensor-rig-row {
+    padding: 11px;
+  }
+  .sensor-evidence-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sensor-inspect-query {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sensor-inspect-query button {
+    justify-content: center;
+  }
+  .sensor-evidence-title {
+    flex-wrap: wrap;
+  }
+  .sensor-form-footer {
+    flex-wrap: wrap;
+  }
+  .sensor-form-footer > button {
+    flex: 1;
+  }
+  .sensor-detail-active .recording-heading-line h2 {
+    font-size: 17px;
+  }
+  .sensor-point-frame {
+    font-size: 11px;
+  }
+  .sensor-view-controls > span {
+    font-size: 11px;
+  }
+}

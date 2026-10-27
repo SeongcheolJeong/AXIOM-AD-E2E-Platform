@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "axiom-vecu-network"
+version = "0.1.0"
+description = "Optional actual SIL Kit, autoas BSW and Trampoline network execution"
+requires-python = ">=3.11"
+dependencies = ["axiom-vecu==0.1.0"]
+[project.entry-points."ade2e.experiment_handlers"]
+vecu_network = "axiom_vecu_network:NetworkHandler"
+[tool.setuptools.packages.find]
+where = ["src"]

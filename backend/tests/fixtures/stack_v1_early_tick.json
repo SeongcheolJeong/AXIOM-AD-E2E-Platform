@@ -1,0 +1,369 @@
+{
+  "payload_hash": "dec48452f0dbaa852c04eeb61b7bdefb378a9b6bbab2673655f8aaa4d3b701fb",
+  "provenance": {
+    "created_at": "2026-09-13T04:45:59.838808+00:00",
+    "job_id": "stack_replay_08f4acfa17e441de90772f234ba67ef9",
+    "kind": "saved_authored_legacy_browser_fixture"
+  },
+  "tick": {
+    "control_application": "not_applied_open_loop",
+    "error": null,
+    "finished_at": "2026-09-13T04:45:59.883973+00:00",
+    "index": 0,
+    "input": {
+      "at_ns": "1700000000000000123",
+      "ego": {
+        "channel_id": 2,
+        "decoder_id": "axiom-ego-json",
+        "decoder_version": "1",
+        "log_time_ns": "1700000000003000123",
+        "message_sha256": "1af04a72bc4886ec66a4ec53643a11d184790004f17dfc3f11082c7e3f87491e",
+        "message_size_bytes": 200,
+        "ordinal": 0,
+        "publish_time_ns": "1700000000000000123",
+        "recording_id": "rec_4ca2b5e5488741d5926d5993aeef0e90",
+        "recording_sha256": "d8d362d5784489b4c9ac84f020cfc8e8353f329703d58390fbef796459176639"
+      },
+      "index": 0,
+      "lidar": null,
+      "lidar_age_ns": null,
+      "lidar_aligned_time_ns": null,
+      "next_lidar_aligned_time_ns": "1700000000100000123"
+    },
+    "output": {
+      "at_ns": "1700000000000000123",
+      "components": [
+        {
+          "default_parameters": {
+            "corridor_half_width_m": 1.2,
+            "ego_front_x_m": 2.5,
+            "ground_bins": 3,
+            "ground_reference_z_m": 0.0,
+            "ground_tolerance_m": 0.18,
+            "lookahead_m": 30.0,
+            "max_abs_pitch_roll_rad": 0.08,
+            "max_ego_age_ms": 100.0,
+            "max_lidar_age_ms": 100.0,
+            "max_obstacle_height_m": 2.5,
+            "min_forward_points": 8,
+            "min_ground_points": 6,
+            "min_obstacle_height_m": 0.2
+          },
+          "id": "lidar-corridor",
+          "implementation": {
+            "algorithm": "lidar-corridor/1",
+            "package": "ade2e"
+          },
+          "limitations": [
+            "Point geometry only: no object class, actor identity, velocity, free-space or TTC estimate.",
+            "Ground reference is an authored flat-road assumption; mount height does not establish ground height.",
+            "Ground counts and longitudinal bins qualify sample coverage only, not absence of obstacles.",
+            "Sparse low obstacles, overhangs, occlusion and reflectivity can defeat this experimental detector."
+          ],
+          "name": "LiDAR corridor geometric observation",
+          "parameter_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "corridor_half_width_m": {
+                "default": 1.2,
+                "exclusiveMinimum": 0,
+                "maximum": 10,
+                "title": "Corridor Half Width M",
+                "type": "number"
+              },
+              "ego_front_x_m": {
+                "default": 2.5,
+                "maximum": 10,
+                "minimum": 0,
+                "title": "Ego Front X M",
+                "type": "number"
+              },
+              "ground_bins": {
+                "default": 3,
+                "maximum": 20,
+                "minimum": 1,
+                "title": "Ground Bins",
+                "type": "integer"
+              },
+              "ground_reference_z_m": {
+                "default": 0.0,
+                "maximum": 10,
+                "minimum": -10,
+                "title": "Ground Reference Z M",
+                "type": "number"
+              },
+              "ground_tolerance_m": {
+                "default": 0.18,
+                "exclusiveMinimum": 0,
+                "maximum": 0.5,
+                "title": "Ground Tolerance M",
+                "type": "number"
+              },
+              "lookahead_m": {
+                "default": 30.0,
+                "exclusiveMinimum": 0,
+                "maximum": 200,
+                "title": "Lookahead M",
+                "type": "number"
+              },
+              "max_abs_pitch_roll_rad": {
+                "default": 0.08,
+                "exclusiveMinimum": 0,
+                "maximum": 0.3,
+                "title": "Max Abs Pitch Roll Rad",
+                "type": "number"
+              },
+              "max_ego_age_ms": {
+                "default": 100.0,
+                "maximum": 1000,
+                "minimum": 0,
+                "title": "Max Ego Age Ms",
+                "type": "number"
+              },
+              "max_lidar_age_ms": {
+                "default": 100.0,
+                "maximum": 1000,
+                "minimum": 0,
+                "title": "Max Lidar Age Ms",
+                "type": "number"
+              },
+              "max_obstacle_height_m": {
+                "default": 2.5,
+                "exclusiveMinimum": 0,
+                "maximum": 10,
+                "title": "Max Obstacle Height M",
+                "type": "number"
+              },
+              "min_forward_points": {
+                "default": 8,
+                "maximum": 20000,
+                "minimum": 1,
+                "title": "Min Forward Points",
+                "type": "integer"
+              },
+              "min_ground_points": {
+                "default": 6,
+                "maximum": 20000,
+                "minimum": 1,
+                "title": "Min Ground Points",
+                "type": "integer"
+              },
+              "min_obstacle_height_m": {
+                "default": 0.2,
+                "exclusiveMinimum": 0,
+                "maximum": 2,
+                "title": "Min Obstacle Height M",
+                "type": "number"
+              }
+            },
+            "title": "CorridorParameters",
+            "type": "object"
+          },
+          "role": "perception",
+          "status": "available",
+          "version": "1"
+        },
+        {
+          "default_parameters": {
+            "allow_no_obstacle_observed_motion": false,
+            "assumed_deceleration_mps2": 2.0,
+            "cruise_speed_mps": 5.0,
+            "minimum_gap_m": 2.0,
+            "response_time_s": 0.1,
+            "time_headway_s": 1.5
+          },
+          "id": "stopping-headway",
+          "implementation": {
+            "algorithm": "stopping-headway/1",
+            "package": "ade2e"
+          },
+          "limitations": [
+            "Assumes a stationary observed surface and declared braking response; not calibrated stopping performance.",
+            "Ego speed and route heading are supplied telemetry; surrounding actor state is not an input.",
+            "Motion after no obstacle observation requires an explicit pilot assumption; this is not free-space certification."
+          ],
+          "name": "Stationary-obstacle stopping and headway policy",
+          "parameter_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "allow_no_obstacle_observed_motion": {
+                "default": false,
+                "title": "Allow No Obstacle Observed Motion",
+                "type": "boolean"
+              },
+              "assumed_deceleration_mps2": {
+                "default": 2.0,
+                "exclusiveMinimum": 0,
+                "maximum": 10,
+                "title": "Assumed Deceleration Mps2",
+                "type": "number"
+              },
+              "cruise_speed_mps": {
+                "default": 5.0,
+                "maximum": 20,
+                "minimum": 0,
+                "title": "Cruise Speed Mps",
+                "type": "number"
+              },
+              "minimum_gap_m": {
+                "default": 2.0,
+                "maximum": 20,
+                "minimum": 0,
+                "title": "Minimum Gap M",
+                "type": "number"
+              },
+              "response_time_s": {
+                "default": 0.1,
+                "maximum": 5,
+                "minimum": 0,
+                "title": "Response Time S",
+                "type": "number"
+              },
+              "time_headway_s": {
+                "default": 1.5,
+                "maximum": 10,
+                "minimum": 0,
+                "title": "Time Headway S",
+                "type": "number"
+              }
+            },
+            "title": "HeadwayParameters",
+            "type": "object"
+          },
+          "role": "policy",
+          "status": "available",
+          "version": "1"
+        },
+        {
+          "default_parameters": {
+            "brake_gain": 0.3,
+            "max_steer": 0.5,
+            "max_throttle": 0.5,
+            "steering_gain": 1.0,
+            "throttle_gain": 0.2
+          },
+          "id": "proportional-control",
+          "implementation": {
+            "algorithm": "proportional-control/1",
+            "package": "ade2e"
+          },
+          "limitations": [
+            "Normalized actuator commands are not a vehicle dynamics model.",
+            "Route heading error is declared oracle/telemetry; this component does not perceive lanes.",
+            "Steer is positive left. CARLA's actuator convention must be converted at its bridge."
+          ],
+          "name": "Proportional speed and route-heading control",
+          "parameter_schema": {
+            "additionalProperties": false,
+            "properties": {
+              "brake_gain": {
+                "default": 0.3,
+                "exclusiveMinimum": 0,
+                "maximum": 5,
+                "title": "Brake Gain",
+                "type": "number"
+              },
+              "max_steer": {
+                "default": 0.5,
+                "maximum": 1,
+                "minimum": 0,
+                "title": "Max Steer",
+                "type": "number"
+              },
+              "max_throttle": {
+                "default": 0.5,
+                "maximum": 1,
+                "minimum": 0,
+                "title": "Max Throttle",
+                "type": "number"
+              },
+              "steering_gain": {
+                "default": 1.0,
+                "maximum": 10,
+                "minimum": 0,
+                "title": "Steering Gain",
+                "type": "number"
+              },
+              "throttle_gain": {
+                "default": 0.2,
+                "maximum": 5,
+                "minimum": 0,
+                "title": "Throttle Gain",
+                "type": "number"
+              }
+            },
+            "title": "ControlParameters",
+            "type": "object"
+          },
+          "role": "controller",
+          "status": "available",
+          "version": "1"
+        }
+      ],
+      "control": {
+        "brake": 1.0,
+        "hand_brake": false,
+        "reverse": false,
+        "steer": 0.0,
+        "steering_convention": "positive_left",
+        "throttle": 0.0
+      },
+      "decision": {
+        "force_brake": true,
+        "mode": "unknown_stop",
+        "reasons": [
+          "unknown_or_insufficient_observation",
+          "kernel_unknown_stop"
+        ],
+        "stopping_distance_m": 14.0,
+        "target_speed_mps": 0.0
+      },
+      "elapsed_ms": 0.9260419756174088,
+      "input_points_sha256": null,
+      "kernel_version": "stack-kernel/1",
+      "observation": {
+        "coverage_qualified": false,
+        "distance_m": null,
+        "forward_points": 0,
+        "ground_bins_observed": 0,
+        "ground_points": 0,
+        "input_points": 0,
+        "nearest_point_xyz_m": null,
+        "obstacle_points": 0,
+        "reasons": [
+          "lidar_unavailable: No LiDAR message exists at or before this aligned cursor; future data is excluded",
+          "lidar_unavailable"
+        ],
+        "semantics": "observed_surface_distance_not_free_space_or_ttc",
+        "status": "unknown"
+      },
+      "sequence": 0,
+      "warnings": [
+        "lidar_unavailable: No LiDAR message exists at or before this aligned cursor; future data is excluded",
+        "lidar_unavailable"
+      ]
+    },
+    "output_hash": "c562fd433f1b389cc8d3a16a8f37d12f89245dada3c1cc6dc2d04f78a066c6db",
+    "packet": {
+      "at_ns": "1700000000000000123",
+      "ego": {
+        "capture_time_ns": "1700000000000000123",
+        "frame_id": "ego",
+        "pitch_rad": 0.0,
+        "roll_rad": 0.0,
+        "route_heading_error_rad": 0.08,
+        "source": "authored independent ego sample; no controller feedback",
+        "speed_mps": 4.0,
+        "timestamp_ns": "1700000000000000123"
+      },
+      "lidar": null,
+      "sequence": 0,
+      "unavailable_reasons": [
+        "lidar_unavailable: No LiDAR message exists at or before this aligned cursor; future data is excluded"
+      ]
+    },
+    "points": null,
+    "started_at": "2026-09-13T04:45:59.878511+00:00",
+    "status": "completed"
+  }
+}

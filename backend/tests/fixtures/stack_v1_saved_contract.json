@@ -1,0 +1,734 @@
+{
+  "consumed_xyz_base64": "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593qQMxs7D6aKdu6Ct7qQMxs7L6a0du6me/UQBRmSMCaud26AVS1QNcBlsCa4d66ABmhQAqNq8Caad+6k1OKQMJjvsCa4d+64Q1YQACAxMD6I9E95GZIQADw1MCaceC6D3IRQDPR38CaueC6zN5rPx5j6cAz0126ikHsPjOz6sCaGem43dprvx5f6cAz0zW65mZIwBTw1MCa4eC6VL9iwOs5zsCaweC6wjJ8wDOzxsCameC6ExmhwEeNq8CaGeC6QY2rwPYYocCa4d+6HlS1wOsBlsCaqd+6FbPGwGYyfMCaMd+6lznOwAq/YsCa8d66xe/UwD1mSMCaqd66087awIVDLcCaYd66x9DfwMJxEcCaGd66l/DjwOsZ6r+ayd26ICrnwIVjsL+aed26KXrpwML1a7+aKd26Qd7qwBRu7L6a2dy63WnIwLi+yT6aKdy6oEDFwDODlj+amdu6C3WiwHsQbECaydm6pLmawAAAgECakdm6WXaJwABikkCaGdm6wP9/wK65mkCa6di6KxBswOF0okCaudi6pnpBwAD4r0CaYdi6tv8qwACytUCaOdi6LsHHv4V/wkCa4de6gIKWvwBAxUCayde6tFdJvx45x0Caude6fr3JvjNpyECaqde6MzMztY/OyECaode6J73JPgppyECamde6goKWPwBAxUCaode6ADb4P4/6vkCaude6+dcTQLi0ukCayde6DzJXQBSMqUCaEdi6QnaJQNdhkkCagdi62WGSQHt2iUCasdi6i7maQNf/f0Ca4di6U7K1QNf/KkCawdm6eUDFQOGClj+awdq6vjnHQFJYST+aCdu6uGnIQADAyT6aSdu6zWnIQHC9yb6a2du66jnHQFJYSb+aIdy6TYDCQJnBx7+aqdy6d7W6QKTYE8CaOd268LK1QCkAK8Caed26zvivQDN7QcCaud26qnWiQB4RbMCaOd66n2KSQOF2icCasd66D3eJQI9iksCa6d66kwCAQD26msCaGd+6fTNXQAqNqcCaed+64QArQDOztcCayd+6DdkTQMK1usCa8d+6hevRNevPyMCaYeC6GL/JvntqyMCaaeC6DllJv486x8CaaeC6EdkTwOu1usCaQeC64QArwEeztcCaKeC6pwCAwGa6msCaqd+6tmKSwPZ2icCaUd+6cLqawI8AgMCaId+6y3WiwEcRbMCa8d66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XD0gQMyMXMCaOd66OxMSQB4tZsCaYd66e1UDQPXkbsCaed66ByboP4WrdsCakd66e3yoP+GigcCawd66d1VMP7jkhcCa4d6696sIP647h8Ca8d66MPGIPgAKiMCa8d6661G4tM1OiMCaAd+6LfGIvgAKiMCaAd+676sIv647h8CaAd+6N1VMv+HkhcCaAd+6CSbov66rdsCa0d66elUDwPXkbsCawd66PxMSwHAtZsCaqd66YD0gwMyMXMCamd66XJ46wD26RsCaYd663A1SwJnFLcCaId66AI1cwPY8IMCaAd66Ui1mwDMTEsCa2d26c6t2wBQm6L+akd26oXh9wGa2yL+aYd263aKBwCl8qL+aOd260qACwFIoBr/WLo4/XsW8vz0Kvj3IZaw//uC6vxTuvz6xNKo/YvO5v1w/Ez8AIqY/mdRcwMzUzz+aGdu6ZHJFwCl0D0Caqdq6sww8wJmRG0Cagdq6CHQPwGZyRUCaAdq60NWWv8wcaECakdm6I8dyv4VjbECagdm61DB1vjOTc0CaYdm6uB4FNbgOdECaWdm6CrX0PushckCaUdm6NMdyPwBkbECaYdm619WWP6McaECaYdm6tK+zPwrrYkCacdm6ENTPP1LUXECagdm6hybrP2beVUCakdm6rsUCQFIQTkCamdm6WpEbQHsMPECaydm6jREnQPXoMUCa4dm6pAw8QJmRG0CaGdq6T3JFQCl0D0CaOdq6h95VQAon6z+agdq6c9RcQHvUzz+aodq682NsQK7Hcj+aGdu6NbxvQBTuNj+aQdu6/Q50QAAAAACawdu6x5NzQKMwdb6a6du6a7xvQBTuNr+aQdy6At9VQAon67+aEd26BxFOQOvFAsCaOd26OA08QMKRG8Cagd26iukxQOsRJ8Caod26PcYCQMwQTsCaGd66gSfrPzPfVcCaOd66ANXPPx7VXMCaUd66gLCzP9frYsCaYd66htaWP3AdaMCacd66Nbb0PuEicsCamd66Crb0vrgicsCasd66E+42v/W8b8Caqd66N8hyv3tkbMCaqd66gNaWv5kdaMCaod66grCzvwDsYsCamd669pEbwPUMPMCaOd66KxInwHDpMcCaId66Rw08wOuRG8Ca6d26HhFOwBTGAsCaqd26a8W8vx4Fvr3DZaw/",
+  "consumed_xyz_sha256": "e812ef796dac337821db1eaade29eed0104b043a5d56f05c652e72758feb51fa",
+  "legacy_json_schema_sha256": {
+    "CorridorObservation": "ca128642579927e48903e7b6b3d2cbd9bd3fb6ee5922af2032545a3c3cd8120d",
+    "ModuleSelection": "0ec0200995f04c28231c8eb96cac31342226b2fe341a6ccd0b699fb5a8f3bcc0",
+    "StackComponentMetadata": "1a8a192f44ed1308a887f737b5445891b49d1d727ff1f3c8a12e5dbb84e184b2",
+    "StackControl": "5d1ed03a453c05863a2bfdf84380b548b25bef584d3c3fcf4875710fc7db1a6f",
+    "StackDecision": "f009b156b00be488ff4d9c9bc544d7a4b0e86a6f1ba04123f2efd8bd36cd9eac",
+    "StackDefinition": "30eb1df38fad54e73c9a442a703c68a07d36e6397995ebe3ca7c3bae2cce7e38",
+    "StackEgo": "e3366c430a7eb66e9e4647deb81c9e81d692aea2df28da92ba5d0d1a54d6137a",
+    "StackLidar": "8a1b149801911582710be4c7935f6f3044af3482b9ce544c5146b4e342f0f9a8",
+    "StackOutput": "4b67ee6c59a80a3ffd1f3a17ee48b7e95df8502fbb3695cb38a0b56bbdc1d342",
+    "StackPacket": "ce886ad2847b0235e50a236602eab56280c2d8f0d59215127d1fdbeb37e91553"
+  },
+  "legacy_output_canonical_sha256": "6a1a96bfd66f24c05a1c0e249188ee3af1abff12f55ee74402633efcb63348fa",
+  "legacy_stack_canonical_sha256": "67d5fe1c3b1c189742cd1f75d279db02f1ee50aa51be4919d5629bfebadacd67",
+  "output": {
+    "at_ns": "29095616843218",
+    "components": [
+      {
+        "default_parameters": {
+          "corridor_half_width_m": 1.2,
+          "ego_front_x_m": 2.5,
+          "ground_bins": 3,
+          "ground_reference_source": "",
+          "ground_reference_z_m": null,
+          "ground_tolerance_m": 0.18,
+          "lookahead_m": 30.0,
+          "max_abs_pitch_roll_rad": 0.08,
+          "max_ego_age_ms": 100.0,
+          "max_input_skew_ms": 50.0,
+          "max_lidar_age_ms": 100.0,
+          "max_obstacle_height_m": 2.5,
+          "min_forward_points": 8,
+          "min_ground_points": 6,
+          "min_obstacle_height_m": 0.2
+        },
+        "id": "lidar-corridor",
+        "implementation": {
+          "algorithm": "lidar-corridor/1",
+          "package": "ade2e"
+        },
+        "limitations": [
+          "Point geometry only: no object class, actor identity, velocity, free-space or TTC estimate.",
+          "Ground reference is an authored flat-road assumption; mount height does not establish ground height.",
+          "Ground counts and longitudinal bins qualify sample coverage only, not absence of obstacles.",
+          "Sparse low obstacles, overhangs, occlusion and reflectivity can defeat this experimental detector."
+        ],
+        "name": "LiDAR corridor geometric observation",
+        "parameter_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "corridor_half_width_m": {
+              "default": 1.2,
+              "exclusiveMinimum": 0,
+              "maximum": 10,
+              "title": "Corridor Half Width M",
+              "type": "number"
+            },
+            "ego_front_x_m": {
+              "default": 2.5,
+              "maximum": 10,
+              "minimum": 0,
+              "title": "Ego Front X M",
+              "type": "number"
+            },
+            "ground_bins": {
+              "default": 3,
+              "maximum": 20,
+              "minimum": 1,
+              "title": "Ground Bins",
+              "type": "integer"
+            },
+            "ground_reference_source": {
+              "default": "",
+              "maxLength": 1000,
+              "title": "Ground Reference Source",
+              "type": "string"
+            },
+            "ground_reference_z_m": {
+              "anyOf": [
+                {
+                  "maximum": 10,
+                  "minimum": -10,
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Ground Reference Z M"
+            },
+            "ground_tolerance_m": {
+              "default": 0.18,
+              "exclusiveMinimum": 0,
+              "maximum": 0.5,
+              "title": "Ground Tolerance M",
+              "type": "number"
+            },
+            "lookahead_m": {
+              "default": 30.0,
+              "exclusiveMinimum": 0,
+              "maximum": 200,
+              "title": "Lookahead M",
+              "type": "number"
+            },
+            "max_abs_pitch_roll_rad": {
+              "default": 0.08,
+              "exclusiveMinimum": 0,
+              "maximum": 0.3,
+              "title": "Max Abs Pitch Roll Rad",
+              "type": "number"
+            },
+            "max_ego_age_ms": {
+              "default": 100.0,
+              "maximum": 1000,
+              "minimum": 0,
+              "title": "Max Ego Age Ms",
+              "type": "number"
+            },
+            "max_input_skew_ms": {
+              "default": 50.0,
+              "maximum": 1000,
+              "minimum": 0,
+              "title": "Max Input Skew Ms",
+              "type": "number"
+            },
+            "max_lidar_age_ms": {
+              "default": 100.0,
+              "maximum": 1000,
+              "minimum": 0,
+              "title": "Max Lidar Age Ms",
+              "type": "number"
+            },
+            "max_obstacle_height_m": {
+              "default": 2.5,
+              "exclusiveMinimum": 0,
+              "maximum": 10,
+              "title": "Max Obstacle Height M",
+              "type": "number"
+            },
+            "min_forward_points": {
+              "default": 8,
+              "maximum": 20000,
+              "minimum": 1,
+              "title": "Min Forward Points",
+              "type": "integer"
+            },
+            "min_ground_points": {
+              "default": 6,
+              "maximum": 20000,
+              "minimum": 1,
+              "title": "Min Ground Points",
+              "type": "integer"
+            },
+            "min_obstacle_height_m": {
+              "default": 0.2,
+              "exclusiveMinimum": 0,
+              "maximum": 2,
+              "title": "Min Obstacle Height M",
+              "type": "number"
+            }
+          },
+          "title": "CorridorParameters",
+          "type": "object"
+        },
+        "role": "perception",
+        "status": "available",
+        "version": "1"
+      },
+      {
+        "default_parameters": {
+          "allow_no_obstacle_observed_motion": false,
+          "assumed_deceleration_mps2": 2.0,
+          "cruise_speed_mps": 5.0,
+          "minimum_gap_m": 2.0,
+          "response_time_s": 0.1,
+          "time_headway_s": 1.5
+        },
+        "id": "stopping-headway",
+        "implementation": {
+          "algorithm": "stopping-headway/1",
+          "package": "ade2e"
+        },
+        "limitations": [
+          "Assumes a stationary observed surface and declared braking response; not calibrated stopping performance.",
+          "Ego speed and route heading are supplied telemetry; surrounding actor state is not an input.",
+          "Motion after no obstacle observation requires an explicit pilot assumption; this is not free-space certification."
+        ],
+        "name": "Stationary-obstacle stopping and headway policy",
+        "parameter_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "allow_no_obstacle_observed_motion": {
+              "default": false,
+              "title": "Allow No Obstacle Observed Motion",
+              "type": "boolean"
+            },
+            "assumed_deceleration_mps2": {
+              "default": 2.0,
+              "exclusiveMinimum": 0,
+              "maximum": 10,
+              "title": "Assumed Deceleration Mps2",
+              "type": "number"
+            },
+            "cruise_speed_mps": {
+              "default": 5.0,
+              "maximum": 20,
+              "minimum": 0,
+              "title": "Cruise Speed Mps",
+              "type": "number"
+            },
+            "minimum_gap_m": {
+              "default": 2.0,
+              "maximum": 20,
+              "minimum": 0,
+              "title": "Minimum Gap M",
+              "type": "number"
+            },
+            "response_time_s": {
+              "default": 0.1,
+              "maximum": 5,
+              "minimum": 0,
+              "title": "Response Time S",
+              "type": "number"
+            },
+            "time_headway_s": {
+              "default": 1.5,
+              "maximum": 10,
+              "minimum": 0,
+              "title": "Time Headway S",
+              "type": "number"
+            }
+          },
+          "title": "HeadwayParameters",
+          "type": "object"
+        },
+        "role": "policy",
+        "status": "available",
+        "version": "1"
+      },
+      {
+        "default_parameters": {
+          "brake_gain": 0.3,
+          "max_steer": 0.5,
+          "max_throttle": 0.5,
+          "steering_gain": 1.0,
+          "throttle_gain": 0.2
+        },
+        "id": "proportional-control",
+        "implementation": {
+          "algorithm": "proportional-control/1",
+          "package": "ade2e"
+        },
+        "limitations": [
+          "Normalized actuator commands are not a vehicle dynamics model.",
+          "Route heading error is declared oracle/telemetry; this component does not perceive lanes.",
+          "Steer is positive left. CARLA's actuator convention must be converted at its bridge."
+        ],
+        "name": "Proportional speed and route-heading control",
+        "parameter_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "brake_gain": {
+              "default": 0.3,
+              "exclusiveMinimum": 0,
+              "maximum": 5,
+              "title": "Brake Gain",
+              "type": "number"
+            },
+            "max_steer": {
+              "default": 0.5,
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Max Steer",
+              "type": "number"
+            },
+            "max_throttle": {
+              "default": 0.5,
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Max Throttle",
+              "type": "number"
+            },
+            "steering_gain": {
+              "default": 1.0,
+              "maximum": 10,
+              "minimum": 0,
+              "title": "Steering Gain",
+              "type": "number"
+            },
+            "throttle_gain": {
+              "default": 0.2,
+              "maximum": 5,
+              "minimum": 0,
+              "title": "Throttle Gain",
+              "type": "number"
+            }
+          },
+          "title": "ControlParameters",
+          "type": "object"
+        },
+        "role": "controller",
+        "status": "available",
+        "version": "1"
+      }
+    ],
+    "control": {
+      "brake": 1.0,
+      "hand_brake": false,
+      "reverse": false,
+      "steer": 0.0,
+      "steering_convention": "positive_left",
+      "throttle": 0.0
+    },
+    "decision": {
+      "force_brake": true,
+      "mode": "unknown_stop",
+      "reasons": [
+        "unknown_or_insufficient_observation",
+        "kernel_unknown_stop"
+      ],
+      "stopping_distance_m": 4.896599237013909,
+      "target_speed_mps": 0.0
+    },
+    "elapsed_ms": 8.035890998144168,
+    "input_points_sha256": "e812ef796dac337821db1eaade29eed0104b043a5d56f05c652e72758feb51fa",
+    "kernel_version": "stack-kernel/1",
+    "observation": {
+      "coverage_qualified": false,
+      "distance_m": null,
+      "forward_points": 29,
+      "ground_bins_observed": 2,
+      "ground_points": 29,
+      "input_points": 823,
+      "nearest_point_xyz_m": null,
+      "obstacle_points": 0,
+      "reasons": [
+        "insufficient_forward_ground_coverage"
+      ],
+      "semantics": "observed_surface_distance_not_free_space_or_ttc",
+      "status": "unknown",
+      "supported_distance_m": 6.33043098449707
+    },
+    "sequence": 63,
+    "warnings": []
+  },
+  "packet": {
+    "at_ns": "29095616843218",
+    "ego": {
+      "capture_time_ns": "29095616843218",
+      "frame_id": "ego",
+      "pitch_rad": 5.960464042810091e-07,
+      "roll_rad": -5.326322025161625e-06,
+      "route_heading_error_rad": -0.003297227495610233,
+      "source": "carla-ego-state-and-map-route/1",
+      "speed_mps": 1.931066158009273,
+      "timestamp_ns": "29095616843218"
+    },
+    "lidar": {
+      "capture_time_ns": "29095616843218",
+      "complete_frame": true,
+      "coordinate_convention": "x_forward_y_left_z_up",
+      "encoding": "xyz_float32_le",
+      "frame_id": "ego",
+      "point_count": 823,
+      "points_sha256": "e812ef796dac337821db1eaade29eed0104b043a5d56f05c652e72758feb51fa",
+      "size_bytes": 9876,
+      "source_message_sha256": "42f283c30d49d8eb09103b5825cf2aa13be3b567a104da175648f1b147828970",
+      "timestamp_ns": "29095616843218"
+    },
+    "sequence": 63,
+    "unavailable_reasons": []
+  },
+  "provenance": {
+    "kind": "saved_actual_carla_v1_contract",
+    "run_file_sha256": "9136cf37d8d4ff6d96c635776a173d5fc9daa383989025ed441985782c83323d",
+    "run_id": "run_3afd988754104e3db895eed83ba36494",
+    "trace_file_sha256": "8aabaa14a37154d0af8988f79087ba98d77c8d4ca4969cb067fc37ede768dbbe"
+  },
+  "stack": {
+    "component_metadata": [
+      {
+        "default_parameters": {
+          "corridor_half_width_m": 1.2,
+          "ego_front_x_m": 2.5,
+          "ground_bins": 3,
+          "ground_reference_source": "",
+          "ground_reference_z_m": null,
+          "ground_tolerance_m": 0.18,
+          "lookahead_m": 30.0,
+          "max_abs_pitch_roll_rad": 0.08,
+          "max_ego_age_ms": 100.0,
+          "max_input_skew_ms": 50.0,
+          "max_lidar_age_ms": 100.0,
+          "max_obstacle_height_m": 2.5,
+          "min_forward_points": 8,
+          "min_ground_points": 6,
+          "min_obstacle_height_m": 0.2
+        },
+        "id": "lidar-corridor",
+        "implementation": {
+          "algorithm": "lidar-corridor/1",
+          "package": "ade2e"
+        },
+        "limitations": [
+          "Point geometry only: no object class, actor identity, velocity, free-space or TTC estimate.",
+          "Ground reference is an authored flat-road assumption; mount height does not establish ground height.",
+          "Ground counts and longitudinal bins qualify sample coverage only, not absence of obstacles.",
+          "Sparse low obstacles, overhangs, occlusion and reflectivity can defeat this experimental detector."
+        ],
+        "name": "LiDAR corridor geometric observation",
+        "parameter_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "corridor_half_width_m": {
+              "default": 1.2,
+              "exclusiveMinimum": 0,
+              "maximum": 10,
+              "title": "Corridor Half Width M",
+              "type": "number"
+            },
+            "ego_front_x_m": {
+              "default": 2.5,
+              "maximum": 10,
+              "minimum": 0,
+              "title": "Ego Front X M",
+              "type": "number"
+            },
+            "ground_bins": {
+              "default": 3,
+              "maximum": 20,
+              "minimum": 1,
+              "title": "Ground Bins",
+              "type": "integer"
+            },
+            "ground_reference_source": {
+              "default": "",
+              "maxLength": 1000,
+              "title": "Ground Reference Source",
+              "type": "string"
+            },
+            "ground_reference_z_m": {
+              "anyOf": [
+                {
+                  "maximum": 10,
+                  "minimum": -10,
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "title": "Ground Reference Z M"
+            },
+            "ground_tolerance_m": {
+              "default": 0.18,
+              "exclusiveMinimum": 0,
+              "maximum": 0.5,
+              "title": "Ground Tolerance M",
+              "type": "number"
+            },
+            "lookahead_m": {
+              "default": 30.0,
+              "exclusiveMinimum": 0,
+              "maximum": 200,
+              "title": "Lookahead M",
+              "type": "number"
+            },
+            "max_abs_pitch_roll_rad": {
+              "default": 0.08,
+              "exclusiveMinimum": 0,
+              "maximum": 0.3,
+              "title": "Max Abs Pitch Roll Rad",
+              "type": "number"
+            },
+            "max_ego_age_ms": {
+              "default": 100.0,
+              "maximum": 1000,
+              "minimum": 0,
+              "title": "Max Ego Age Ms",
+              "type": "number"
+            },
+            "max_input_skew_ms": {
+              "default": 50.0,
+              "maximum": 1000,
+              "minimum": 0,
+              "title": "Max Input Skew Ms",
+              "type": "number"
+            },
+            "max_lidar_age_ms": {
+              "default": 100.0,
+              "maximum": 1000,
+              "minimum": 0,
+              "title": "Max Lidar Age Ms",
+              "type": "number"
+            },
+            "max_obstacle_height_m": {
+              "default": 2.5,
+              "exclusiveMinimum": 0,
+              "maximum": 10,
+              "title": "Max Obstacle Height M",
+              "type": "number"
+            },
+            "min_forward_points": {
+              "default": 8,
+              "maximum": 20000,
+              "minimum": 1,
+              "title": "Min Forward Points",
+              "type": "integer"
+            },
+            "min_ground_points": {
+              "default": 6,
+              "maximum": 20000,
+              "minimum": 1,
+              "title": "Min Ground Points",
+              "type": "integer"
+            },
+            "min_obstacle_height_m": {
+              "default": 0.2,
+              "exclusiveMinimum": 0,
+              "maximum": 2,
+              "title": "Min Obstacle Height M",
+              "type": "number"
+            }
+          },
+          "title": "CorridorParameters",
+          "type": "object"
+        },
+        "role": "perception",
+        "status": "available",
+        "version": "1"
+      },
+      {
+        "default_parameters": {
+          "allow_no_obstacle_observed_motion": false,
+          "assumed_deceleration_mps2": 2.0,
+          "cruise_speed_mps": 5.0,
+          "minimum_gap_m": 2.0,
+          "response_time_s": 0.1,
+          "time_headway_s": 1.5
+        },
+        "id": "stopping-headway",
+        "implementation": {
+          "algorithm": "stopping-headway/1",
+          "package": "ade2e"
+        },
+        "limitations": [
+          "Assumes a stationary observed surface and declared braking response; not calibrated stopping performance.",
+          "Ego speed and route heading are supplied telemetry; surrounding actor state is not an input.",
+          "Motion after no obstacle observation requires an explicit pilot assumption; this is not free-space certification."
+        ],
+        "name": "Stationary-obstacle stopping and headway policy",
+        "parameter_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "allow_no_obstacle_observed_motion": {
+              "default": false,
+              "title": "Allow No Obstacle Observed Motion",
+              "type": "boolean"
+            },
+            "assumed_deceleration_mps2": {
+              "default": 2.0,
+              "exclusiveMinimum": 0,
+              "maximum": 10,
+              "title": "Assumed Deceleration Mps2",
+              "type": "number"
+            },
+            "cruise_speed_mps": {
+              "default": 5.0,
+              "maximum": 20,
+              "minimum": 0,
+              "title": "Cruise Speed Mps",
+              "type": "number"
+            },
+            "minimum_gap_m": {
+              "default": 2.0,
+              "maximum": 20,
+              "minimum": 0,
+              "title": "Minimum Gap M",
+              "type": "number"
+            },
+            "response_time_s": {
+              "default": 0.1,
+              "maximum": 5,
+              "minimum": 0,
+              "title": "Response Time S",
+              "type": "number"
+            },
+            "time_headway_s": {
+              "default": 1.5,
+              "maximum": 10,
+              "minimum": 0,
+              "title": "Time Headway S",
+              "type": "number"
+            }
+          },
+          "title": "HeadwayParameters",
+          "type": "object"
+        },
+        "role": "policy",
+        "status": "available",
+        "version": "1"
+      },
+      {
+        "default_parameters": {
+          "brake_gain": 0.3,
+          "max_steer": 0.5,
+          "max_throttle": 0.5,
+          "steering_gain": 1.0,
+          "throttle_gain": 0.2
+        },
+        "id": "proportional-control",
+        "implementation": {
+          "algorithm": "proportional-control/1",
+          "package": "ade2e"
+        },
+        "limitations": [
+          "Normalized actuator commands are not a vehicle dynamics model.",
+          "Route heading error is declared oracle/telemetry; this component does not perceive lanes.",
+          "Steer is positive left. CARLA's actuator convention must be converted at its bridge."
+        ],
+        "name": "Proportional speed and route-heading control",
+        "parameter_schema": {
+          "additionalProperties": false,
+          "properties": {
+            "brake_gain": {
+              "default": 0.3,
+              "exclusiveMinimum": 0,
+              "maximum": 5,
+              "title": "Brake Gain",
+              "type": "number"
+            },
+            "max_steer": {
+              "default": 0.5,
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Max Steer",
+              "type": "number"
+            },
+            "max_throttle": {
+              "default": 0.5,
+              "maximum": 1,
+              "minimum": 0,
+              "title": "Max Throttle",
+              "type": "number"
+            },
+            "steering_gain": {
+              "default": 1.0,
+              "maximum": 10,
+              "minimum": 0,
+              "title": "Steering Gain",
+              "type": "number"
+            },
+            "throttle_gain": {
+              "default": 0.2,
+              "maximum": 5,
+              "minimum": 0,
+              "title": "Throttle Gain",
+              "type": "number"
+            }
+          },
+          "title": "ControlParameters",
+          "type": "object"
+        },
+        "role": "controller",
+        "status": "available",
+        "version": "1"
+      }
+    ],
+    "created_at": "2026-09-13T06:20:49.657709+00:00",
+    "definition": {
+      "controller": {
+        "id": "proportional-control",
+        "parameters": {
+          "brake_gain": 0.3,
+          "max_steer": 0.5,
+          "max_throttle": 0.5,
+          "steering_gain": 1.0,
+          "throttle_gain": 0.2
+        },
+        "version": "1"
+      },
+      "perception": {
+        "id": "lidar-corridor",
+        "parameters": {
+          "corridor_half_width_m": 1.2,
+          "ego_front_x_m": 2.5,
+          "ground_bins": 3,
+          "ground_reference_source": "Explicit low-speed flat-road pilot assumption: plane z=0 in ego coordinates; uncalibrated, not inferred from LiDAR mount or certified road geometry.",
+          "ground_reference_z_m": 0.0,
+          "ground_tolerance_m": 0.18,
+          "lookahead_m": 15.0,
+          "max_abs_pitch_roll_rad": 0.08,
+          "max_ego_age_ms": 100.0,
+          "max_input_skew_ms": 50.0,
+          "max_lidar_age_ms": 100.0,
+          "max_obstacle_height_m": 2.5,
+          "min_forward_points": 8,
+          "min_ground_points": 6,
+          "min_obstacle_height_m": 0.2
+        },
+        "version": "1"
+      },
+      "policy": {
+        "id": "stopping-headway",
+        "parameters": {
+          "allow_no_obstacle_observed_motion": true,
+          "assumed_deceleration_mps2": 2.0,
+          "cruise_speed_mps": 2.0,
+          "minimum_gap_m": 2.0,
+          "response_time_s": 0.1,
+          "time_headway_s": 1.5
+        },
+        "version": "1"
+      },
+      "reference_frame": "ego",
+      "schema_version": "1"
+    },
+    "description": "Same geometry and controller; headway changes the required stopping horizon within the observed 15m corridor.",
+    "download_url": "/api/v1/stacks/stack_8fd0b443d2a84a17bff2fc1f29d353a8/export?revision=1",
+    "id": "stack_8fd0b443d2a84a17bff2fc1f29d353a8",
+    "kernel_version": "stack-kernel/1",
+    "manifest_hash": "79fb131a6af4f1cccea725981f8c206d56f0dc7c76e4a57eb6e3cb5696890095",
+    "manifest_size_bytes": 6942,
+    "name": "CARLA live geometric stack \u00b7 observed horizon comparison",
+    "note": "Explicit bounded pilot motion assumption; unknown/insufficient observations still stop.",
+    "revision": 1,
+    "schema_version": "1"
+  }
+}

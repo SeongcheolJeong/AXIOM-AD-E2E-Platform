@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/TrampolineRTOS/trampoline",
+  "commit": "ff287023252bf73273067f00d2dbc8bbc9a20401",
+  "archive_url": "https://github.com/TrampolineRTOS/trampoline/archive/ff287023252bf73273067f00d2dbc8bbc9a20401.tar.gz",
+  "archive_sha256": "2ae36637b34e5988b85249e0a16bbe4a7a69b5fd1a6994a67f93b3722c6b9b40",
+  "patched_originals": {
+    "machines/posix/tpl_machine_posix.c": "711ae7df1192391b851c87d18e572476341535bee80bc6ac27286a7788b73bbc"
+  },
+  "license_notice": "Preserve upstream LICENSE and per-file GPL/LGPL notices. Host process integration does not settle customer redistribution terms."
+}

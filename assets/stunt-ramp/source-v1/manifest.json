@@ -1,0 +1,49 @@
+{
+  "axes": {
+    "x": "forward",
+    "y": "right",
+    "z": "up"
+  },
+  "collision_status": "source_hulls_only_not_imported_or_cooked",
+  "convex_collision_objects": 57,
+  "engine_import_scale_cm_per_m": 100,
+  "files": {
+    "README.md": {
+      "sha256": "af4ff765a1b2878097c62952d91e6fbb4efa24b05f764c9e8a0dfa4e383863d8",
+      "size_bytes": 2222
+    },
+    "collision.obj": {
+      "sha256": "9662fb468e27d3c197548ca4978383a080afed826e212c8fd864e411a374228f",
+      "size_bytes": 28028
+    },
+    "visual.obj": {
+      "sha256": "ad73e0b5ad9297c65658c432a016719dd797c74dd627ada9357b744db00413f1",
+      "size_bytes": 15415
+    }
+  },
+  "generator": {
+    "path": "scripts/build_stunt_ramp_asset.py",
+    "sha256": "2034b7f911c423c5559bdb9b8cd608c608256f507a9141826d57c40016ff0e9c"
+  },
+  "native_map_available": false,
+  "parameters": {
+    "approach_length_m": 12.0,
+    "landing_length_m": 30.0,
+    "landing_width_m": 30.0,
+    "radius_m": 6.0,
+    "segments": 55,
+    "sweep_deg": 110.0,
+    "thickness_m": 0.3,
+    "width_m": 8.0
+  },
+  "physical_validation": "not_established",
+  "rights": {
+    "distribution_license": "project_distribution_license_undecided",
+    "external_assets": [],
+    "origin": "original_project_authored"
+  },
+  "schema_version": "stunt-ramp-source/1",
+  "source_kind": "original_authored_geometry",
+  "units": "m",
+  "visual_objects": 3
+}

@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "axiom-hil-gateway"
+version = "0.1.0"
+description = "Optional two ECU SocketCAN/UDP HIL gateway"
+requires-python = ">=3.11"
+dependencies = ["axiom-vecu-network==0.1.0"]
+[project.entry-points."ade2e.experiment_handlers"]
+hil_gateway = "axiom_hil_gateway:GatewayHandler"
+[tool.setuptools.packages.find]
+where = ["src"]

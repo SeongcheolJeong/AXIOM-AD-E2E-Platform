@@ -1,0 +1,18 @@
+{
+  "name": "Front LiDAR · declared physical mount",
+  "reference_frame": "ego",
+  "coordinate_convention": "right_handed_z_up",
+  "source_kind": "simulation",
+  "source": "Authored CARLA placement; not a collision-mesh or optical calibration measurement.",
+  "note": "Verify native pose, visibility and driving performance separately. Original returns remain intact.",
+  "sensors": [{
+    "key": "front",
+    "name": "Front LiDAR",
+    "kind": "lidar",
+    "frame_id": "lidar_front",
+    "transform": {
+      "translation_m": [2.5, 0.0, 1.5],
+      "rotation_xyzw": [0.0, 0.0, 0.0, 1.0]
+    }
+  }]
+}

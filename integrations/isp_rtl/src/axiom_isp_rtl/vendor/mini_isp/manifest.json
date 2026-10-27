@@ -1,0 +1,64 @@
+{
+  "schema_version": "isp-vendor-source/1",
+  "repository": "https://github.com/amd/mini-isp",
+  "revision": "67e752d6bf668179ec45446089a709bbc1ef9736",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "blc.sv",
+      "upstream_path": "rtl/blc.sv",
+      "url": "https://raw.githubusercontent.com/amd/mini-isp/67e752d6bf668179ec45446089a709bbc1ef9736/rtl/blc.sv",
+      "sha256": "bbf6dc8d58fe34cd6e1303b16b83010a729539d180d0d3b89b2eac6a7ce093bc",
+      "license": "MIT"
+    },
+    {
+      "path": "colorgain.sv",
+      "upstream_path": "rtl/colorgain.sv",
+      "url": "https://raw.githubusercontent.com/amd/mini-isp/67e752d6bf668179ec45446089a709bbc1ef9736/rtl/colorgain.sv",
+      "sha256": "3a49f806f5173c375286b29c13bccc5b9125e1deadb8724d314166752983a2af",
+      "license": "MIT"
+    },
+    {
+      "path": "demosaic.sv",
+      "upstream_path": "rtl/demosaic.sv",
+      "url": "https://raw.githubusercontent.com/amd/mini-isp/67e752d6bf668179ec45446089a709bbc1ef9736/rtl/demosaic.sv",
+      "sha256": "919d9e8ebadf28b443addfafd3f239e824da55712905db2011ff5cbf3644c037",
+      "license": "MIT"
+    },
+    {
+      "path": "linebuffer.sv",
+      "upstream_path": "rtl/linebuffer.sv",
+      "url": "https://raw.githubusercontent.com/amd/mini-isp/67e752d6bf668179ec45446089a709bbc1ef9736/rtl/linebuffer.sv",
+      "sha256": "421ee35a525daddb8c12a5703e3e641adc827e0e36fc59d8b15e8e52671a0d03",
+      "license": "MIT"
+    },
+    {
+      "path": "simple_dual_ported_ram.sv",
+      "upstream_path": "rtl/simple_dual_ported_ram.sv",
+      "url": "https://raw.githubusercontent.com/amd/mini-isp/67e752d6bf668179ec45446089a709bbc1ef9736/rtl/simple_dual_ported_ram.sv",
+      "sha256": "25f6676203ee313c20b20baabaa841b08225b543a018988dc639ece300b5de29",
+      "license": "MIT"
+    },
+    {
+      "path": "skidbuffer.sv",
+      "upstream_path": "rtl/skidbuffer.sv",
+      "url": "https://raw.githubusercontent.com/amd/mini-isp/67e752d6bf668179ec45446089a709bbc1ef9736/rtl/skidbuffer.sv",
+      "sha256": "5ce681e48af99d326a47680e5507206c0da9a5365342bf6e8ec7c3f4efe46a06",
+      "license": "MIT"
+    },
+    {
+      "path": "LICENSE.md",
+      "upstream_path": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/amd/mini-isp/67e752d6bf668179ec45446089a709bbc1ef9736/LICENSE.md",
+      "sha256": "dea7c40601fafea5ebe00f152334de6276ad3a343939c64101e7747e6c206d95",
+      "license": "MIT"
+    },
+    {
+      "path": "REUSE.toml",
+      "upstream_path": "REUSE.toml",
+      "url": "https://raw.githubusercontent.com/amd/mini-isp/67e752d6bf668179ec45446089a709bbc1ef9736/REUSE.toml",
+      "sha256": "550a5d447cc499120ba18ac0901786b077f477072a35e6661436faad73fffec4",
+      "license": "MIT"
+    }
+  ]
+}

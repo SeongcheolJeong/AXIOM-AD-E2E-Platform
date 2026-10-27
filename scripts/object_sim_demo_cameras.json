@@ -1,0 +1,8 @@
+{
+  "schema_version": "object-sim-demo-cameras/1",
+  "description": "Native front and rear observer cameras; explicit actor-relative poses, 5 Hz retained RGB.",
+  "sensors": [
+    {"id": "front", "actor_id": "ego", "kind": "camera_rgb", "pose": {"x": 2.8, "y": 0, "z": 1.7, "heading_rad": 0}, "width": 640, "height": 360, "fov_deg": 90, "period_s": 0.2},
+    {"id": "chase", "actor_id": "ego", "kind": "camera_rgb", "pose": {"x": -8, "y": 0, "z": 3, "heading_rad": 0}, "width": 640, "height": 360, "fov_deg": 100, "period_s": 0.2}
+  ]
+}

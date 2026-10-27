@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "axiom-rtl-lab"
+version = "0.1.0"
+description = "Reference FIFO RTL and independent SimPy cycle comparison"
+requires-python = ">=3.11"
+dependencies = ["simpy==4.1.1"]
+[project.entry-points."ade2e.experiment_handlers"]
+rtl_lab = "axiom_rtl_lab:RtlHandler"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.setuptools.package-data]
+axiom_rtl_lab = ["rtl/*.sv", "rtl/*.cpp"]

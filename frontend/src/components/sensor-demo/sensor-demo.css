@@ -1,0 +1,124 @@
+.sensor-demo { color: #274640; display: grid; gap: 20px; min-width: 0; }
+.sensor-demo button, .sensor-presenter button { cursor: pointer; font-family: inherit; }
+.sensor-demo button:disabled { opacity: .48; cursor: default; }
+.sensor-demo button:focus-visible, .sensor-demo input:focus-visible, .sensor-demo select:focus-visible, .sensor-presenter button:focus-visible { outline: 3px solid #5aa995; outline-offset: 3px; }
+.sensor-demo-project { display: flex; justify-content: space-between; gap: 12px; align-items: center; color: #73827b; font-size: 11px; }
+.sensor-demo-project label { display: flex; align-items: center; gap: 10px; }
+.sensor-demo-project select { border: 1px solid #cddbd2; border-radius: 6px; padding: 7px 10px; color: #34584b; background: white; font: inherit; min-width: 160px; }
+.sensor-demo-hero { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.sensor-demo-eyebrow { display: block; font-size: 9px; letter-spacing: 1.8px; color: #6d8980; font-weight: 800; }
+.sensor-demo-hero h1 { font-size: clamp(24px, 2.2vw, 34px); letter-spacing: -.9px; font-weight: 650; line-height: 1.3; margin: 7px 0 10px; color: #23483c; }
+.sensor-demo-hero p { color: #6b7d71; font-size: 12px; margin: 0; line-height: 1.6; }
+.sensor-demo-native-badge { display: inline-flex; gap: 7px; align-items: center; font: 9px 'IBM Plex Mono', monospace; color: #477466; border: 1px solid #d4e3da; padding: 8px 10px; border-radius: 5px; white-space: nowrap; }
+.sensor-demo-native-badge i { width: 5px; height: 5px; border-radius: 50%; background: #4c9b76; }
+.sensor-demo-presets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.sensor-demo-preset { position: relative; display: flex; gap: 13px; align-items: center; text-align: left; border: 1px solid #d9e1d8; border-radius: 11px; background: #fbfcf9; padding: 18px 16px; color: #395d51; transition: border-color .16s, background .16s; min-width: 0; }
+.sensor-demo-preset.selected { background: #eaf4ee; border-color: #729e87; box-shadow: 0 0 0 1px #8cbba033; }
+.sensor-demo-preset:not(:disabled):hover { border-color: #8caf9a; background: #f0f6ef; }
+.sensor-demo-preset-icon { display: grid; place-items: center; width: 43px; height: 43px; flex-shrink: 0; background: #e3eee5; border-radius: 10px; color: #50806b; }
+.sensor-demo-preset:nth-child(2) .sensor-demo-preset-icon { background: #e5eef6; color: #527c99; }
+.sensor-demo-preset:nth-child(3) .sensor-demo-preset-icon { background: #f5eee0; color: #a07d3e; }
+.sensor-demo-preset small { display: block; font-size: 8px; letter-spacing: 1.2px; color: #7c9184; }
+.sensor-demo-preset h2 { font-size: 16px; font-weight: 650; margin: 5px 0 7px; }
+.sensor-demo-card-values { display: inline-flex; align-items: center; gap: 8px; font: 10px 'IBM Plex Mono', monospace; color: #698376; }
+.sensor-demo-availability { position: absolute; top: 11px; right: 10px; font-size: 8px; color: #8d936f; }
+.sensor-demo-availability.ready { color: #48806a; }
+.sensor-demo-layout { display: grid; grid-template-columns: 275px minmax(0, 1fr); align-items: start; gap: 18px; min-width: 0; }
+.sensor-demo-editor { display: grid; gap: 12px; background: white; border: 1px solid #d6dfd5; border-radius: 12px; padding: 18px; min-width: 0; }
+.sensor-demo-section-heading { display: flex; gap: 9px; align-items: center; }
+.sensor-demo-section-heading>span { font: 10px 'IBM Plex Mono', monospace; color: #7d9987; }
+.sensor-demo-section-heading h2 { font-size: 16px; margin: 0; }
+.sensor-demo-editor-description { font-size: 11px; color: #7c897a; line-height: 1.7; margin: 0; }
+.sensor-demo-rig { margin: 0; }
+.sensor-demo-rig svg { display: block; width: 100%; border-radius: 9px; }
+.sensor-demo-rig figcaption { display: flex; flex-wrap: wrap; gap: 5px 10px; padding-top: 8px; color: #718176; font-size: 8px; }
+.sensor-demo-rig figcaption span { display: flex; align-items: center; gap: 4px; }
+.sensor-demo-rig figcaption i { width: 6px; height: 6px; border-radius: 50%; background: #67b396; }
+.sensor-demo-rig figcaption i.lidar { background: #8eb5db; }.sensor-demo-rig figcaption i.radar { background: #d3ac6a; }
+.sensor-demo-rig figcaption small { flex-basis: 100%; font-size: 8px; margin-top: 3px; color: #899589; }
+.sensor-demo-value-label { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; margin-top: 5px; }
+.sensor-demo-value-label span { color: #819384; font-weight: 400; }
+.sensor-demo-value-control { display: flex; gap: 7px; }
+.sensor-demo-value-control input { width: 100%; min-width: 0; border: 1px solid #c9d8ca; border-radius: 7px; padding: 10px 12px; font: 24px 'IBM Plex Mono', monospace; color: #315647; background: #fafcf8; }
+.sensor-demo-value-control button { border: 1px solid #d5e0d1; background: #f4f7f0; border-radius: 6px; padding: 8px; color: #658369; }
+.sensor-demo-value-slider { width: 100%; margin: 0; accent-color: #527c60; }
+.sensor-demo-range-labels { display: flex; justify-content: space-between; color: #8b9988; font-size: 8px; margin-top: -8px; }
+.sensor-demo-difference { display: grid; grid-template-columns: 1fr auto 1fr; column-gap: 8px; row-gap: 5px; background: #f0f5ed; padding: 10px; border-radius: 7px; }
+.sensor-demo-difference>span { font-size: 9px; color: #899981; }.sensor-demo-difference>strong { font: 11px 'IBM Plex Mono',monospace; }
+.sensor-demo-difference>span:first-child { grid-area: 1/1; }.sensor-demo-difference>strong:nth-child(2) { grid-area: 2/1; }.sensor-demo-difference>svg { grid-area: 1/2/3/3; align-self: center; color: #9baf93; }.sensor-demo-difference>span:nth-child(4) { grid-area: 1/3; }.sensor-demo-difference>strong:nth-child(5) { grid-area: 2/3; }
+.sensor-demo-fixed { font-size: 9px; color: #87917d; margin: 0; line-height: 1.7; }
+.sensor-demo-primary { display: flex; align-items: center; justify-content: center; gap: 7px; width: 100%; background: #416f51; color: #fff; border: 1px solid #416f51; border-radius: 7px; padding: 11px 7px; font-size: 11px; font-weight: 650; min-height: 40px; }
+.sensor-demo-primary:hover:not(:disabled) { background: #305e43; }
+.sensor-demo-preview { padding-top: 8px; border-top: 1px solid #dfe7d9; }
+.sensor-demo-preview>strong { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #477559; }.sensor-demo-preview p { margin: 8px 0; font-size: 10px; color: #778c73; line-height: 1.6; }
+.sensor-demo-input-error { font-size: 10px; color: #986f36; line-height: 1.6; margin: 0; }
+.sensor-demo-error { padding: 10px 13px; background: #fff1eb; border: 1px solid #edd1c4; border-radius: 7px; color: #995c43; font-size: 11px; line-height: 1.7; overflow-wrap: anywhere; margin: 0; }
+.sensor-demo-error button, .sensor-demo-message button { margin-left: 8px; border: 0; background: transparent; color: inherit; text-decoration: underline; }
+.sensor-demo-message { padding: 15px; border: 1px solid #dce5d8; border-radius: 7px; font-size: 12px; color: #71816a; }
+.sensor-demo-source { font-size: 9px; color: #819179; line-height: 1.7; }.sensor-demo-source summary { cursor: pointer; }.sensor-demo-source code { overflow-wrap: anywhere; font-size: 8px; }
+.sensor-demo-result { display: grid; gap: 10px; min-width: 0; }
+.sensor-demo-result-origin { display: flex; align-items: center; justify-content: space-between; color: #7c8c7b; font-size: 9px; gap: 8px; min-height: 16px; }
+.sensor-demo-result-origin button { border: 0; background: transparent; color: #567b5a; font-size: 9px; }
+.sensor-demo-run-status { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #eaf3ec; border: 1px solid #bbd1c0; padding: 12px 14px; border-radius: 9px; }.sensor-demo-run-status.failed { background: #fcf0e7; border-color: #e7cbb9; }
+.sensor-demo-run-status strong { font-size: 12px; color: #486f50; }.sensor-demo-run-status p { font-size: 10px; margin: 5px 0 0; color: #7b8c73; overflow-wrap: anywhere; }.sensor-demo-run-status button { display: flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #bed2b8; border-radius: 6px; padding: 9px 10px; font-size: 10px; color: #486c42; flex-shrink: 0; }
+.sensor-demo-empty { display: grid; align-content: center; justify-items: center; gap: 18px; text-align: center; min-height: 570px; background: radial-gradient(ellipse at top, #e9f3ee, #f8faf4); border: 1px solid #d6e1d3; border-radius: 12px; padding: 25px; }.sensor-demo-empty h2 { font-size: 22px; margin: 0; }.sensor-demo-empty p { font-size: 13px; line-height: 1.8; color: #7b8b75; margin: 0; }.sensor-demo-empty>span:last-child { font-size: 10px; color: #97a18c; }.sensor-demo-empty-symbol { display: flex; gap: 24px; color: #82a693; padding-bottom: 8px; }
+.sensor-presenter { min-width: 0; display: grid; gap: 10px; padding: 17px; border: 1px solid #cfded3; background: #edf4f0; border-radius: 13px; }
+.sensor-presenter-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; }.sensor-presenter-heading h2 { font-size: 20px; letter-spacing: -.3px; margin: 5px 0 0; color: #2f5245; }
+.sensor-presenter button,.sensor-presenter select { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: #fcfefb; border: 1px solid #c9d9ce; border-radius: 6px; padding: 6px 9px; color: #4f7561; font-size: 10px; }
+.sensor-presenter-heading>button { padding: 8px; font-size: 10px; white-space: nowrap; }
+.sensor-presenter-context { display: flex; flex-wrap: wrap; gap: 5px 16px; color: #7d9689; font-size: 8px; line-height: 1.6; }
+.sensor-presenter-loading { display: grid; place-items: center; min-height: 410px; color: #7c958a; font-size: 12px; border: 1px solid #dce7dc; background: #f3f8f1; border-radius: 10px; }
+.sensor-presenter-cameras { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.sensor-presenter-camera { min-width: 0; border: 1px solid #cbdccf; border-radius: 9px; background: #fbfdfb; padding: 9px; }
+.sensor-presenter-camera>header { display: flex; gap: 7px; align-items: center; margin-bottom: 7px; color: #5f7d6c; font-size: 9px; }.sensor-presenter-camera>header strong { font-weight: 600; }.sensor-presenter-camera>header>span:last-child { margin-left: auto; font: 8px 'IBM Plex Mono',monospace; color: #8b9d8e; }
+.sensor-rig-letter { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 4px; background: #dce6dc; color: #55725a; font: 10px 'IBM Plex Mono',monospace; }.sensor-rig-letter.rig_b { background: #dce9f1; color: #4c7690; }
+.sensor-presenter .carla-camera-frame { position: relative; gap: 5px; }.sensor-presenter .carla-camera-frame canvas { width: 100%; height: auto; aspect-ratio: 16/9; display: block; border-radius: 5px; background: #12292b; }
+.sensor-presenter .carla-camera-frame>details,.sensor-presenter .carla-camera-frame>.button { display: none; }
+.sensor-presenter .carla-camera-frame figcaption { min-height: 26px; font: 7px/1.6 'IBM Plex Mono',monospace; color: #8a9a8a; }
+.sensor-presenter .carla-camera-frame>span.expansion-clock { position: absolute; left: 5px; top: 5px; right: 5px; padding: 5px 7px; font-size: 8px; border-radius: 4px; background: #142e2be8; color: #ccded1; }
+.sensor-presenter-playback { padding: 9px 12px 5px; border: 1px solid #d1dfd2; border-radius: 8px; background: #f8fcf6; }
+.sensor-presenter-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }.sensor-presenter-controls button.sensor-presenter-play { background: #416e52; color: #fff; border-color: #416e52; min-width: 80px; }.sensor-presenter-controls output { margin-left: auto; color: #668369; font: 10px 'IBM Plex Mono',monospace; }.sensor-presenter-controls select { padding: 5px; }
+.sensor-presenter-playback>input { width: 100%; margin: 10px 0 4px; accent-color: #5c8764; height: 8px; }.sensor-presenter-stream-status { color: #8c9e86; font-size: 8px; min-height: 15px; line-height: 1.8; }
+.sensor-presenter-ranging-tabs { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; }.sensor-presenter-ranging-tabs button { border-color: transparent; background: transparent; padding: 6px 9px; }.sensor-presenter-ranging-tabs button[aria-selected=true] { background: #d9e7dc; color: #3d664a; font-weight: 650; }.sensor-presenter-ranging-tabs>span { font-size: 8px; color: #8b9a84; margin-left: auto; }
+.sensor-presenter-ranging { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }.sensor-presenter-ranging>div { min-width: 0; }.sensor-presenter-point-label { display: block; font-size: 9px; color: #6e8873; font-weight: 500; padding: 0 3px 6px; }
+.sensor-presenter .native-point-compact { position: relative; padding: 9px; border-color: #cbdbd0; border-radius: 9px; }.sensor-presenter .native-point-compact header h3 { font-size: 10px!important; }.sensor-presenter .native-point-compact header h3 span { font-size: 8px; }.sensor-presenter .native-point-compact header small { font-size: 8px; }.sensor-presenter .native-point-compact .native-point-controls { margin-bottom: 6px; gap: 4px; }.sensor-presenter .native-point-compact .native-point-controls button { padding: 4px 8px; font-size: 8px; }.sensor-presenter .native-point-compact .native-point-controls label { display: none; }
+.sensor-presenter .native-point-compact .native-point-canvas { height: 175px; }.sensor-presenter .native-point-compact .native-point-inspector,.sensor-presenter .native-point-compact .native-point-evidence,.sensor-presenter .native-point-compact>.button { display: none; }
+.sensor-presenter .native-point-compact .native-point-axis { font-size: 7px; margin: 5px 0 0; }.sensor-presenter .native-point-hold { margin: 5px 0 0; min-height: 14px; font: 7px/1.5 'IBM Plex Mono',monospace; color: #8d9f8c; overflow-wrap: anywhere; }.sensor-presenter .native-point-compact .native-radar-anomaly { position: absolute; z-index: 2; top: 80px; left: 13px; right: 13px; margin: 0; padding: 5px 7px; font-size: 8px; background: #fff0f3ed; }
+.sensor-presenter-details { border-top: 1px solid #d4e1d6; padding-top: 10px; font-size: 9px; color: #869880; }.sensor-presenter-details summary { cursor: pointer; }.sensor-presenter-details p { line-height: 1.7; }.sensor-presenter-details h3 { font-size: 11px; }.sensor-presenter-details pre { max-height: 160px; overflow: auto; padding: 10px; background: #e3ede4; color: #657f65; font-size: 9px; white-space: pre-wrap; overflow-wrap: anywhere; }.sensor-presenter-details a { color: #4b7554; font-size: 10px; }.sensor-presenter-details>.sensor-presenter-cameras { margin-top: 12px; }
+.sensor-presenter:fullscreen { width: 100vw; height: 100vh; overflow-y: auto; border: 0; border-radius: 0; box-sizing: border-box; padding: 20px 28px; align-content: start; gap: 9px; }.sensor-presenter:fullscreen .sensor-presenter-heading h2 { font-size: 26px; }.sensor-presenter:fullscreen .carla-camera-frame canvas { height: 36vh; object-fit: contain; }.sensor-presenter:fullscreen .native-point-compact .native-point-canvas { height: 19vh; }.sensor-presenter:fullscreen .sensor-presenter-details { padding-top: 6px; }
+@keyframes sensor-demo-spin { to { transform: rotate(360deg); } }.sensor-demo-spin { animation: sensor-demo-spin 1s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .sensor-demo-spin { animation: none; } }
+@media(max-width:1250px) { .sensor-demo-layout { grid-template-columns: 235px minmax(0,1fr); gap: 12px; }.sensor-demo-editor { padding: 14px; }.sensor-demo-preset { gap: 9px; padding: 18px 12px; }.sensor-demo-preset h2 { font-size: 14px; }.sensor-demo-preset-icon { width: 34px; height: 38px; }.sensor-demo-native-badge { display: none; }.sensor-presenter { padding: 12px; }.sensor-presenter-controls { gap: 4px; }.sensor-presenter-controls button { padding: 5px 6px; } }
+@media(max-width:1000px) { .sensor-demo-layout { grid-template-columns: minmax(0,1fr); }.sensor-demo-editor { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; }.sensor-demo-editor>.sensor-demo-rig { grid-row: 3/9; }.sensor-demo-editor>.sensor-demo-section-heading,.sensor-demo-editor>.sensor-demo-editor-description { grid-column: 1/-1; }.sensor-demo-editor>.sensor-demo-source,.sensor-demo-editor>.sensor-demo-error { grid-column: 1/-1; }.sensor-demo-native-badge { display: none; }.sensor-demo-empty { min-height: 350px; }.sensor-demo-availability { display: none; } }
+@media(max-width:650px) { .sensor-demo-presets { grid-template-columns: 1fr; gap: 7px; }.sensor-demo-preset { padding: 12px; }.sensor-demo-preset h2 { display: inline; margin-right: 10px; }.sensor-demo-preset small { margin-bottom: 5px; }.sensor-demo-editor { display: grid; grid-template-columns: 1fr; }.sensor-demo-editor>.sensor-demo-rig { grid-row: auto; }.sensor-demo-hero h1 { font-size: 25px; }.sensor-demo-project { align-items: start; }.sensor-demo-project>span { display: none; }.sensor-presenter-cameras,.sensor-presenter-ranging { grid-template-columns: 1fr; }.sensor-presenter-controls output { width: 100%; margin-top: 5px; }.sensor-demo-run-status { flex-wrap: wrap; }.sensor-presenter-heading h2 { font-size: 17px; }.sensor-presenter-ranging-tabs>span { width: 100%; margin-left: 0; }.sensor-presenter:fullscreen { padding: 12px; } }
+
+.sensor-presenter-observed-difference { display: flex; align-items: center; gap: 12px; padding: 8px 11px; border-radius: 6px; background: #dfeee3; color: #54775b; }.sensor-presenter-observed-difference strong { font: 12px "IBM Plex Mono", monospace; }.sensor-presenter-observed-difference span { color: #82977c; font-size: 8px; }
+
+/* Presenter controls and labels stay legible at a 1080p screen share. */
+.sensor-demo-primary, .sensor-presenter button, .sensor-presenter select { font-size: 12px; }
+.sensor-demo-preset small { font-size: 9px; }.sensor-demo-card-values { font-size: 12px; }
+.sensor-demo-value-label { font-size: 12px; }.sensor-demo-editor-description { font-size: 12px; }
+.sensor-demo-difference>span { font-size: 10px; }.sensor-demo-difference>strong { font-size: 12px; }
+.sensor-demo-preview>strong { font-size: 12px; }.sensor-demo-preview p { font-size: 11px; }
+.sensor-presenter-camera>header { font-size: 12px; }.sensor-presenter-camera>header>span:last-child { font-size: 10px; }
+.sensor-presenter-context { font-size: 10px; }.sensor-presenter-point-label { font-size: 11px; }
+.sensor-presenter-observed-difference strong { font-size: 16px; }.sensor-presenter-observed-difference span { font-size: 10px; }
+.sensor-presenter-controls output { font-size: 12px; }.sensor-presenter .native-point-compact header h3 { font-size: 12px!important; }.sensor-presenter .native-point-compact header small { font-size: 10px; }
+.sensor-presenter-heading>button { font-size: 12px; }.sensor-demo-result-origin { font-size: 10px; }
+
+/* Keep the entire presenter cockpit inside a 1920 × 1080 screen share. */
+.sensor-presenter-controls select { width: auto; min-width: 64px; flex: 0 0 auto; }
+.sensor-presenter .carla-camera-frame figcaption { display: none; }
+.sensor-presenter:fullscreen .carla-camera-frame canvas { height: 32vh; }
+.sensor-presenter:fullscreen .native-point-compact .native-point-canvas { height: 15vh; min-height: 140px; }
+.sensor-presenter:fullscreen .sensor-presenter-playback { padding-top: 7px; padding-bottom: 3px; }
+.sensor-presenter:fullscreen .sensor-presenter-details { padding-top: 5px; }
+
+.sensor-demo-presets { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+
+.sensor-driving-current { margin-left: auto; display: flex; flex-wrap: wrap; gap: 6px 16px; color: #54785d; font: 11px "IBM Plex Mono",monospace; }
+.sensor-driving-current span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.sensor-driving-current b { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 4px; background: #c9ddcf; }
+.sensor-presenter-driving .sensor-presenter-observed-difference { flex-wrap: wrap; }
+.sensor-presenter-driving:fullscreen .sensor-presenter-observed-difference { flex-wrap: nowrap; }
+.sensor-stream-motion { margin: 0 0 10px; padding: 9px 12px; border-radius: 7px; background: #dcebe2; font: 12px "IBM Plex Mono",monospace; color: #4d7561; }

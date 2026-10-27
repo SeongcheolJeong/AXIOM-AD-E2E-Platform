@@ -1,0 +1,216 @@
+import { test, expect } from "@playwright/test";
+import { readFile } from "node:fs/promises";
+import { authoredContext, liveFixture, installLive } from "./carla-live-fixture";
+
+// UI/protocol evidence authored independently of CARLA. No native simulator run.
+test("authored live trace binds fixed context, exact points, request/ACK/next physics and verified exports", async ({ page }, testInfo) => {
+  const input = await authoredContext(page.request), fixture = liveFixture(input, "complete"), errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await installLive(page, [fixture]);
+  const panel = page.getByTestId("carla-live-verified");
+  await expect(panel).toContainText("40 / 40 command ACKs");
+  await expect(panel).toContainText("41 / 41 physics frames");
+  await expect(page.getByTestId("carla-saved-context")).toContainText("no RGB input or capture");
+  await expect(page.getByTestId("carla-saved-context")).toContainText("Ground unknown");
+  await expect(panel.getByTestId("stack-control-application")).toContainText("KERNEL REQUEST");
+  await expect(panel.getByTestId("carla-application-status")).toHaveText("next frame observed");
+  await expect(panel.getByTestId("carla-live-actuation")).toContainText("-0.1");
+  await expect(panel.getByTestId("carla-live-points")).toContainText("3 full points");
+  await expect(panel.getByRole("img", { name: "Ego speed around each command interval" })).toBeVisible();
+  await expect(panel.locator('[data-series="Next physics ego speed"]')).toHaveAttribute("data-valid-points", "40");
+  await panel.getByLabel("Live command interval").fill("39");
+  await expect(panel.getByTestId("carla-live-actuation")).toContainText("140 / 7 s");
+  await expect(panel.getByTestId("carla-live-points")).toContainText("3 full points");
+  const download = page.waitForEvent("download");
+  await panel.getByRole("link", { name: "Download verified live trace JSON" }).click();
+  expect(await readFile((await (await download).path())!)).toEqual(fixture.files.get("carla-stack-trace.json"));
+  await panel.screenshot({ path: testInfo.outputPath("authored-live-inspector-desktop.png") });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBeTruthy();
+  await expect.poll(() => page.locator(".sidebar").evaluate((element) => element.getBoundingClientRect().right)).toBeLessThanOrEqual(0);
+  await page.getByRole("button", { name: "Open navigation", exact: true }).click();
+  await expect(page.locator(".sidebar")).toHaveClass(/mobile-open/);
+  await page.locator(".sidebar").getByRole("button", { name: "Run explorer", exact: true }).click();
+  await expect(page.locator(".sidebar")).not.toHaveClass(/mobile-open/);
+  await expect.poll(() => page.locator(".sidebar").evaluate((element) => element.getBoundingClientRect().right)).toBeLessThanOrEqual(0);
+  await page.getByTestId("carla-saved-context").scrollIntoViewIfNeeded();
+  await page.screenshot({ path: testInfo.outputPath("authored-live-inspector-mobile.png") });
+  expect(errors).toEqual([]);
+});
+
+test("partial authored live evidence preserves all scheduled intervals and distinguishes ACK, rejected and unavailable readback", async ({ page }) => {
+  const input = await authoredContext(page.request), partial = liveFixture(input, "partial", true), rejected = liveFixture(input, "rejected", true), readback = liveFixture(input, "readback", true);
+  Object.assign(rejected.trace.ticks[1], { application_status: "send_rejected", control_acknowledged: false, control_rpc_response: { actor_id: null, error: "Authored engine rejection" } });
+  rejected.manifest.acknowledged_commands = 1; rejected.refresh();
+  Object.assign(readback.trace.ticks[1], { application_status: "next_frame_observed", next_world_frame: 102, next_time_s: 5.1, next_ego: { x: .2, y: 0, yaw: 0, speed_mps: 3.8 }, observed_control: null });
+  readback.manifest.next_frame_observed_commands = 2; readback.manifest.observed_frames = 3; readback.refresh();
+  await installLive(page, [partial, rejected, readback]);
+  const panel = page.getByTestId("carla-live-verified"), selection = page.getByLabel("Select execution", { exact: true });
+  await expect(panel).toContainText("Partial recorded sequence");
+  await expect(panel).toContainText("1 / 40 next-frame observations");
+  await panel.getByLabel("Live command interval").fill("1");
+  await expect(panel.getByTestId("carla-application-status")).toHaveText("acknowledged without next observation");
+  await expect(panel.getByTestId("carla-live-actuation")).toContainText("Unavailable");
+  await panel.getByLabel("Live command interval").fill("39");
+  await expect(panel.getByTestId("stack-policy-mode")).not.toBeVisible();
+  await expect(panel.getByTestId("carla-live-points")).toContainText("No consumed point buffer");
+  await panel.locator("summary", { hasText: "Inspect all 40 scheduled intervals" }).click();
+  await expect(panel.locator("tbody tr")).toHaveCount(40);
+  await selection.selectOption(rejected.run.id);
+  await expect(panel).toContainText("1 / 40 command ACKs");
+  await panel.getByLabel("Live command interval").fill("1");
+  await expect(panel.getByTestId("carla-application-status")).toHaveText("send rejected");
+  await expect(panel.getByTestId("carla-live-actuation")).toContainText("Authored engine rejection");
+  await selection.selectOption(readback.run.id);
+  await expect(panel).toContainText("2 / 40 next-frame observations");
+  await panel.getByLabel("Live command interval").fill("1");
+  await expect(panel.getByTestId("carla-application-status")).toHaveText("next frame observed");
+  await expect(panel.getByTestId("carla-live-actuation")).toContainText("3.8 m/s");
+  await expect(panel.locator('[data-series="Observed control brake"]')).toHaveAttribute("data-valid-points", "1");
+});
+
+test("live evidence rejects hash/context/clock/steering/ACK and point slices; late selections never resurrect prior evidence", async ({ page }) => {
+  const input = await authoredContext(page.request), good = liveFixture(input, "good"), slow = liveFixture(input, "slow"), missing = liveFixture(input, "missing");
+  const cases = ["sha", "context", "clock", "steering", "ack", "denominator", "foreign"].map((name) => {
+    const item = liveFixture(input, name);
+    if (name === "context") item.trace.context_hash = "a".repeat(64);
+    if (name === "clock") item.trace.ticks[0].next_world_frame += 1;
+    if (name === "steering") item.trace.ticks[0].requested_carla_control.steer = .1;
+    if (name === "ack") item.trace.ticks[0].control_rpc_response = null;
+    if (name === "denominator") item.trace.ticks.pop();
+    item.refresh();
+    if (name === "sha") item.run.artifacts[0].sha256 = "f".repeat(64);
+    if (name === "foreign") item.run.artifacts[0].download_url = "https://invalid.example/private";
+    return item;
+  });
+  const points = liveFixture(input, "points"); points.trace.ticks[0].points.offset_bytes = 2e6; points.refresh();
+  await installLive(page, [good, slow, missing, ...cases, points]);
+  const panel = page.getByTestId("carla-live-verified"), selection = page.getByLabel("Select execution", { exact: true });
+  await expect(panel).toBeVisible();
+  let release = () => {};
+  const barrier = new Promise<void>((resolve) => { release = resolve; });
+  const slowArtifact = slow.run.artifacts[0];
+  await page.route(`**${slowArtifact.download_url}`, async (route) => { await barrier; await route.fulfill({ contentType: "application/json", body: slow.files.get(slowArtifact.name)! }).catch(() => {}); });
+  await selection.selectOption(slow.run.id);
+  await expect(panel).not.toBeVisible();
+  await page.route(`**/api/v1/runs/${missing.run.id}`, (route) => route.fulfill({ status: 503, json: { detail: "Authored selection lookup failed" } }));
+  await selection.selectOption(missing.run.id); release();
+  await expect(page.getByTestId("carla-live-inspector")).not.toBeVisible();
+  for (const item of cases) {
+    await selection.selectOption(item.run.id);
+    await expect(page.getByTestId("carla-live-inspector").getByRole("alert")).toContainText("Live evidence rejected");
+    await expect(panel).not.toBeVisible();
+  }
+  await selection.selectOption(points.run.id);
+  await expect(panel).toBeVisible();
+  await expect(panel.getByTestId("carla-live-points").getByRole("alert")).toContainText("Point slice lies outside");
+  await expect(panel.getByTestId("carla-live-points").locator("canvas")).toHaveCount(0);
+});
+
+test("live launch uses explicit revisions and stable whole-control idempotency after lost response; incompatible rigs fail closed", async ({ page }) => {
+  const input = await authoredContext(page.request), stack = input.context.stack_snapshot, rig = input.context.rig_snapshot;
+  const changed = await page.request.post(`/api/v1/stacks/${stack.id}/revisions`, { data: { expected_revision: 1, name: stack.name, description: stack.description, note: "Authored next revision", definition: stack.definition } });
+  expect(changed.status()).toBe(201);
+  const incompatible = await page.request.post(`/api/v1/sensor-rigs/${rig.id}/revisions`, { data: { expected_revision: 1, name: rig.name, description: rig.description, reference_frame: rig.reference_frame, coordinate_convention: rig.coordinate_convention, source_kind: rig.source_kind, source: rig.source, note: "Authored incompatible mount", sensors: [{ ...rig.sensors[0], transform: { translation_m: [0, 0, 3], rotation_xyzw: [0, 0, 0, 1] } }] } });
+  expect(incompatible.status()).toBe(201);
+  await page.route("**/api/v1/adapters", async (route) => { const adapters = await (await route.fetch()).json(); const carla = adapters.find((item: any) => item.id === "carla"); Object.assign(carla, { status: "available", version: "0.4.0", capabilities: [...carla.capabilities, "live_lidar_stack"], description: "Authored browser capability fixture; no CARLA worker connected" }); await route.fulfill({ json: adapters }); });
+  await page.goto("/#runs");
+  await page.getByRole("button", { name: "Run simulation", exact: true }).first().click();
+  const dialog = page.getByRole("dialog", { name: "Launch a simulation" });
+  await dialog.getByLabel("Execution adapter", { exact: true }).selectOption("carla");
+  await expect(dialog.getByLabel("CARLA controller mode")).toHaveValue("legacy");
+  await dialog.getByLabel("Scenario", { exact: true }).selectOption(input.scenario.id);
+  await dialog.getByLabel("CARLA controller mode").selectOption("stack");
+  await dialog.getByLabel("Live CARLA stack", { exact: true }).selectOption(stack.id);
+  await expect(dialog.getByLabel("Live CARLA stack revision", { exact: true })).toHaveValue("");
+  await dialog.getByLabel("Live CARLA stack revision", { exact: true }).selectOption("1");
+  await dialog.getByLabel("Live CARLA sensor rig", { exact: true }).selectOption(rig.id);
+  await dialog.getByLabel("Live CARLA rig revision", { exact: true }).selectOption("2");
+  await dialog.getByLabel("Live CARLA LiDAR sensor", { exact: true }).selectOption("roof");
+  await expect(dialog.getByRole("button", { name: "Run simulation", exact: true })).toBeDisabled();
+  await dialog.getByLabel("Live CARLA rig revision", { exact: true }).selectOption("1");
+  await dialog.getByLabel("Live CARLA LiDAR sensor", { exact: true }).selectOption("roof");
+  await expect(dialog.getByTestId("carla-pinned-stack")).toContainText("fixed r1");
+  await expect(dialog.getByRole("button", { name: "Run simulation", exact: true })).toBeEnabled();
+  const requests: { body: any; key: string | undefined }[] = [];
+  await page.route("**/api/v1/jobs", async (route) => { if (route.request().method() !== "POST") return route.continue(); requests.push({ body: route.request().postDataJSON(), key: route.request().headers()["idempotency-key"] }); await route.abort("failed"); });
+  await dialog.getByRole("button", { name: "Run simulation", exact: true }).click();
+  await expect(dialog.getByRole("button", { name: "Retry submission" })).toBeEnabled();
+  await dialog.getByRole("button", { name: "Retry submission" }).click();
+  await expect.poll(() => requests.length).toBe(2);
+  expect(requests[0]).toEqual(requests[1]);
+  expect(requests[0].body.control).toEqual({ mode: "stack", stack_id: stack.id, stack_revision: 1, rig_id: rig.id, rig_revision: 1, lidar_sensor_key: "roof", sensor_profile_id: "carla-lidar-ego/1" });
+  await expect(dialog.getByLabel("Live CARLA stack revision", { exact: true })).toHaveValue("1");
+  await dialog.getByLabel("CARLA controller mode").selectOption("legacy");
+  await dialog.getByRole("button", { name: "Run simulation", exact: true }).click();
+  await expect.poll(() => requests.length).toBe(3);
+  expect(requests[2].body.control).toBeUndefined(); expect(requests[2].key).not.toBe(requests[0].key);
+});
+
+test("actual native bridge and shared kernel over a mocked world keep 80 commands, 81 observations and original point bytes inspectable", async ({ page }, testInfo) => {
+  const { execFileSync } = await import("node:child_process"), path = await import("node:path"), { fileURLToPath } = await import("node:url");
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+  const directory = testInfo.outputPath("native-mocked-world");
+  execFileSync(process.env.AXIOM_TEST_PYTHON ?? path.join(root, ".venv/bin/python"), [path.join(root, "e2e/fixtures/native_live_fixture.py"), directory], { cwd: root, timeout: 30000 });
+  const run = JSON.parse(await readFile(path.join(directory, "browser-run.json"), "utf8"));
+  const files = new Map<string, Buffer>();
+  for (const artifact of run.artifacts) files.set(artifact.name, await readFile(path.join(directory, artifact.name)));
+  await installLive(page, [{ run, files } as any]);
+  const panel = page.getByTestId("carla-live-verified");
+  await expect(panel).toContainText("80 / 80 command ACKs");
+  await expect(panel).toContainText("81 / 81 retained LiDAR + ego observations");
+  await expect(panel.getByTestId("carla-live-points")).toContainText("12 full points");
+  await expect(panel.getByTestId("stack-policy-mode")).toHaveText("pilot cruise");
+  await panel.getByLabel("Live command interval").fill("79");
+  await expect(panel.getByTestId("carla-application-status")).toHaveText("next frame observed");
+  await expect(panel.getByTestId("carla-live-points")).toContainText("12 full points");
+  const download = page.waitForEvent("download");
+  await panel.getByRole("link", { name: "Download verified live manifest" }).click();
+  expect(await readFile((await (await download).path())!)).toEqual(files.get("carla-stack-manifest.json"));
+});
+
+test("switching complete native-shaped runs retains exactly one live and startup inspector without duplicate React keys", async ({ page }, testInfo) => {
+  const { execFileSync } = await import("node:child_process"), path = await import("node:path"), { fileURLToPath } = await import("node:url");
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+  const fixtures = [];
+  for (const variant of ["unknown", "known"]) {
+    const directory = testInfo.outputPath(`native-${variant}`);
+    execFileSync(process.env.AXIOM_TEST_PYTHON ?? path.join(root, ".venv/bin/python"), [path.join(root, "e2e/fixtures/native_live_fixture.py"), directory, variant], { cwd: root, timeout: 30000 });
+    const run = JSON.parse(await readFile(path.join(directory, "browser-run.json"), "utf8"));
+    const files = new Map<string, Buffer>();
+    for (const artifact of run.artifacts) files.set(artifact.name, await readFile(path.join(directory, artifact.name)));
+    fixtures.push({ run, files });
+  }
+  const reactKeyErrors: string[] = [], pageErrors: string[] = [];
+  page.on("console", (message) => { if (/same key|unique.*key|duplicate.*key/i.test(message.text())) reactKeyErrors.push(message.text()); });
+  page.on("pageerror", (error) => pageErrors.push(error.message));
+  await installLive(page, fixtures as any);
+  const heading = page.getByRole("heading", { name: "Live CARLA control evidence", exact: true });
+  const panel = page.getByTestId("carla-live-verified");
+  await expect(panel.getByTestId("stack-policy-mode")).toHaveText("unknown stop");
+  await expect(page.getByTestId("carla-startup-verified")).toHaveCount(1);
+  for (const index of [1, 0, 1, 0]) {
+    await page.getByLabel("Select execution", { exact: true }).selectOption(fixtures[index].run.id);
+    await expect(heading).toHaveCount(1);
+    await expect(page.getByLabel("Live command interval")).toHaveCount(1);
+    await expect(page.getByTestId("carla-startup-inspector")).toHaveCount(1);
+    await expect(panel.getByTestId("stack-policy-mode")).toHaveText(index === 0 ? "unknown stop" : "pilot cruise");
+    await expect(page.getByTestId("carla-saved-context")).toHaveCount(1);
+    await expect(page.getByTestId("carla-saved-context")).toContainText(fixtures[index].run.execution_context.context_hash);
+  }
+  let release = () => {};
+  const barrier = new Promise<void>((resolve) => { release = resolve; });
+  await page.route(`**/api/v1/runs/${fixtures[1].run.id}`, async (route) => { await barrier; await route.fulfill({ json: fixtures[1].run }).catch(() => {}); });
+  await page.getByLabel("Select execution", { exact: true }).selectOption(fixtures[1].run.id);
+  await expect(heading).toHaveCount(0);
+  await expect(page.getByTestId("carla-startup-inspector")).toHaveCount(0);
+  await page.route(`**/api/v1/runs/${fixtures[0].run.id}`, (route) => route.fulfill({ status: 503, json: { detail: "Authored run lookup failure" } }));
+  await page.getByLabel("Select execution", { exact: true }).selectOption(fixtures[0].run.id);
+  release();
+  await expect(page.getByText("Execution unavailable", { exact: true })).toBeVisible();
+  await expect(heading).toHaveCount(0);
+  await expect(page.getByLabel("Live command interval")).toHaveCount(0);
+  await expect(page.getByTestId("carla-startup-inspector")).toHaveCount(0);
+  expect(reactKeyErrors).toEqual([]);
+  expect(pageErrors).toEqual([]);
+});

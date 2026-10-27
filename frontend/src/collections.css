@@ -1,0 +1,17 @@
+.collections-page { min-width: 0; }
+.collections-page small { display: block; overflow-wrap: anywhere; font-size: 11px; opacity: .8; margin-top: 5px; }
+.collections-page .case-section { margin-bottom: 18px; }
+.collections-page .collection-library .case-card { margin-bottom: 8px; }
+.collection-sources { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr)); gap: 16px; margin: 18px 0; }
+.collection-sources fieldset { border: 1px solid var(--border, #d8e0e8); border-radius: 12px; padding: 16px; min-width: 0; display: grid; gap: 12px; }
+.collection-sources legend { font-weight: 700; padding: 0 8px; }
+.collection-sources label { display: grid; gap: 6px; font-size: 12px; }
+.collection-sources input, .collection-sources select, .collection-sources textarea { width: 100%; min-width: 0; }
+.collections-page .case-table-scroll { margin: 16px 0; max-width: 100%; }
+.collections-page table { min-width: 800px; }
+.collections-page td { vertical-align: top; max-width: 300px; overflow-wrap: anywhere; }
+.collection-curation td select { width: 190px; }
+.collection-curation td input:not([type=checkbox]) { width: 190px; }
+.collection-publication { padding: 16px 0; border-bottom: 1px solid var(--border, #d8e0e8); }
+.collections-page .case-toolbar { gap: 12px; flex-wrap: wrap; }
+@media (max-width: 640px) { .collections-page .condition-stats { grid-template-columns: 1fr 1fr; } .collections-page .case-toolbar label { width: 100%; } }

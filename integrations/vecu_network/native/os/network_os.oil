@@ -1,0 +1,58 @@
+OIL_VERSION = "2.5";
+
+IMPLEMENTATION trampoline {
+  TASK { UINT32 STACKSIZE = 49152; };
+  ISR { UINT32 STACKSIZE = 32768; };
+};
+
+CPU network_os {
+  OS config {
+    STATUS = EXTENDED;
+    ERRORHOOK = TRUE;
+    BUILD = TRUE {
+      APP_SRC = "network_os.c";
+      TRAMPOLINE_BASE_PATH = "@TRAMPOLINE@";
+      CFLAGS = "-O0 -g -Wall -Wextra -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=0";
+      APP_NAME = "axiom-network-os";
+      LINKER = "gcc";
+      SYSTEM = PYTHON;
+    };
+  };
+  APPMODE stdAppmode {};
+  EVENT ControlEvent { MASK = AUTO; };
+  ALARM BswAlarm {
+    COUNTER = SystemCounter;
+    ACTION = ACTIVATETASK { TASK = BswTask; };
+    AUTOSTART = FALSE;
+  };
+  ALARM ControlAlarm {
+    COUNTER = SystemCounter;
+    ACTION = ACTIVATETASK { TASK = ControlDispatch; };
+    AUTOSTART = FALSE;
+  };
+  TASK ControlTask {
+    PRIORITY = 4;
+    AUTOSTART = TRUE { APPMODE = stdAppmode; };
+    ACTIVATION = 1;
+    SCHEDULE = FULL;
+    EVENT = ControlEvent;
+  };
+  TASK BswTask {
+    PRIORITY = 3;
+    AUTOSTART = FALSE;
+    ACTIVATION = 1;
+    SCHEDULE = FULL;
+  };
+  TASK ControlDispatch {
+    PRIORITY = 2;
+    AUTOSTART = FALSE;
+    ACTIVATION = 1;
+    SCHEDULE = FULL;
+  };
+  TASK Driver {
+    PRIORITY = 1;
+    AUTOSTART = TRUE { APPMODE = stdAppmode; };
+    ACTIVATION = 1;
+    SCHEDULE = FULL;
+  };
+};

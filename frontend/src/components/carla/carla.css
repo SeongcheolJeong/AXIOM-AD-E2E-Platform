@@ -1,0 +1,357 @@
+.carla-control-fields {
+  margin: 20px 0;
+  padding: 16px;
+  border: 1px solid var(--border, #d6e3d4);
+  border-radius: 12px;
+  min-width: 0;
+}
+.carla-control-fields legend {
+  padding: 0 6px;
+  font-size: 13px;
+  font-weight: 650;
+}
+.carla-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.carla-form-grid label {
+  min-width: 0;
+}
+.carla-scope-notice {
+  background: rgba(89, 130, 94, 0.08);
+  padding: 13px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.carla-scope-notice strong {
+  font-size: 11px;
+  letter-spacing: 0.07em;
+}
+.carla-scope-notice p,
+.carla-subtle,
+.carla-pinned-definition p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted, #66765f);
+}
+.carla-pinned-definition {
+  display: grid;
+  gap: 5px;
+  margin: 14px 0;
+  padding-left: 11px;
+  border-left: 2px solid #8daf92;
+  font-size: 12px;
+  min-width: 0;
+}
+.carla-pinned-definition code {
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+.carla-pinned-definition p {
+  margin: 2px 0;
+}
+@media (max-width: 600px) {
+  .carla-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.carla-live-inspector {
+  margin: 22px 0;
+  padding: 24px;
+  min-width: 0;
+}
+.carla-live-heading,
+.carla-live-downloads {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.carla-live-heading h2 {
+  margin: 7px 0;
+  font-size: 21px;
+}
+.carla-live-inspector details {
+  margin: 15px 0;
+  min-width: 0;
+}
+.carla-live-inspector summary,
+.carla-saved-context summary {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 650;
+  padding: 6px 0;
+}
+.carla-live-inspector pre,
+.carla-saved-context pre {
+  max-height: 400px;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 10px;
+  line-height: 1.5;
+  background: #f2f5ef;
+  padding: 12px;
+  border-radius: 7px;
+}
+.carla-live-inspector code,
+.carla-saved-context code {
+  overflow-wrap: anywhere;
+  font-size: 10px;
+}
+.carla-context-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.carla-context-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  padding: 12px;
+  background: #f8faf6;
+  border-radius: 8px;
+}
+.carla-context-grid span,
+.carla-context-hash span {
+  font-size: 11px;
+  color: #687564;
+}
+.carla-context-grid strong {
+  font-size: 12px;
+}
+.carla-context-hash {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 18px;
+}
+.carla-live-counts {
+  display: flex;
+  gap: 10px 18px;
+  flex-wrap: wrap;
+  padding: 15px;
+  border: 1px solid #dce4d6;
+  border-radius: 9px;
+  font-size: 12px;
+  background: #f7f9f3;
+}
+.carla-live-counts strong {
+  width: 100%;
+  font-size: 15px;
+}
+.carla-live-signals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+.carla-live-signals figure {
+  border: 1px solid #e1e6da;
+  border-radius: 10px;
+  margin: 0;
+  padding: 13px;
+  min-width: 0;
+}
+.carla-live-signals figcaption {
+  font-size: 12px;
+  font-weight: 650;
+  margin-bottom: 8px;
+}
+.carla-live-signals svg {
+  width: 100%;
+  display: block;
+}
+.carla-live-signals svg text {
+  font: 10px sans-serif;
+  fill: #6e7868;
+}
+.carla-signal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  font-size: 10px;
+  color: #677461;
+}
+.carla-signal-legend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.carla-signal-legend i {
+  width: 12px;
+  height: 3px;
+}
+.carla-tick-selection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0 12px;
+}
+.carla-tick-selection label {
+  flex: 1;
+  font-size: 12px;
+}
+.carla-tick-selection input {
+  width: 100%;
+  margin-top: 9px;
+}
+.carla-tick-identity {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 11px;
+  margin-bottom: 15px;
+}
+.carla-actuation {
+  border: 1px solid #d4dfd0;
+  border-radius: 10px;
+  padding: 18px;
+  margin: 18px 0;
+  background: #fbfcf8;
+}
+.carla-actuation-title {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.carla-actuation h3,
+.carla-live-points h3 {
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+.carla-actuation-title > strong {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #536951;
+}
+.carla-actuation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.carla-actuation h4 {
+  margin: 8px 0 12px;
+  font-size: 12px;
+}
+.carla-actuation dl {
+  margin: 0;
+  font-size: 11px;
+}
+.carla-actuation dl div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 7px;
+  padding: 5px 0;
+}
+.carla-actuation dt {
+  color: #73806b;
+}
+.carla-actuation dd {
+  margin: 0;
+  font-family: "IBM Plex Mono", monospace;
+}
+.carla-live-points {
+  min-width: 0;
+  margin-top: 20px;
+}
+.carla-live-points > code {
+  display: block;
+  margin: 7px 0 14px;
+}
+.carla-table-scroll {
+  overflow-x: auto;
+}
+.carla-table-scroll table {
+  min-width: 780px;
+}
+.carla-live-downloads {
+  justify-content: flex-start;
+  margin-top: 22px;
+}
+.carla-live-downloads > span {
+  color: #6d7967;
+  font-size: 11px;
+}
+@media (max-width: 900px) {
+  .carla-context-grid,
+  .carla-actuation-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .carla-live-signals {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .carla-live-inspector {
+    padding: 14px;
+  }
+  .carla-live-downloads .button {
+    width: 100%;
+    justify-content: center;
+    font-size: 11px;
+  }
+  .carla-live-counts {
+    flex-direction: column;
+  }
+}
+.modal.carla-launch-modal {
+  width: min(780px, calc(100vw - 30px));
+}
+
+.sensor-configurations-page section {
+  margin-block: 24px;
+}
+.sensor-library-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.sensor-configurations-page pre {
+  max-height: 360px;
+  overflow: auto;
+  padding: 16px;
+  background: #f7f9fa;
+  font-size: 12px;
+}
+.sensor-configurations-page code {
+  overflow-wrap: anywhere;
+}
+
+.sensor-readback-table {
+  overflow: auto;
+  margin-block: 18px;
+}
+.sensor-readback-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.sensor-readback-table caption {
+  text-align: left;
+  padding: 10px 0;
+  font-weight: 600;
+}
+.sensor-readback-table th,
+.sensor-readback-table td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #d8ded8;
+}
+.carla-saved-context pre,
+.carla-pinned-definition pre {
+  max-height: 380px;
+  max-width: 100%;
+  overflow: auto;
+  font-size: 12px;
+}

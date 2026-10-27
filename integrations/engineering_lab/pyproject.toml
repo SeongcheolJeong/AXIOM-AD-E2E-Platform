@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "axiom-engineering-lab"
+version = "0.1.0"
+description = "Local user RTL and ngspice engineering experiments"
+requires-python = ">=3.11"
+dependencies = ["axiom-rtl-lab==0.1.0"]
+[project.entry-points."ade2e.experiment_handlers"]
+engineering_lab = "axiom_engineering:EngineeringHandler"
+[tool.setuptools.packages.find]
+where = ["src"]

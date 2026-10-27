@@ -1,0 +1,1093 @@
+.perception-page {
+  min-width: 0;
+}
+.perception-page h2,
+.perception-page h3 {
+  margin: 0;
+  color: #253a39;
+}
+.perception-page h2 {
+  font-size: 21px;
+  letter-spacing: -0.5px;
+}
+.perception-page h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+.perception-page p {
+  font-size: 12px;
+  line-height: 1.65;
+}
+.perception-topbar,
+.perception-section-toolbar,
+.perception-experiment-toolbar,
+.perception-small-heading,
+.perception-frame-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.perception-topbar {
+  margin-bottom: 22px;
+}
+.perception-tabs {
+  display: flex;
+  border: 1px solid #d7dfd3;
+  padding: 4px;
+  border-radius: 10px;
+  background: #eaf0e5;
+  gap: 3px;
+}
+.perception-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #586f63;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.perception-tabs button[aria-selected="true"] {
+  color: #1d5d4b;
+  background: #fffef8;
+  box-shadow: 0 1px 5px #213f2a12;
+}
+.perception-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.perception-section-toolbar {
+  margin-bottom: 18px;
+}
+.perception-section-toolbar p {
+  margin: 7px 0 0;
+  color: #627065;
+}
+.perception-models,
+.perception-comparisons,
+.perception-inspector {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  min-width: 0;
+}
+.perception-comparisons {
+  gap: 12px;
+}
+.perception-comparisons > .perception-section-toolbar {
+  margin-bottom: 0;
+}
+.perception-section-toolbar > div {
+  min-width: 0;
+}
+.perception-section-toolbar h2 {
+  overflow-wrap: anywhere;
+}
+.perception-comparison-scope {
+  color: #5c7155;
+  font-size: 12px;
+}
+.perception-comparison-scope summary {
+  cursor: pointer;
+}
+.perception-comparison-scope p {
+  margin: 8px 0 0;
+}
+.perception-comparisons > [data-testid="prediction-comparison-detail"] {
+  min-width: 0;
+}
+.perception-page .panel {
+  min-width: 0;
+}
+.perception-runtime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 12px;
+}
+.perception-runtime {
+  padding: 17px 20px;
+}
+.perception-runtime > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+}
+.perception-runtime > div > svg {
+  color: #488473;
+}
+.perception-runtime p {
+  margin: 8px 0;
+  color: #5f756a;
+}
+.perception-runtime small {
+  font:
+    11px "IBM Plex Mono",
+    monospace;
+  color: #596d61;
+  overflow-wrap: anywhere;
+}
+.perception-runtime details {
+  border-top: 1px solid #e2e7da;
+  margin-top: 12px;
+  padding-top: 10px;
+}
+.perception-runtime summary {
+  color: #5b7165;
+  font-size: 12px;
+  cursor: pointer;
+}
+.perception-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9eee6;
+  color: #607162;
+  border: 1px solid #d6dfd1;
+  border-radius: 5px;
+  padding: 4px 7px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.perception-pill.ready {
+  background: #e0f1e5;
+  border-color: #c2dfcc;
+  color: #287357;
+}
+.perception-pill.warning {
+  background: #fff1d9;
+  border-color: #ead8b6;
+  color: #8a622b;
+}
+.perception-pill.failure {
+  background: #ffebe5;
+  border-color: #efd2c8;
+  color: #9a4637;
+}
+.perception-model-detail,
+.perception-job-header,
+.perception-job-evidence,
+.perception-comparison-header,
+.perception-comparison-report,
+.perception-comparison-footer {
+  padding: 22px;
+}
+.perception-model-detail > .perception-form-grid {
+  border-bottom: 1px solid #e0e6d8;
+  padding-bottom: 18px;
+  margin-bottom: 20px;
+}
+.perception-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #6e8269;
+  font:
+    11px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 1px;
+}
+.perception-scope {
+  background: #edf2e7;
+  border-left: 3px solid #8da78a;
+  color: #526c55;
+  padding: 11px 14px;
+  border-radius: 0 5px 5px 0;
+  margin: 0 0 18px;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.perception-muted {
+  color: #627369;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.perception-definition-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 0.7fr 0.7fr;
+  gap: 16px;
+  padding: 17px 0;
+  border-bottom: 1px solid #e1e7db;
+  margin-bottom: 12px;
+}
+.perception-definition-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+.perception-definition-grid span {
+  color: #6a7c6d;
+  font-size: 11px;
+}
+.perception-definition-grid strong {
+  font-size: 13px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.perception-hash {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #697b6c;
+  font-size: 11px;
+  margin: 9px 0;
+  min-width: 0;
+}
+.perception-hash code {
+  color: #506354;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+.perception-details {
+  border-top: 1px solid #dfe6d7;
+  margin-top: 16px;
+  padding-top: 14px;
+}
+.perception-details summary {
+  cursor: pointer;
+  color: #506953;
+  font-size: 12px;
+  font-weight: 600;
+}
+.perception-details summary svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7px;
+}
+.perception-details > p {
+  color: #637365;
+}
+.perception-page pre,
+.perception-form pre {
+  margin-top: 12px;
+  max-height: 400px;
+  overflow: auto;
+  border: 1px solid #dae3d2;
+  border-radius: 7px;
+  background: #f0f4e9;
+  padding: 13px;
+  color: #465e4e;
+  font:
+    11px/1.7 "IBM Plex Mono",
+    monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.perception-class-map {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 14px 0;
+  max-height: 220px;
+  overflow: auto;
+}
+.perception-class-map span {
+  display: inline-flex;
+  gap: 7px;
+  border: 1px solid #dce4d4;
+  border-radius: 5px;
+  background: #f3f5ee;
+  padding: 6px 9px;
+  font-size: 12px;
+}
+.perception-class-map b {
+  color: #789270;
+  font:
+    11px "IBM Plex Mono",
+    monospace;
+}
+.perception-evidence-list {
+  display: grid;
+  gap: 0;
+}
+.perception-evidence-list > div {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  border-bottom: 1px solid #e5e9de;
+  padding: 10px 0;
+  gap: 14px;
+}
+.perception-evidence-list dt {
+  color: #6c7d6f;
+  font-size: 11px;
+}
+.perception-evidence-list dd {
+  margin: 0;
+  color: #465d4d;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.perception-evidence-list code {
+  font-size: 11px;
+}
+.perception-modal {
+  width: min(860px, calc(100vw - 32px));
+  max-width: none;
+}
+.perception-form {
+  padding: 22px 26px 0;
+  min-width: 0;
+}
+.perception-form fieldset {
+  display: grid;
+  gap: 18px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.perception-form label,
+.perception-page label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #53684f;
+  min-width: 0;
+}
+.perception-form input:not([type="checkbox"]),
+.perception-form select,
+.perception-form textarea,
+.perception-page select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #d4dece;
+  border-radius: 7px;
+  padding: 10px 11px;
+  background: #fffef8;
+  color: #30473b;
+  font:
+    12px "DM Sans",
+    sans-serif;
+  outline: none;
+}
+.perception-form input:focus,
+.perception-form select:focus,
+.perception-form textarea:focus,
+.perception-page select:focus {
+  border-color: #649681;
+  box-shadow: 0 0 0 3px #82b79a24;
+}
+.perception-form textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+.perception-form input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #2d7860;
+}
+.perception-form small {
+  font-size: 11px;
+  color: #73806b;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.perception-form-grid {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.perception-form-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.perception-form-grid.four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.perception-upload {
+  background: #f0f5e9;
+  border: 1px dashed #bacaac;
+  border-radius: 8px;
+  padding: 16px;
+}
+.perception-upload svg {
+  color: #699367;
+}
+.perception-upload input[type="file"] {
+  padding: 8px;
+  background: #fffdf5;
+  font-size: 12px;
+}
+.perception-upload-progress {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  color: #427253;
+  font-size: 12px;
+  align-items: center;
+}
+.perception-upload-progress progress {
+  accent-color: #54866a;
+}
+.perception-provenance-form {
+  border: 1px solid #dce4d1;
+  border-radius: 8px;
+  padding: 14px;
+}
+.perception-provenance-form summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  color: #5b7255;
+}
+.perception-provenance-form[open] summary {
+  margin-bottom: 15px;
+}
+.perception-provenance-form > label {
+  margin-top: 14px;
+}
+.perception-provenance-form p {
+  color: #738069;
+  font-size: 11px;
+  line-height: 1.65;
+}
+.perception-form footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 19px 0;
+  margin-top: 20px;
+  border-top: 1px solid #dce4d4;
+}
+.perception-small-heading {
+  font-size: 11px;
+  color: #7a8978;
+  flex-wrap: wrap;
+}
+.perception-small-heading strong {
+  color: #405a4b;
+  font-size: 12px;
+}
+.perception-small-heading .sensor-text-button {
+  display: flex;
+  gap: 6px;
+}
+.perception-sample-picker {
+  border: 1px solid #dde4d2;
+  border-radius: 8px;
+  background: #fafbf6;
+  padding: 10px;
+}
+.perception-sample-picker > .table-scroll {
+  max-height: 235px;
+  overflow: auto;
+}
+.perception-sample-picker .perception-actions {
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.perception-page .data-table th,
+.perception-form .data-table th {
+  font-size: 11px;
+}
+.perception-page .data-table td,
+.perception-form .data-table td {
+  font-size: 12px;
+  padding: 10px 12px;
+}
+.perception-stale {
+  padding: 12px 15px;
+  background: #fcf0d7;
+  border: 1px solid #e8d5ac;
+  border-radius: 8px;
+  color: #8b642e;
+  font-size: 12px;
+  line-height: 1.65;
+  margin-bottom: 15px;
+}
+.perception-stale button {
+  margin-left: 10px;
+}
+.perception-experiment-toolbar {
+  margin-bottom: 16px;
+}
+.perception-experiment-toolbar label {
+  max-width: 240px;
+  width: 100%;
+}
+.perception-experiment-toolbar p {
+  color: #7b8976;
+}
+.perception-experiment-grid {
+  display: grid;
+  grid-template-columns: 218px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+.perception-job-list {
+  padding: 8px;
+  max-height: 720px;
+  overflow: auto;
+}
+.perception-job-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 14px 10px;
+  background: transparent;
+  color: #607463;
+  margin-bottom: 5px;
+}
+.perception-job-card[aria-pressed="true"] {
+  border-color: #c5d6bd;
+  background: #edf3e7;
+}
+.perception-job-card:hover {
+  background: #f0f4e9;
+}
+.perception-job-card > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  align-items: center;
+  width: 100%;
+}
+.perception-job-card > strong {
+  font-size: 13px;
+  color: #304d3d;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.perception-job-card > span,
+.perception-job-card > small,
+.perception-job-card > time {
+  font-size: 11px;
+  line-height: 1.5;
+}
+.perception-job-card > span {
+  font-size: 12px;
+}
+.perception-job-card > time {
+  color: #81907b;
+}
+.perception-job-card .job-status {
+  font-size: 10px;
+}
+.perception-job-pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 2px 2px;
+  border-top: 1px solid #e1e8d9;
+}
+.perception-job-pagination .button {
+  padding: 7px 8px;
+}
+.perception-list-empty {
+  padding: 26px 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 12px;
+  color: #6a8164;
+  font-size: 13px;
+}
+.perception-list-empty p {
+  color: #7d8d74;
+  margin: 0;
+}
+.perception-experiment-main {
+  min-width: 0;
+}
+.perception-job-header > .perception-small-heading {
+  margin-bottom: 12px;
+}
+.perception-job-header .perception-section-toolbar {
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-bottom: 12px;
+}
+.perception-job-header .perception-section-toolbar h2 {
+  font-size: 23px;
+}
+.perception-job-header .perception-actions .button {
+  font-size: 12px;
+}
+.perception-dot {
+  margin: 0 7px;
+  color: #a0b093;
+}
+.perception-counts {
+  display: grid;
+  grid-template-columns: 1.3fr repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  border-top: 1px solid #e0e7d6;
+  margin-top: 16px;
+  padding-top: 16px;
+}
+.perception-counts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.perception-counts span {
+  font-size: 11px;
+  color: #718267;
+}
+.perception-counts strong {
+  font-family: "Manrope", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #355b43;
+}
+.perception-counts strong small {
+  font-size: 15px;
+  color: #93a284;
+}
+.perception-frame-workspace {
+  overflow: hidden;
+}
+.perception-frame-list {
+  display: flex;
+  gap: 5px;
+  padding: 11px;
+  background: #f0f4e9;
+  overflow-x: auto;
+  border-bottom: 1px solid #dce5d2;
+}
+.perception-frame-list button {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  text-align: left;
+  gap: 5px 10px;
+  min-width: 110px;
+  padding: 9px 12px;
+  border: 1px solid #d4dfc9;
+  border-radius: 6px;
+  background: #fbfcf6;
+  color: #65795e;
+  font-size: 12px;
+}
+.perception-frame-list button[aria-pressed="true"] {
+  background: #e0eddb;
+  border-color: #a9c49b;
+  color: #2e5c37;
+}
+.perception-frame-list small {
+  grid-column: 1 / -1;
+  font-size: 11px;
+}
+.perception-frame-list i {
+  width: 7px;
+  height: 7px;
+  margin-top: 5px;
+  background: #a8b49b;
+  border-radius: 50%;
+}
+.perception-frame-list i.running {
+  background: #bd944a;
+}
+.perception-frame-list i.completed {
+  background: #598d62;
+}
+.perception-frame-list i.failed {
+  background: #ce785f;
+}
+.perception-frame-result {
+  min-width: 0;
+}
+.perception-frame-heading {
+  padding: 14px 17px;
+  font-size: 13px;
+  color: #476347;
+}
+.prediction-image-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 14px;
+  background: #1c3337;
+  color: #b7d0c4;
+  font-size: 11px;
+}
+.prediction-image-toolbar > div {
+  display: flex;
+  gap: 4px;
+}
+.prediction-image-toolbar button {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: transparent;
+  color: #b5cebd;
+  padding: 5px 7px;
+  font-size: 11px;
+}
+.prediction-image-toolbar button[aria-pressed="true"] {
+  background: #36534d;
+  color: #daf5df;
+  border-color: #547266;
+}
+.prediction-image-stage {
+  height: 350px;
+  overflow: auto;
+  background: #12252a;
+}
+.prediction-image-stage.fit svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.prediction-image-stage.pixels svg {
+  display: block;
+  max-width: none;
+}
+.prediction-image-stage > p {
+  padding: 40px 22px;
+  color: #c3d7ca;
+  text-align: center;
+  margin: 0;
+}
+.prediction-detections {
+  padding: 14px 16px;
+}
+.prediction-detections > .table-scroll {
+  max-height: 260px;
+  overflow: auto;
+  margin-top: 10px;
+}
+.prediction-detections .data-table {
+  min-width: 350px;
+}
+.perception-detection-button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  border: none;
+  color: #44654c;
+  padding: 0;
+  font-size: 12px;
+  text-align: left;
+}
+.perception-detection-button i {
+  height: 8px;
+  width: 8px;
+  border: 1px solid #324a3b33;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.perception-detection-button small {
+  color: #819579;
+  font-size: 11px;
+}
+.perception-detection-button[aria-pressed="true"] {
+  font-weight: 700;
+}
+.perception-frame-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-height: 260px;
+  padding: 35px 24px;
+  background: #f0f4e8;
+  color: #74866a;
+  text-align: center;
+  font-size: 13px;
+}
+.perception-frame-empty > p {
+  max-width: 420px;
+  margin: 0;
+}
+.perception-frame-empty.failure {
+  background: #fff3e9;
+  color: #a56d44;
+}
+.perception-image-provenance {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 15px;
+  padding: 12px 16px;
+  border-top: 1px solid #e0e7d7;
+  color: #6e8266;
+  font-size: 11px;
+}
+.perception-image-provenance code {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.perception-frame-result > .perception-hash {
+  padding: 0 16px;
+}
+.perception-frame-result > .perception-details {
+  padding: 13px 16px 16px;
+}
+.perception-events {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+.perception-events li {
+  display: grid;
+  grid-template-columns: 135px 155px minmax(0, 1fr);
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid #e2e8d9;
+  font-size: 12px;
+  color: #6c8062;
+}
+.perception-events time {
+  font-size: 11px;
+}
+.perception-events strong {
+  font-weight: 600;
+  color: #506c48;
+}
+.perception-select-field {
+  max-width: 640px;
+  margin-bottom: 18px;
+}
+.perception-comparison-identities {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin: 18px 0;
+}
+.perception-comparison-identities > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background: #f1f5e9;
+  border-radius: 7px;
+  padding: 12px;
+  min-width: 0;
+}
+.perception-comparison-identities span {
+  font-size: 11px;
+  color: #738b64;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+.perception-comparison-identities code {
+  font-size: 12px;
+  color: #4c6745;
+  overflow-wrap: anywhere;
+}
+.perception-comparison-identities small {
+  color: #849775;
+  font:
+    11px "IBM Plex Mono",
+    monospace;
+  overflow-wrap: anywhere;
+}
+.perception-comparison-counts {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  border: 1px solid #dce6cf;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.perception-comparison-counts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+  border-right: 1px solid #e0e8d6;
+}
+.perception-comparison-counts > div:last-child {
+  border: 0;
+}
+.perception-comparison-counts strong {
+  font:
+    600 22px "Manrope",
+    sans-serif;
+  color: #4c7649;
+}
+.perception-comparison-counts span {
+  font-size: 11px;
+  color: #748c67;
+}
+.perception-value {
+  max-width: 270px;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+.perception-comparison-report {
+  margin: 18px 0;
+}
+.perception-comparison-report > .perception-section-toolbar {
+  align-items: flex-end;
+}
+.perception-comparison-report label {
+  max-width: 430px;
+  width: 100%;
+}
+.perception-comparison-outcome {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #f0f5e7;
+  padding: 12px;
+  border-radius: 7px;
+  font-size: 12px;
+  color: #56734c;
+  margin-bottom: 18px;
+}
+.perception-prediction-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.perception-prediction-side {
+  min-width: 0;
+  border: 1px solid #dce6cf;
+  border-radius: 9px;
+  overflow: hidden;
+}
+.perception-prediction-side > h3 {
+  padding: 14px;
+  background: #e9f0df;
+  color: #58754b;
+  font-size: 13px;
+}
+.perception-prediction-side:nth-child(2) > h3 {
+  background: #ebe8f4;
+  color: #706481;
+}
+.perception-prediction-side .prediction-image-stage {
+  height: 245px;
+}
+.perception-prediction-side .perception-small-heading {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+}
+.perception-comparison-footer p {
+  color: #75896a;
+  margin-bottom: 0;
+  font-size: 11px;
+}
+@media (max-width: 1200px) {
+  .perception-experiment-grid {
+    grid-template-columns: 195px minmax(0, 1fr);
+  }
+  .perception-section-toolbar {
+    flex-wrap: wrap;
+  }
+  .perception-definition-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .perception-counts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .perception-events li {
+    grid-template-columns: 125px minmax(0, 1fr);
+  }
+  .perception-events li span {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 1000px) {
+  .perception-experiment-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .perception-job-list {
+    max-height: 250px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+  }
+  .perception-job-pagination {
+    grid-column: 1 / -1;
+  }
+  .perception-topbar {
+    flex-wrap: wrap;
+  }
+  .perception-prediction-pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .perception-comparison-counts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .perception-form-grid.four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .perception-topbar,
+  .perception-experiment-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .perception-tabs {
+    justify-content: space-between;
+  }
+  .perception-tabs button {
+    padding: 10px;
+  }
+  .perception-section-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .perception-form {
+    padding: 18px 16px 0;
+  }
+  .perception-form input:not([type="checkbox"]),
+  .perception-form select,
+  .perception-form textarea,
+  .perception-page select {
+    font-size: 16px;
+  }
+  .perception-form-grid.two {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .perception-model-detail,
+  .perception-job-header,
+  .perception-job-evidence,
+  .perception-comparison-header,
+  .perception-comparison-report,
+  .perception-comparison-footer {
+    padding: 16px;
+  }
+  .perception-evidence-list > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 5px;
+  }
+  .perception-job-list {
+    grid-template-columns: minmax(0, 1fr);
+    max-height: 220px;
+  }
+  .perception-comparison-identities {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .perception-comparison-counts > div {
+    padding: 10px;
+  }
+  .prediction-image-stage {
+    height: 250px;
+  }
+  .prediction-image-toolbar > div {
+    flex-wrap: wrap;
+  }
+  .perception-stale button {
+    margin: 8px 0 0;
+  }
+}

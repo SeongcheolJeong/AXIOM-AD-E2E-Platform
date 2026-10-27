@@ -1,0 +1,39 @@
+{
+  "schema_version": "visual-asset-provenance/1",
+  "asset": "Kenney Car Kit sedan",
+  "version": "3.1",
+  "creator": "Kenney",
+  "source_url": "https://kenney.nl/assets/car-kit",
+  "archive_url": "https://kenney.nl/media/pages/assets/car-kit/1a312ec241-1775131960/kenney_car-kit.zip",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "retrieved_at": "2026-10-09",
+  "archive_sha256": "fac7dacac5c7874348cf19729af3ef205f3d366493edaf0a827d93f4fdf3d0c4",
+  "use": "Illustrative passenger-car mesh normalized to retained native bounding-box dimensions. Not the CARLA blueprint mesh. No animated or inferred wheel, suspension, pitch, roll, or vehicle motion. Original GLB and texture bytes are unchanged; runtime geometry transforms and color treatment only.",
+  "native_axes": {
+    "source_forward": "+Z",
+    "source_up": "+Y",
+    "render_forward": "+X",
+    "rotation_y_rad": 1.5707963267948966
+  },
+  "files": [
+    {
+      "path": "sedan.glb",
+      "archive_member": "Models/GLB format/sedan.glb",
+      "sha256": "b532ea7d2c59f7f6b22b138cf1955218a2c1898f1cea932af4d3fd563c3959b7",
+      "size_bytes": 172216
+    },
+    {
+      "path": "Textures/colormap.png",
+      "archive_member": "Models/GLB format/Textures/colormap.png",
+      "sha256": "f3622a03a20c6696065cae9cbe391351be873508af190c2ebd1d420c055787a5",
+      "size_bytes": 12371
+    },
+    {
+      "path": "License.txt",
+      "archive_member": "License.txt",
+      "sha256": "c33b7f6453d134deae7b1b8493717d9ccfa754c25ab97f6de89b88f8fda19b00",
+      "size_bytes": 696
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+# AXIOM minimal ULX3S 85F example, sourced pin facts from pinned profile.json.
+# Control/bring-up ports only; NOT constraints for four external camera streams.
+# Deliberately no blanket BLOCK ASYNCPATHS or BLOCK RESETPATHS exceptions.
+LOCATE COMP "clk_25mhz" SITE "G2";
+IOBUF PORT "clk_25mhz" PULLMODE=NONE IO_TYPE=LVCMOS33;
+FREQUENCY PORT "clk_25mhz" 25 MHZ;
+LOCATE COMP "ftdi_rxd" SITE "L4";
+IOBUF PORT "ftdi_rxd" PULLMODE=UP IO_TYPE=LVCMOS33 DRIVE=4;
+LOCATE COMP "ftdi_txd" SITE "M1";
+IOBUF PORT "ftdi_txd" PULLMODE=UP IO_TYPE=LVCMOS33;
+LOCATE COMP "btn_power_n" SITE "D6";
+IOBUF PORT "btn_power_n" PULLMODE=UP IO_TYPE=LVCMOS33;
+LOCATE COMP "led0" SITE "B2";
+IOBUF PORT "led0" PULLMODE=NONE IO_TYPE=LVCMOS33 DRIVE=4;

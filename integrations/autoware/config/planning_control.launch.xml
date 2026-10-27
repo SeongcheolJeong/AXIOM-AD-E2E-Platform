@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Native planning + MPC/PID only. AXIOM is the simulation supervisor.
+       Perception, NDT, simulator, vehicle interface and ADAPI gates do not run. -->
+  <arg name="map_path" default="/maps"/>
+  <include file="$(find-pkg-share autoware_launch)/launch/autoware.launch.xml">
+    <arg name="map_path" value="$(var map_path)"/>
+    <arg name="vehicle_model" value="sample_vehicle"/>
+    <arg name="sensor_model" value="sample_sensor_kit"/>
+    <arg name="launch_vehicle" value="false"/>
+    <arg name="launch_vehicle_interface" value="false"/>
+    <arg name="launch_system" value="false"/>
+    <arg name="launch_map" value="false"/>
+    <arg name="launch_sensing" value="false"/>
+    <arg name="launch_localization" value="false"/>
+    <arg name="launch_perception" value="false"/>
+    <arg name="launch_control" value="false"/>
+    <arg name="launch_api" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="enable_all_modules_auto_mode" value="true"/>
+    <arg name="is_simulation" value="true"/>
+    <arg name="rviz" value="false"/>
+  </include>
+  <!-- Lanelet2-only map pipeline: no invented pointcloud map for disabled NDT. -->
+  <include file="$(find-pkg-share autoware_map_projection_loader)/launch/map_projection_loader.launch.xml">
+    <arg name="param_path" value="$(find-pkg-share autoware_launch)/config/map/map_projection_loader.param.yaml"/>
+    <arg name="map_projector_info_path" value="$(var map_path)/map_projector_info.yaml"/>
+    <arg name="lanelet2_map_path" value="$(var map_path)/lanelet2_map.osm"/>
+  </include>
+  <node_container pkg="rclcpp_components" exec="component_container_mt" name="axiom_map_container" namespace="/map" output="log">
+    <composable_node pkg="autoware_map_loader" plugin="autoware::map_loader::Lanelet2MapLoaderNode" name="lanelet2_map_loader" namespace="/map">
+      <param from="$(find-pkg-share autoware_launch)/config/map/lanelet2_map_loader.param.yaml"/>
+      <param name="lanelet2_map_path" value="$(var map_path)/lanelet2_map.osm"/>
+      <param name="use_sim_time" value="true"/>
+      <remap from="output/lanelet2_map" to="/map/vector_map"/>
+    </composable_node>
+  </node_container>
+  <node_container pkg="rclcpp_components" exec="component_container_mt" name="axiom_controller_container" namespace="/axiom" output="log">
+    <composable_node pkg="autoware_trajectory_follower_node" plugin="autoware::motion::control::trajectory_follower_node::Controller" name="controller" namespace="/axiom">
+      <remap from="~/input/reference_trajectory" to="/planning/trajectory"/>
+      <remap from="~/input/current_odometry" to="/localization/kinematic_state"/>
+      <remap from="~/input/current_steering" to="/vehicle/status/steering_status"/>
+      <remap from="~/input/current_accel" to="/localization/acceleration"/>
+      <remap from="~/input/current_operation_mode" to="/system/operation_mode/state"/>
+      <remap from="~/output/control_cmd" to="/axiom/native_control_cmd"/>
+      <param from="$(find-pkg-share autoware_launch)/config/control/common/nearest_search.param.yaml"/>
+      <param from="$(find-pkg-share autoware_launch)/config/control/trajectory_follower/trajectory_follower_node.param.yaml"/>
+      <param from="$(find-pkg-share autoware_launch)/config/control/trajectory_follower/longitudinal/pid.param.yaml"/>
+      <param from="$(find-pkg-share autoware_launch)/config/control/trajectory_follower/lateral/mpc.param.yaml"/>
+      <param from="$(find-pkg-share sample_vehicle_description)/config/vehicle_info.param.yaml"/>
+      <param name="lateral_controller_mode" value="mpc"/>
+      <param name="longitudinal_controller_mode" value="pid"/>
+      <param name="use_sim_time" value="true"/>
+    </composable_node>
+  </node_container>
+</launch>

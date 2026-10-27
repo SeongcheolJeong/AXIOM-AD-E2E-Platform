@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "axiom-apollo-lab"
+version = "0.1.0"
+description = "SM8750 architecture timing and CPU reference imaging, not silicon emulation"
+requires-python = ">=3.11"
+dependencies = ["axiom-fpga-lab==0.1.0", "simpy==4.1.1", "numpy==2.5.3", "opencv-python-headless==5.0.0.93", "Pillow==12.3.0"]
+[project.entry-points."ade2e.experiment_handlers"]
+apollo_lab = "axiom_apollo_lab:ApolloHandler"
+[tool.setuptools.packages.find]
+where = ["src"]

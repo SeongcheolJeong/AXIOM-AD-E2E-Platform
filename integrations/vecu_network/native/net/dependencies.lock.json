@@ -1,0 +1,14 @@
+{
+  "schema": "axiom-network-dependencies/1",
+  "silkit": {
+    "version": "5.0.8",
+    "repository": "https://github.com/vectorgrp/sil-kit",
+    "release_url": "https://github.com/vectorgrp/sil-kit/releases/tag/v5.0.8",
+    "archive_url": "https://github.com/vectorgrp/sil-kit/releases/download/v5.0.8/SilKit-5.0.8-ubuntu-24.04-x86_64-gcc.zip",
+    "archive_sha256": "b1dc751c9a44b9dd4a8822b085162a050f3293ff571fbdc9f132b7807ddebbe8",
+    "archive_root": "SilKit-5.0.8-ubuntu-24.04-x86_64-gcc",
+    "license": "MIT; separate dependency notices retained from release",
+    "platform": "Linux/x86_64 Ubuntu 24.04 GCC release",
+    "patches": []
+  }
+}

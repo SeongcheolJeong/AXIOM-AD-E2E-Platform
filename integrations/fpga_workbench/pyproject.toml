@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "axiom-fpga-workbench"
+version = "0.1.0"
+description = "Executable FIFO graph workbench with independent SimPy and generated RTL"
+requires-python = ">=3.11"
+dependencies = ["axiom-rtl-lab==0.1.0", "simpy==4.1.1"]
+[project.entry-points."ade2e.experiment_handlers"]
+fpga_workbench = "axiom_workbench:WorkbenchHandler"
+[tool.setuptools.packages.find]
+where = ["src"]

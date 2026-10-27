@@ -1,0 +1,184 @@
+.remote-outcome-panel,
+.recovered-run-lineage {
+  color: #344f42;
+  border: 1px solid #d6e4dc;
+  border-radius: 8px;
+  background: #fff;
+  padding: 18px;
+  min-width: 0;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.recovered-run-lineage {
+  margin: 0 0 18px;
+  background: #f3f8f5;
+}
+.remote-outcome-heading,
+.remote-outcome-actions,
+.remote-outcome-status,
+.recovery-entry-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.remote-outcome-heading {
+  margin-bottom: 10px;
+}
+.remote-outcome-heading h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 650;
+}
+.remote-outcome-heading > svg {
+  flex: 0 0 auto;
+  color: #53806c;
+}
+.remote-outcome-scope {
+  color: #54665d;
+  margin: 7px 0 14px;
+}
+.remote-outcome-identities {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 20px;
+  margin: 12px 0;
+}
+.remote-outcome-identities > div {
+  min-width: 0;
+}
+.remote-outcome-identities dt {
+  color: #617166;
+  font-size: 11px;
+  margin-bottom: 3px;
+}
+.remote-outcome-identities dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.remote-outcome-identities code,
+.recovery-entry code {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.remote-outcome-state {
+  border: 1px solid #dde7df;
+  border-radius: 6px;
+  padding: 13px;
+  background: #f8faf7;
+  margin: 12px 0;
+}
+.remote-outcome-status {
+  justify-content: space-between;
+}
+.remote-outcome-status strong {
+  font-size: 13px;
+}
+.remote-outcome-status time,
+.recovery-entry time {
+  color: #617166;
+  font-size: 11px;
+}
+.remote-outcome-panel .inline-error,
+.remote-outcome-panel [role="status"],
+.remote-outcome-panel [role="alert"] {
+  overflow-wrap: anywhere;
+}
+.remote-outcome-actions {
+  margin: 13px 0;
+}
+.remote-outcome-actions .button {
+  white-space: normal;
+  text-align: left;
+  min-height: 36px;
+}
+.remote-recovery-form {
+  margin: 14px 0;
+}
+.remote-recovery-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.remote-recovery-form textarea {
+  display: block;
+  width: 100%;
+  min-height: 68px;
+  border: 1px solid #ccd9d0;
+  border-radius: 5px;
+  padding: 10px;
+  font: inherit;
+  color: #344f42;
+  resize: vertical;
+  background: #fff;
+}
+.remote-recovery-form textarea:focus-visible {
+  outline: 2px solid #528472;
+  outline-offset: 2px;
+}
+.remote-outcome-notice {
+  border-left: 3px solid #be9360;
+  padding: 9px 12px;
+  background: #fcf6eb;
+  color: #785d35;
+  margin: 12px 0;
+}
+.remote-recovery-history {
+  border-top: 1px solid #e1e8e3;
+  margin-top: 17px;
+  padding-top: 13px;
+}
+.remote-recovery-history h4 {
+  font-size: 13px;
+  margin: 0 0 10px;
+}
+.remote-recovery-history > ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+.recovery-entry {
+  padding: 12px;
+  border: 1px solid #e1e8e3;
+  border-radius: 6px;
+}
+.recovery-entry-heading {
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.remote-outcome-disclosure {
+  margin-top: 12px;
+}
+.remote-outcome-disclosure summary {
+  cursor: pointer;
+  color: #496651;
+}
+.remote-outcome-disclosure pre {
+  max-height: 260px;
+  overflow: auto;
+  margin-top: 10px;
+  font-size: 11px;
+}
+.recovery-row-label {
+  color: #4e7968;
+  font-size: 11px;
+}
+@media (max-width: 600px) {
+  .remote-outcome-panel,
+  .recovered-run-lineage {
+    padding: 13px;
+  }
+  .remote-outcome-identities {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .remote-outcome-actions {
+    align-items: stretch;
+  }
+  .remote-outcome-actions .button {
+    flex: 1 1 180px;
+    justify-content: center;
+  }
+}

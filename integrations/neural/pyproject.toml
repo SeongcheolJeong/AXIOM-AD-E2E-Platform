@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axiom-neural-adapter"
+version = "1.0.0"
+description = "Optional Splatfacto reconstruction and novel-view demo adapter"
+requires-python = ">=3.10"
+dependencies = ["numpy", "Pillow"]
+
+[project.entry-points."ade2e.experiment_handlers"]
+neural_splatfacto = "axiom_neural:create_handler"
+
+[tool.setuptools.packages.find]
+where = ["src"]

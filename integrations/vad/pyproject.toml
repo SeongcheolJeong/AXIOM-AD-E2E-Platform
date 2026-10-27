@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axiom-vad-adapter"
+version = "0.2.0"
+description = "Isolated native VAD-Tiny recorded inference connector"
+requires-python = ">=3.8"
+# Native engine versions are prepared separately; never install into the core environment.
+dependencies = ["numpy", "Pillow"]
+
+[project.entry-points."ade2e.experiment_handlers"]
+vad_native = "axiom_vad.experiment:NativeVADExperimentHandler"
+
+[tool.setuptools.packages.find]
+where = ["src"]

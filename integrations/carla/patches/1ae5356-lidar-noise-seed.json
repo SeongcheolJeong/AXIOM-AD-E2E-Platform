@@ -1,0 +1,22 @@
+{
+  "schema_version": "carla-engine-source-patch/1",
+  "status": "prepared_not_built_or_deployed",
+  "source_repository": "https://github.com/carla-simulator/carla",
+  "source_revision": "1ae5356",
+  "source_file": "Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/RayCastLidar.cpp",
+  "source_url": "https://raw.githubusercontent.com/carla-simulator/carla/1ae5356/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/RayCastLidar.cpp",
+  "original_sha256": "c37adb3c64e5c6b89019d90daec00c9e61be1188e4efd6c58b963dd5c07e00d4",
+  "patched_sha256": "55288639e1e437c8ada5e97d1b3c21c280d399aae29a889824bcd625d68d31dd",
+  "patch_sha256": "8337dbd79e6fd17dde88b6ee15561353f1403a8589e4ed690c7c3441c2914ae5",
+  "validation": {
+    "checked_at": "2026-09-13T13:10:10.086869+00:00",
+    "git_apply_check": true,
+    "exact_expected_change": true,
+    "second_application_rejected": true,
+    "reverse_restores_original_bytes": true,
+    "native_compile": false,
+    "patched_engine_run": false,
+    "rng_state_readback": false
+  },
+  "license": "CARLA source MIT; Unreal Engine and assets have separate terms."
+}

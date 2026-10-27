@@ -1,0 +1,342 @@
+.hil-mode-tabs {
+  margin-left: auto;
+  display: flex;
+  gap: 5px;
+}
+.hil-mode-tabs a {
+  padding: 8px 12px;
+  border: 1px solid #d7e4d7;
+  border-radius: 7px;
+  text-decoration: none;
+  color: #66816c;
+  font-size: 11px;
+}
+.hil-mode-tabs a.selected {
+  background: #e8f1e1;
+  border-color: #9abb97;
+  color: #395e3c;
+}
+.hil-beta-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 6px 0 22px;
+}
+.hil-beta-heading h1 {
+  font-size: 26px;
+  letter-spacing: -0.8px;
+  margin: 7px 0;
+}
+.hil-beta-heading p {
+  font-size: 12px;
+  color: #899b87;
+  margin: 0;
+}
+.hil-beta-heading > button {
+  font-size: 11px;
+  white-space: nowrap;
+}
+.hil-beta-library {
+  display: flex;
+  gap: 9px;
+  align-items: end;
+  background: #f1f7ed;
+  border: 1px solid #dce8d5;
+  border-radius: 10px;
+  padding: 13px;
+  margin-bottom: 18px;
+}
+.hil-beta-library > label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.hil-beta-library select {
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  padding: 9px 12px;
+}
+.hil-beta-library > button {
+  font-size: 10px;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.hil-beta-grid {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+.hil-beta-sidebar {
+  background: #fff;
+  border: 1px solid #dce6d7;
+  border-radius: 11px;
+  overflow: hidden;
+}
+.hil-beta-sidebar > nav {
+  display: flex;
+  padding: 8px;
+  gap: 4px;
+  border-bottom: 1px solid #e4eadf;
+  background: #fbfcf8;
+}
+.hil-beta-sidebar > nav button {
+  flex: 1;
+  font-size: 10px;
+  white-space: nowrap;
+  border-color: transparent;
+  padding: 9px 5px;
+}
+.hil-beta-sidebar > nav button.selected {
+  background: #e9f3e3;
+  border-color: #c2d8b6;
+  color: #4e7545;
+}
+.hil-beta-form {
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.hil-beta-form > .hil-eyebrow {
+  letter-spacing: 0.5px;
+  font-size: 8px;
+  overflow-wrap: anywhere;
+}
+.hil-beta-form h2 {
+  font-size: 16px;
+  margin: 0;
+}
+.hil-beta-form p {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #859780;
+  margin: 0;
+}
+.hil-beta-form small {
+  font-size: 10px;
+  color: #94a28a;
+  line-height: 1.6;
+}
+.hil-beta-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #5e7857;
+}
+.hil-beta-form label input,
+.hil-beta-form label textarea,
+.hil-beta-form label select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 10px;
+  font-size: 12px;
+  border-color: #dce5d5;
+  background: #fcfdf9;
+}
+.hil-beta-form label textarea {
+  resize: vertical;
+}
+.hil-beta-form input[type="range"] {
+  height: 14px;
+  accent-color: #46825d;
+  padding: 0;
+  border: 0;
+}
+.hil-beta-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.hil-beta-form > button,
+.hil-beta-form details button {
+  font-size: 11px;
+}
+.hil-beta-form details {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #7e9376;
+}
+.hil-beta-form details p {
+  margin: 9px 0;
+  font-size: 10px;
+}
+.hil-beta-form details code {
+  font-size: 9px;
+  overflow-wrap: anywhere;
+}
+.hil-beta-form details select {
+  font-size: 10px;
+  margin: 8px 0;
+}
+.hil-beta-form details button {
+  width: 100%;
+}
+.hil-beta-draft-state {
+  padding: 9px 10px;
+  background: #f6f4e6;
+  border-radius: 6px;
+  color: #94815d !important;
+  font-size: 10px !important;
+}
+.hil-beta-engine {
+  padding: 12px;
+  border: 1px solid #e0e8d7;
+  background: #f8fbf2;
+  border-radius: 7px;
+}
+.hil-beta-engine strong {
+  font-size: 10px;
+  color: #69865b;
+}
+.hil-beta-engine p {
+  font-size: 10px;
+  margin-top: 5px;
+}
+.hil-beta-readonly {
+  padding: 0 16px 16px;
+  font-size: 10px;
+  line-height: 1.6;
+  color: #9a9271;
+}
+.hil-beta-result {
+  min-width: 0;
+}
+.hil-beta-notice {
+  padding: 10px 13px;
+  background: #edf7e8;
+  border: 1px solid #caddbd;
+  border-radius: 7px;
+  color: #5c7d4c;
+  font-size: 12px;
+  margin: 0 0 15px;
+}
+.hil-beta-recovery {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  border: 1px solid #e4ca9d;
+  background: #fff7e5;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 11px;
+}
+.hil-beta-recovery > span {
+  font:
+    9px "IBM Plex Mono",
+    monospace;
+  color: #9c855f;
+  overflow-wrap: anywhere;
+}
+.hil-beta-recovery button {
+  margin-left: auto;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.hil-beta-form button.hil-beta-history-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 11px 10px;
+  gap: 5px;
+  background: #fafcf7;
+}
+.hil-beta-history-row.selected {
+  border-color: #82ac76 !important;
+  background: #eff7e8 !important;
+}
+.hil-beta-history-row strong {
+  font-size: 11px;
+}
+.hil-beta-history-row small {
+  font-size: 9px;
+}
+.hil-beta-history-row code {
+  font-size: 8px;
+  color: #9aa990;
+  overflow-wrap: anywhere;
+}
+.hil-beta-history-row p {
+  font-size: 10px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.hil-beta .hil-result-origin {
+  margin-top: 0;
+}
+.hil-beta-result .hil-empty {
+  min-height: 560px;
+}
+.hil-beta-result .hil-empty p {
+  padding: 0 20px;
+}
+.hil-beta-result .hil-empty a {
+  font-size: 12px;
+  color: #4c8564;
+}
+@media (max-width: 1150px) {
+  .hil-beta-grid {
+    grid-template-columns: 245px minmax(0, 1fr);
+    gap: 12px;
+  }
+  .hil-beta-heading h1 {
+    font-size: 22px;
+  }
+  .hil-beta-library > label {
+    display: block;
+  }
+  .hil-beta-library select {
+    width: 100%;
+    margin-top: 5px;
+  }
+  .hil-mode-tabs {
+    margin-left: 0;
+  }
+}
+@media (max-width: 850px) {
+  .hil-beta-grid {
+    grid-template-columns: 1fr;
+  }
+  .hil-beta-heading {
+    gap: 12px;
+  }
+  .hil-beta-heading h1 {
+    font-size: 20px;
+  }
+  .hil-beta-library {
+    flex-wrap: wrap;
+  }
+  .hil-beta-library > label {
+    flex-basis: 100%;
+  }
+  .hil-beta-form {
+    max-height: 520px;
+    overflow: auto;
+  }
+  .hil-project {
+    flex-wrap: wrap;
+  }
+  .hil-beta-recovery {
+    flex-wrap: wrap;
+  }
+}
+
+.hil-beta-library > select {
+  flex: 0 0 65px;
+  width: 65px;
+  font-size: 11px;
+}
+.hil-fault-timing{display:flex;flex-direction:column;gap:9px;padding:12px 10px;background:#fff8ee;border:1px solid #eddcc5;border-radius:8px}.hil-fault-timing>div:first-child{display:flex;flex-direction:column;gap:3px}.hil-fault-timing strong{font-size:11px;color:#947452}.hil-fault-timing small{font-size:9px;color:#99866d}.hil-timing-inputs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.hil-fault-timing .hil-timing-inputs label{font-size:10px;color:#8d7357}.hil-fault-timing .hil-timing-inputs input{padding:7px 8px;background:#fffdfa;border-color:#e9d7bd}.hil-timing-track{position:relative;height:6px;background:#e8e8df;border-radius:4px;margin:5px 0 14px}.hil-timing-track>i{position:absolute;height:6px;background:#d49a61;border-radius:4px}.hil-timing-track>span{position:absolute;top:10px;font:8px "IBM Plex Mono",monospace;color:#a28f74}.hil-timing-last{right:0}.hil-fault-timing .hil-error{color:#b25e41;font-size:10px}
+.hil-profile-comparison{display:flex;flex-direction:column;gap:12px;padding:11px 9px;border:1px solid #d7e4d0;border-radius:8px;background:#f6faf1}.hil-profile-picker{display:grid;grid-template-columns:minmax(0,1fr) 63px;gap:7px}.hil-profile-picker small,.hil-profile-picker p{grid-column:1/-1}.hil-profile-comparison>button{font-size:10px}.hil-profile-picker label{min-width:0}.hil-beta-sidebar>nav{flex-wrap:wrap}.hil-beta-sidebar>nav button{flex-basis:40%}
+.hil-scene-picker{display:flex;flex-direction:column;gap:8px;padding:12px 10px;border:1px solid #d9e2e9;border-radius:8px;background:#f4f8fa}.hil-scene-picker .hil-scene-schedule{display:flex;gap:5px}.hil-scene-schedule>span{display:flex;flex-direction:column;gap:3px;flex:1;padding:7px;background:#e9f0f4;color:#628299;border-radius:5px;font:10px "IBM Plex Mono",monospace}.hil-scene-schedule b{font-size:8px;color:#93a7b4;font-weight:400}.hil-scene-picker>small{font-size:9px;color:#879daa}
